@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.10.4
+  sdk: ">=3.7.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -31,20 +31,119 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
+  # =========================
+  # 🎨 UI & Design
+  # =========================
+  flutter_screenutil: any
+  flutter_svg: any
+  google_fonts: any
+  lottie: any
+  shimmer: any
+  table_calendar: any
+  flutter_rating_bar: any
+  pinput: any
+  ansicolor: any
+#  anyawesome_snackbar_content: any
+
+  # =========================
+  # 🧠 State Management
+  # =========================
+  flutter_bloc: any
+  bloc: any
+  provider: any
+  get: any
+  equatable: any
+  dartz: any
+
+  # =========================
+  # 🌐 Networking
+  # =========================
+  dio: any
+  retrofit: any
+  http: any
+  http_parser: any
+  cookie_jar: any
+  dio_cookie_manager: any
+
+  # =========================
+  # 🪵 Logging & Debugging
+  # =========================
+  pretty_dio_logger: any
+  talker_dio_logger: any
+  device_preview: any
+
+  # =========================
+  # 🔐 Authentication
+  # =========================
+  firebase_core: any
+  firebase_authentication: ^0.0.31
+  google_sign_in: any
+  jwt_decoder: any
+
+  # =========================
+  # 🗺 Location & Maps
+  # =========================
+  flutter_map: any
+  latlong2: any
+  geocoding: any
+  location: any
+
+  # =========================
+  # 💾 Local Storage
+  # =========================
+  hive: any
+  hive_flutter: any
+  shared_preferences: any
+
+  # =========================
+  # 📷 Media & Files
+  # =========================
+  image_picker: any
+  cached_network_image: any
+
+  # =========================
+  # 🔌 Dependency Injection
+  # =========================
+  get_it: any
+  injectable: any
+
+  # =========================
+  # 🧩 Routing & Navigation
+  # =========================
+  go_router: any
+
+  # =========================
+  # 🌍 Localization & Utils
+  # =========================
+  intl: any
+  timeago: any
+  json_annotation: any
+
+  # =========================
+  # 🍎 Platform / System
+  # =========================
+  cupertino_icons: any
+
 
 dev_dependencies:
+  analyzer: any
+  build_runner: any
+  hive_generator: any
+  injectable_generator: any
+  json_serializable: any
+
+  retrofit_generator: any
+
   flutter_test:
     sdk: flutter
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^6.0.0
+  flutter_lints: any
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
