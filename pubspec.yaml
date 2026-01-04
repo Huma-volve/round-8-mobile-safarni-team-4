@@ -124,6 +124,11 @@ dependencies:
   # =========================
   cupertino_icons: any
 
+  # =========================
+  # 📦 splash
+  # =========================
+  flutter_native_splash: any
+
 
 dev_dependencies:
   analyzer: any
@@ -158,7 +163,10 @@ flutter:
 
   assets:
      - assets/icons/
-
+     - assets/images/
+  # To add assets to your application, add an assets section, like this:
+    
+  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
