@@ -6,3 +6,4 @@ trigger: always_on
 - sepearte widgets into classes .
 - do not do custom widgets if it exist in theming design system .
 - do not use screen utils instead use expanded of flexable and media query.
+- make seperate classes for widgets .

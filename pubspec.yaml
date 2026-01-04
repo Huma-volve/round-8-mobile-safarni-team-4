@@ -130,6 +130,7 @@ dependencies:
   flutter_native_splash: any
 
 
+
 dev_dependencies:
   analyzer: any
   build_runner: any
