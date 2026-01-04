@@ -29,7 +29,7 @@ abstract class AppThemes {
         fontWeight: FontWeight.w600,
       ),
       titleMedium: GoogleFonts.poppins(
-        fontSize: 16,
+        fontSize: 14,
         color: AppColors.black,
         fontWeight: FontWeight.w500,
       ),
@@ -147,7 +147,7 @@ abstract class AppThemes {
         borderRadius: BorderRadius.circular(4),
         borderSide: const BorderSide(color: Colors.red),
       ),
-      hintStyle: GoogleFonts.geo(
+      hintStyle: GoogleFonts.poppins(
         fontSize: 13,
         fontWeight: FontWeight.w400,
         color: AppColors.gray,

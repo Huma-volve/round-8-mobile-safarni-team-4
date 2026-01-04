@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/home_view.dart';
+import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 
 abstract class AppRouter {
   static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
@@ -10,6 +11,11 @@ abstract class AppRouter {
       switch (name) {
         case AppRoutes.home:
           return MaterialPageRoute(builder: (context) => HomeView());
+
+        case AppRoutes.flightBooking:
+          return MaterialPageRoute(
+            builder: (context) => const FlightBookingPage(),
+          );
 
         default:
           return _errorRoute();
