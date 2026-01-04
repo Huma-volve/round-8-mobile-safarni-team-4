@@ -44,7 +44,7 @@ class _CheckoutViewState extends State<CheckoutView> {
           child: BlocProvider(
             create: (context) => paymentCubit,
             child: Column(
-              spacing: 32,
+              spacing: 20,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(flex: 9, child: CreditCardView()),
@@ -54,7 +54,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                     paymentSelectorModels: paymentSelectorModels,
                   ),
                 ),
-                Expanded(flex: 7, child: PaymentForm()),
+                Expanded(flex: 8, child: PaymentForm()),
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(

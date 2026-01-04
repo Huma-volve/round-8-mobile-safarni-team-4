@@ -8,29 +8,31 @@ class PayPalBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Full Name',
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.w600,
-            color: AppColors.black,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Full Name',
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w600,
+              color: AppColors.black,
+            ),
           ),
-        ),
-        const SizedBox(height: 8),
-        TextField(decoration: InputDecoration(hintText: 'Your full name')),
-        const SizedBox(height: 16),
-        Text(
-          'Your Email',
-          style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.w600,
-            color: AppColors.black,
+          const SizedBox(height: 8),
+          TextField(decoration: InputDecoration(hintText: 'Your full name')),
+          const SizedBox(height: 16),
+          Text(
+            'Your Email',
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              fontWeight: FontWeight.w600,
+              color: AppColors.black,
+            ),
           ),
-        ),
-        const SizedBox(height: 8),
-        TextField(decoration: InputDecoration(hintText: 'Type your email')),
-      ],
+          const SizedBox(height: 8),
+          TextField(decoration: InputDecoration(hintText: 'Type your email')),
+        ],
+      ),
     );
   }
 }
