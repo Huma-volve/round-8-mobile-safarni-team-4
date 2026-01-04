@@ -16,11 +16,7 @@ class HomeView extends StatelessWidget {
               FilledButton(onPressed: () {}, child: Text('Add')),
               OutlinedButton(onPressed: () {}, child: Text('Add')),
 
-              TextField(
-                decoration: InputDecoration(
-                  hintText: 'full name',
-                ),
-              ),
+              TextField(decoration: InputDecoration(hintText: 'full name')),
             ],
           ),
         ),
