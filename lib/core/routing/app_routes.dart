@@ -1,4 +1,3 @@
-
 abstract class AppRoutes {
   static const home = '/home';
   static const flightBooking = '/flightBooking';
@@ -9,5 +8,6 @@ abstract class AppRoutes {
   static const welcomeView = '/welcomeView';
   static const loginView = '/loginView';
   static const signupView = '/signupView';
+  static const seatSelection = '/seatSelection';
   static const forgetPasswordView = '/forgetPasswordView';
 }
