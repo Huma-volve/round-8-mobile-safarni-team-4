@@ -11,46 +11,44 @@ class HotelRecommendation extends StatelessWidget {
   final HotelModel hotelModel;
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: Container(
-        width: 200,
-        margin: const EdgeInsets.only(left: 16, top: 8, bottom: 8),
-        padding: const EdgeInsets.all(12.0),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(1),
-              spreadRadius: 3,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
+    return Container(
+      width: 200,
+      margin: const EdgeInsets.only(left: 16, top: 8, bottom: 8),
+      padding: const EdgeInsets.all(12.0),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(1),
+            spreadRadius: 3,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
+        borderRadius: BorderRadius.circular(16.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Image.asset(
+              hotelModel.hotelImage,
+              fit: BoxFit.cover,
+            //  width: double.infinity,
             ),
-          ],
-          borderRadius: BorderRadius.circular(16.0),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Image.asset(
-                hotelModel.hotelImage,
-                fit: BoxFit.cover,
-              //  width: double.infinity,
+          ),
+          const SizedBox(height: 4.0),
+          CustomDiscountAndRationg(hotelModel: hotelModel),
+          FittedBox(
+            child: Text(
+              hotelModel.hotelName,
+              style: AppThemes.light.textTheme.titleLarge!.copyWith(
+                fontSize: 16.0,
               ),
             ),
-            const SizedBox(height: 4.0),
-            CustomDiscountAndRationg(hotelModel: hotelModel),
-            FittedBox(
-              child: Text(
-                hotelModel.hotelName,
-                style: AppThemes.light.textTheme.titleLarge!.copyWith(
-                  fontSize: 16.0,
-                ),
-              ),
-            ),
-            FittedBox(child: CustomLocation()),
-          ],
-        ),
+          ),
+          FittedBox(child: CustomLocation()),
+        ],
       ),
     );
   }

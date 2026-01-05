@@ -20,13 +20,7 @@ class CustomHotelHeader extends StatelessWidget {
           SizedBox(height: 8.0),
           SearchTextField(),
           SizedBox(height: 8.0),
-          CustomTextHeader(
-            title: 'Recommended Hotels',
-            textButton: 'See All',
-            onPressed: () {
-              // Get.toNamed('/all-hotels');
-            },
-          ),
+         
         ],
       ),
     );
