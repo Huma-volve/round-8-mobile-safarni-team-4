@@ -35,7 +35,7 @@ class OnboardingHeader extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    context.pushNamed(AppRoutes.home);
+                    context.pushNamed(AppRoutes.welcomeView);
                   },
                   child: Text(
                     "Skip",

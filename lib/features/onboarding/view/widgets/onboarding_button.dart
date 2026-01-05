@@ -32,7 +32,7 @@ class OnboardingButton extends StatelessWidget {
               curve: Curves.easeIn,
             );
           } else {
-            context.pushNamed(AppRoutes.home);
+            context.pushNamed(AppRoutes.welcomeView);
           }
         },
         buttonName: isLastPage ? "Get Start" : "Next",

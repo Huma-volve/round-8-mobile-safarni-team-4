@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
+import 'package:round_8_mobile_safarni_team4/features/auth/presentation/views/welcome_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/home_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/view/onboarding_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
@@ -28,6 +29,11 @@ abstract class AppRouter {
           return MaterialPageRoute(
             builder: (context) => const PaymentSuccessView(),
           );
+
+          case AppRoutes.welcomeView:
+            return MaterialPageRoute(
+              builder: (context) => const WelcomeView(),
+            );
 
         default:
           return _errorRoute();
