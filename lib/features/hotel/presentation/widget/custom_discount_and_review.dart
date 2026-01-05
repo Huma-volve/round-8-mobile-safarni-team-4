@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/hotel_model.dart';
 
-class CustomDiscountAndRationg extends StatelessWidget {
-  const CustomDiscountAndRationg({super.key,  this.hotelModel , this.text});
-
-  final HotelModel? hotelModel;
-  final String? text;
+class CustomDiscountAndReview extends StatelessWidget {
+  const CustomDiscountAndReview({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
@@ -20,7 +15,7 @@ class CustomDiscountAndRationg extends StatelessWidget {
             borderRadius: BorderRadius.circular(4.0),
           ),
           child: Text(
-            hotelModel!.discount,
+            "10%Off",
             style: AppThemes.light.textTheme.labelMedium!.copyWith(
               color: Color(0xff007BFF),
             ),
@@ -33,8 +28,8 @@ class CustomDiscountAndRationg extends StatelessWidget {
           icon: Icon(Icons.star, color: Colors.amber),
         ),
         Text(
-          text ??
-          hotelModel!.rating  ,
+          "4.5(356 reviews)",
+
           style: AppThemes.light.textTheme.displayLarge!.copyWith(
             fontSize: 12.0,
           ),
