@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../../../core/colors/app_colors.dart';
+import '../../../../core/constants/assets_paths.dart';
 
 class FlightBookingHeader extends StatelessWidget {
-  const FlightBookingHeader({super.key});
+  const FlightBookingHeader({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(
-            'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop',
-          ),
+          image: AssetImage(AssetsPaths.planeImage),
           fit: BoxFit.cover,
         ),
       ),
@@ -28,10 +28,10 @@ class FlightBookingHeader extends StatelessWidget {
             right: 0,
             child: Center(
               child: Text(
-                'Book Your Flight',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                title,
+                style: Theme.of(context).textTheme.displayLarge?.copyWith(
                   color: AppColors.white,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
                 ),
               ),
             ),
