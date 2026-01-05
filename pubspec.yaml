@@ -77,6 +77,7 @@ dependencies:
   talker_dio_logger: any
   timeago: any
 
+
 dev_dependencies:
   analyzer: any
   build_runner: any
