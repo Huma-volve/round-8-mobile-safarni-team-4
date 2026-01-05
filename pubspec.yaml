@@ -123,6 +123,7 @@ dependencies:
   # 🍎 Platform / System
   # =========================
   cupertino_icons: any
+  smooth_page_indicator: ^2.0.1
 
 
 dev_dependencies:

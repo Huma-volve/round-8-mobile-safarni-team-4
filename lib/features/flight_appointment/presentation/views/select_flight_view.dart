@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/widgets/flight_booking_header.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/date_selector_strip.dart';
@@ -28,7 +29,9 @@ class SelectFlightView extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: FilledButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.seatSelection);
+            },
             child: Text(
               "Continue",
               style: GoogleFonts.poppins(

@@ -8,4 +8,5 @@ abstract class AppRoutes {
   static const welcomeView = '/welcomeView';
   static const loginView = '/loginView';
   static const signupView = '/signupView';
+  static const seatSelection = '/seatSelection';
 }
