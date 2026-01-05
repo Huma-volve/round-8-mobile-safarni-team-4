@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/utils/extesions/date_ex.dart';
 import '../../../../core/colors/app_colors.dart';
 
@@ -61,7 +62,9 @@ class FlightBookingForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.selectFlight);
+                },
                 child: Text(
                   'Search Flights',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(

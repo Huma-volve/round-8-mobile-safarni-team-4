@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
+import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/home_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 
@@ -16,7 +17,10 @@ abstract class AppRouter {
           return MaterialPageRoute(
             builder: (context) => const FlightBookingPage(),
           );
-
+        case AppRoutes.selectFlight:
+          return MaterialPageRoute(
+            builder: (context) => const SelectFlightView(),
+          );
         default:
           return _errorRoute();
       }

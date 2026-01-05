@@ -5,7 +5,7 @@ import '../colors/app_colors.dart';
 abstract class AppThemes {
   static ThemeData light = ThemeData(
     useMaterial3: true,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: AppColors.scaffoldBg,
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.transparent,
       surfaceTintColor: AppColors.transparent,
@@ -117,15 +117,11 @@ abstract class AppThemes {
       }),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(
-          color: AppColors.gray,
-        ),
+        borderSide: BorderSide(color: AppColors.gray),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(
-          color: AppColors.gray,
-        ),
+        borderSide: BorderSide(color: AppColors.gray),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
@@ -133,9 +129,7 @@ abstract class AppThemes {
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(
-          color: AppColors.gray,
-        ),
+        borderSide: BorderSide(color: AppColors.gray),
       ),
 
       errorBorder: OutlineInputBorder(
@@ -179,6 +173,23 @@ abstract class AppThemes {
           horizontal: 24,
         ),
         textStyle: GoogleFonts.geo(fontSize: 16, fontWeight: FontWeight.w800),
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        padding: const WidgetStatePropertyAll(
+          EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+        ),
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        textStyle: WidgetStatePropertyAll(
+          GoogleFonts.geo(
+            fontSize: 16,
+            color: AppColors.white,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
       ),
     ),
     iconButtonTheme: IconButtonThemeData(
