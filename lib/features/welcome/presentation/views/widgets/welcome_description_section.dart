@@ -15,7 +15,7 @@ class WelcomeDescriptionSection extends StatelessWidget {
         textAlign: TextAlign.center,
         style: context.textTheme.displayMedium?.copyWith(
           fontSize: context.sp(14),
-          color: AppColors.black[60],
+          color: AppColors.black[80],
         ),
       ),
     );

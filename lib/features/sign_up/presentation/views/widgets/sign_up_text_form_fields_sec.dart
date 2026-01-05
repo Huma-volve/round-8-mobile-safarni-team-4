@@ -5,8 +5,8 @@ import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.
 import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/widgets/custom_text_form_field.dart';
 
-class LoginTextFormFieldsSec extends StatelessWidget {
-  const LoginTextFormFieldsSec({super.key});
+class SignUpTextFormFieldsSec extends StatelessWidget {
+  const SignUpTextFormFieldsSec({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +14,35 @@ class LoginTextFormFieldsSec extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Email',
+          'Name',
           style: context.textTheme.displayMedium?.copyWith(
             fontSize: context.sp(14),
-            color: AppColors.black[80],
-            fontWeight: FontWeight.w500,
+            color: AppColors.black[90],
+            fontWeight: FontWeight.w600,
           ),
         ),
         context.gapH(4),
         CustomTextFormField(
-          hintText: 'Enter your email',
+          hintText: 'kneeDue',
+          prefixIcon: Icons.person_outline,
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter a valid email';
+            }
+          },
+        ),
+        context.gapH(16),
+        Text(
+          'Email',
+          style: context.textTheme.displayMedium?.copyWith(
+            fontSize: context.sp(14),
+            color: AppColors.black[90],
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        context.gapH(4),
+        CustomTextFormField(
+          hintText: 'kneeDue@untitledui.com',
           prefixIcon: Icons.email_outlined,
           validator: (value) {
             if (value == null ||
@@ -38,13 +57,13 @@ class LoginTextFormFieldsSec extends StatelessWidget {
           'Password',
           style: context.textTheme.displayMedium?.copyWith(
             fontSize: context.sp(14),
-            color: AppColors.black[80],
-            fontWeight: FontWeight.w500,
+            color: AppColors.black[90],
+            fontWeight: FontWeight.w600,
           ),
         ),
-        context.gapH(4),  
+        context.gapH(4),
         CustomTextFormField(
-          hintText: 'Enter your password',
+          hintText: '***********',
           isObscureText: true,
           prefixIcon: Icons.lock_outline,
           validator: (value) {

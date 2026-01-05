@@ -65,7 +65,7 @@ class OnboardingCarousel extends StatelessWidget {
                 style: context.textTheme.titleMedium?.copyWith(
                   fontSize: context.sp(24),
                   fontWeight: FontWeight.w600,
-                  color: AppColors.black[100],
+                  color: Colors.black,
                 ),
               ),
             ),

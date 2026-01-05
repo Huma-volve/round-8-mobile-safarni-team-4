@@ -8,11 +8,12 @@ class CustomFaceGoogleContainer extends StatelessWidget {
   const CustomFaceGoogleContainer({
     super.key,
     required this.isGoogle,
-    this.onTap,
+    this.onTap, required this.title,
   });
 
   final bool isGoogle;
   final void Function()? onTap;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +39,10 @@ class CustomFaceGoogleContainer extends StatelessWidget {
             ),
             context.gapW(10),
             Text(
-              isGoogle ? 'Sign in with Google' : 'Sign in with Facebook',
+              title,
               style: AppThemes.light.textTheme.displayMedium?.copyWith(
                 color: AppColors.black[80],
-                fontSize: context.sp(16),
+                fontSize: context.sp(14),
                 fontWeight: FontWeight.w600,
               ),
             ),
