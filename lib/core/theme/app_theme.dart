@@ -5,7 +5,7 @@ import '../colors/app_colors.dart';
 abstract class AppThemes {
   static ThemeData light = ThemeData(
     useMaterial3: true,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: AppColors.scaffoldBg,
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.transparent,
       surfaceTintColor: AppColors.transparent,
@@ -180,6 +180,23 @@ abstract class AppThemes {
         textStyle: GoogleFonts.poppins(
           fontSize: 16,
           fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        padding: const WidgetStatePropertyAll(
+          EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+        ),
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        textStyle: WidgetStatePropertyAll(
+          GoogleFonts.geo(
+            fontSize: 16,
+            color: AppColors.white,
+            fontWeight: FontWeight.w800,
+          ),
         ),
       ),
     ),

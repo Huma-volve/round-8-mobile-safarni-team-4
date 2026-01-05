@@ -14,7 +14,10 @@ class FlightBookingPage extends StatelessWidget {
       body: Column(
         spacing: 14,
         children: [
-          Expanded(flex: 5, child: const FlightBookingHeader()),
+          Expanded(
+            flex: 5,
+            child: const FlightBookingHeader(title: 'Book Your Flight'),
+          ),
           Expanded(child: const TripTypeSelector()),
           Expanded(flex: 12, child: const FlightBookingForm()),
         ],

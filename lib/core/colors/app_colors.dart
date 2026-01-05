@@ -6,6 +6,7 @@ abstract class AppColors {
   static const Color _starColor = Color(0xffF9E000);
   static const Color _red = Color(0xFFCC1010);
   static const Color _gray = Color(0xFF808080);
+  static const Color _scaffoldBg = Color(0xFFF8F9FD);
 
   static const Color _warningColor = Color(0xfffffa726);
   static const MaterialColor _mainColorLight = MaterialColor(0xff1E429F, {
@@ -52,4 +53,6 @@ abstract class AppColors {
   static Color get gray => _gray;
 
   static Color get transparent => Colors.transparent;
+
+  static Color get scaffoldBg => _scaffoldBg;
 }

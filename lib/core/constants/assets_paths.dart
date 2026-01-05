@@ -2,6 +2,8 @@ abstract class AssetsPaths {
   static const _roundTripIcon = 'assets/icons/round_trip.png';
   static const _multiCityIcon = 'assets/icons/multi_city.png';
   static const _oneWayIcon = 'assets/icons/one_way.png';
+  static const _planeImage = 'assets/images/plane_bg.jpg';
+  static const _planeIcon = 'assets/icons/plane_icon.png';
   static const _applePayIcon = 'assets/icons/apple_pay.png';
   static const _googlePayIcon = 'assets/icons/google_pay.png';
   static const _masterCardIcon = 'assets/icons/mastercard.png';
@@ -27,6 +29,10 @@ abstract class AssetsPaths {
   static String get multiCityIcon => _multiCityIcon;
 
   static String get oneWayIcon => _oneWayIcon;
+
+  static String get planeImage => _planeImage;
+
+  static String get planeIcon => _planeIcon;
 
   static String get applePayIcon => _applePayIcon;
 
