@@ -9,6 +9,7 @@ class NearbyHotel extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           CustomTextHeader(
             title: 'Nearby Hotels',

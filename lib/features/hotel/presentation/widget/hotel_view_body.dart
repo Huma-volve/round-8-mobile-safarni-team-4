@@ -11,9 +11,7 @@ class HotelViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(child: CustomHotelHeader()),
-        SliverToBoxAdapter(
-          child: SizedBox(height: 250.0, child: ListHotelRecommendation()),
-        ),
+        SliverToBoxAdapter(child: ListHotelRecommendation(),),
         SliverFillRemaining(child: NearbyHotel()),
       ],
     );

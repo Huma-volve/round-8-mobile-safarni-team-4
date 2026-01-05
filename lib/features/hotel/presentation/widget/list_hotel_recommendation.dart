@@ -9,12 +9,15 @@ class ListHotelRecommendation extends StatelessWidget {
   Widget build(BuildContext context) {
     final hieght = MediaQuery.of(context).size.height;
     print("hieght $hieght");
-    return ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: listHotelModel.length,
-      itemBuilder: (context, index) {
-        return HotelRecommendation(hotelModel: listHotelModel[index]);
-      },
+    return SizedBox(
+      height: hieght * 0.35,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: listHotelModel.length,
+        itemBuilder: (context, index) {
+          return HotelRecommendation(hotelModel: listHotelModel[index]);
+        },
+      ),
     );
   }
 }

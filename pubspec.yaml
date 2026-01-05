@@ -34,7 +34,7 @@ dependencies:
   # =========================
   # 🎨 UI & Design
   # =========================
-  flutter_screenutil: any
+  flutter_screenutil: ^5.9.3
   flutter_svg: any
   google_fonts: any
   lottie: any
