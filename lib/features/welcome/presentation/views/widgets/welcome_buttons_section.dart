@@ -14,7 +14,12 @@ class WelcomeButtonsSection extends StatelessWidget {
       flex: 3,
       child: Column(
         children: [
-          CustomButton(buttonName: 'Sign Up', onPressed: () {}),
+          CustomButton(
+            buttonName: 'Sign Up',
+            onPressed: () {
+              context.pushNamed(AppRoutes.signupView);
+            },
+          ),
           context.gapH(16),
           CustomButton(
             buttonName: 'Log In',

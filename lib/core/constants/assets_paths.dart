@@ -22,6 +22,7 @@ abstract class AssetsPaths {
   static const _onboardingImage3 = 'assets/images/onbording3_.png';
   static const _welcomeImage = 'assets/images/welcome_image.png';
   static const _loginImage = 'assets/images/login_image.png';
+  static const _keyIcon = 'assets/icons/key.svg';
 
   static String get roundTripIcon => _roundTripIcon;
 
@@ -50,6 +51,7 @@ abstract class AssetsPaths {
   static String get wifiCreditIcon => _wifiCreditIcon;
 
   static String get chipIcon => _chipIcon;
+  static String get keyIcon => _keyIcon;
 
   static String get correctIcon => _correctIcon;
   static String get onboardingImage1 => _onboardingImage1;

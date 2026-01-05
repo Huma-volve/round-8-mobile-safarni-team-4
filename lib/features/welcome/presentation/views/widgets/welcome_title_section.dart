@@ -11,7 +11,7 @@ class WelcomeTitleSection extends StatelessWidget {
       flex: 1,
       child: Text(
         'Welcome',
-        style: context.textTheme.titleLarge?.copyWith(fontSize: context.sp(32)),
+        style: context.textTheme.titleLarge?.copyWith(fontSize: context.sp(32),),
       ),
     );
   }

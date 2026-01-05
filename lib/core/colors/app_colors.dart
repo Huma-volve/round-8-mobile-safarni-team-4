@@ -10,7 +10,7 @@ abstract class AppColors {
   static const Color _green = Color(0xFF03D947);
 
   static const Color _warningColor = Color(0xfffffa726);
-  static const MaterialColor _mainColorLight = MaterialColor(0xFF145DB8, {
+  static const MaterialColor _mainColorLight = MaterialColor(0xff1E429F, {
     10: Color(0xFFE9EBF8),
     20: Color(0xFFB6CDE9),
     30: Color(0xFF93B4DE),
