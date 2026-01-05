@@ -12,7 +12,7 @@ abstract class AppThemes {
       centerTitle: true,
       titleSpacing: 0,
       titleTextStyle: GoogleFonts.poppins(
-        fontSize: 20,
+        fontSize: 18,
         color: AppColors.black,
         fontWeight: FontWeight.w700,
       ),
@@ -58,13 +58,18 @@ abstract class AppThemes {
         color: AppColors.black,
         fontWeight: FontWeight.w400,
       ),
-      bodyMedium: GoogleFonts.poppins(
+      bodyMedium: GoogleFonts.spaceMono(
         fontSize: 14,
         color: AppColors.black,
         fontWeight: FontWeight.w400,
       ),
       bodySmall: GoogleFonts.poppins(
         fontSize: 12,
+        color: AppColors.black,
+        fontWeight: FontWeight.w400,
+      ),
+      displayMedium: GoogleFonts.poppins(
+        fontSize: 14,
         color: AppColors.black,
         fontWeight: FontWeight.w400,
       ),
@@ -142,7 +147,7 @@ abstract class AppThemes {
         borderSide: const BorderSide(color: Colors.red),
       ),
       hintStyle: GoogleFonts.poppins(
-        fontSize: 13,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppColors.gray,
       ),
@@ -157,10 +162,10 @@ abstract class AppThemes {
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),
         textStyle: WidgetStatePropertyAll(
-          GoogleFonts.geo(
+          GoogleFonts.poppins(
             fontSize: 16,
             color: AppColors.white,
-            fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.w600,
           ),
         ),
       ),
@@ -172,7 +177,10 @@ abstract class AppThemes {
           vertical: 12,
           horizontal: 24,
         ),
-        textStyle: GoogleFonts.geo(fontSize: 16, fontWeight: FontWeight.w800),
+        textStyle: GoogleFonts.poppins(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
       ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -194,6 +202,7 @@ abstract class AppThemes {
     ),
     iconButtonTheme: IconButtonThemeData(
       style: IconButton.styleFrom(
+        padding: EdgeInsets.zero,
         foregroundColor: AppColors.black,
         disabledForegroundColor: AppColors.black[40],
       ),
