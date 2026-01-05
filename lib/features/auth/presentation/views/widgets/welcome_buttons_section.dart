@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
+import 'package:round_8_mobile_safarni_team4/core/extensions/size_config_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/extensions/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/widgets/custom_button.dart';
+
+class WelcomeButtonsSection extends StatelessWidget {
+  const WelcomeButtonsSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      flex: 3,
+      child: Column(
+        children: [
+          CustomButton(buttonName: 'Sign Up', onPressed: () {}),
+          context.gapH(16),
+          CustomButton(
+            buttonName: 'Log In',
+            onPressed: () {},
+            buttonColors: Colors.white,
+            border: Border.all(color: AppColors.mainColorLight, width: 1.5),
+            style: context.textTheme.titleLarge?.copyWith(
+              color: AppColors.mainColorLight,
+              fontSize: context.sp(16),
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

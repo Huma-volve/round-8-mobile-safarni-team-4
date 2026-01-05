@@ -68,6 +68,11 @@ abstract class AppThemes {
         color: AppColors.black,
         fontWeight: FontWeight.w400,
       ),
+      displayMedium: GoogleFonts.poppins(
+        fontSize: 14,
+        color: AppColors.black,
+        fontWeight: FontWeight.w400,
+      ),
     ),
     colorScheme: ColorScheme(
       brightness: Brightness.light,
