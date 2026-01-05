@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/constants/assets_paths.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/view/widgets/onboarding_header.dart';
 
@@ -26,23 +27,36 @@ class _OnboardingViewState extends State<OnboardingView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: Stack(
           children: [
-            context.gapH(25),
-            OnboardingHeader(
-              controller: _pageController,
-              currentIndex: _currentIndex,
-            ),
-            Expanded(
-              child: OnboardingCarousel(
-                controller: _pageController,
-                currentIndex: _currentIndex,
-                onPageChanged: (index) => setState(() => _currentIndex = index),
+            Align(
+              alignment: Alignment.topCenter,
+
+              child: Image.asset(
+                AssetsPaths.onboardingBackgroundShape,
+                fit: BoxFit.contain,
               ),
             ),
-            OnboardingButton(
-              controller: _pageController,
-              currentIndex: _currentIndex,
+            Column(
+              children: [
+                context.gapH(25),
+                OnboardingHeader(
+                  controller: _pageController,
+                  currentIndex: _currentIndex,
+                ),
+                Expanded(
+                  child: OnboardingCarousel(
+                    controller: _pageController,
+                    currentIndex: _currentIndex,
+                    onPageChanged:
+                        (index) => setState(() => _currentIndex = index),
+                  ),
+                ),
+                OnboardingButton(
+                  controller: _pageController,
+                  currentIndex: _currentIndex,
+                ),
+              ],
             ),
           ],
         ),

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
-import 'package:round_8_mobile_safarni_team4/features/auth/presentation/views/login_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/auth/presentation/views/welcome_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/forget_password_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/sign_up_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views/welcome_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/home_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/view/onboarding_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 import '../../features/payment/presentation/views/checkout_view.dart';
-import '../../features/payment/presentation/views/payment_success_view.dart';
 
 abstract class AppRouter {
   static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
@@ -23,9 +24,7 @@ abstract class AppRouter {
           );
 
         case AppRoutes.paymentMethod:
-          return MaterialPageRoute(
-            builder: (context) => const CheckoutView(),
-          );
+          return MaterialPageRoute(builder: (context) => const CheckoutView());
 
         case AppRoutes.paymentSuccess:
           return MaterialPageRoute(
@@ -35,17 +34,19 @@ abstract class AppRouter {
           return MaterialPageRoute(
             builder: (context) => const SelectFlightView(),
           );
-            builder: (context) => const PaymentSuccessView(),
-          );
 
-          case AppRoutes.welcomeView:
-            return MaterialPageRoute(
-              builder: (context) => const WelcomeView(),
-            );
+        case AppRoutes.welcomeView:
+          return MaterialPageRoute(builder: (context) => const WelcomeView());
 
         case AppRoutes.loginView:
+          return MaterialPageRoute(builder: (context) => const LoginView());
+
+        case AppRoutes.signupView:
+          return MaterialPageRoute(builder: (context) => const SignUpView());
+
+        case AppRoutes.forgetPasswordView:
           return MaterialPageRoute(
-            builder: (context) => const LoginView(),
+            builder: (context) => const ForgetPasswordView(),
           );
 
         default:
