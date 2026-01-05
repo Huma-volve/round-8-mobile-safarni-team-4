@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/extensions/size_config_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/extensions/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/model/onboarding_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -20,7 +21,7 @@ class OnboardingCarousel extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView.builder(
       controller: controller,
-      
+
       itemCount: OnboardingModel.onBordingList.length,
       onPageChanged: onPageChanged,
       itemBuilder: (context, index) {
@@ -61,10 +62,10 @@ class OnboardingCarousel extends StatelessWidget {
               child: Text(
                 item.text,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: context.textTheme.titleMedium?.copyWith(
                   fontSize: context.sp(24),
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xFF1D2939),
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.black[100],
                 ),
               ),
             ),

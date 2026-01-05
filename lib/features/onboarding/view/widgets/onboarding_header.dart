@@ -25,7 +25,7 @@ class OnboardingHeader extends StatelessWidget {
             "Safarni",
             style: context.textTheme.titleLarge?.copyWith(
               color: AppColors.mainColorLight,
-              fontSize: 24,
+              fontSize: context.sp(24),
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -41,7 +41,7 @@ class OnboardingHeader extends StatelessWidget {
                     "Skip",
                     style: context.textTheme.displayLarge?.copyWith(
                       color: AppColors.mainColorLight,
-                      fontSize: 16,
+                      fontSize: context.sp(16),
                     ),
                   ),
                 ),
@@ -49,7 +49,7 @@ class OnboardingHeader extends StatelessWidget {
                 Icon(
                   Icons.arrow_forward_ios,
                   color: AppColors.mainColorLight,
-                  size: 12,
+                  size: context.w(12),
                 ),
               ],
             ),

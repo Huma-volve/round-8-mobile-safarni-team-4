@@ -20,7 +20,10 @@ class OnboardingButton extends StatelessWidget {
     bool isLastPage = currentIndex == OnboardingModel.onBordingList.length - 1;
 
     return Padding(
-      padding: EdgeInsets.all(context.w(24)),
+      padding: EdgeInsets.symmetric(
+        horizontal: context.w(16),
+        vertical: (context.w(24)),
+      ),
       child: CustomButton(
         onPressed: () {
           if (!isLastPage) {
