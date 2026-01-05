@@ -5,4 +5,6 @@ abstract class AppRoutes {
   static const paymentSuccess = '/paymentSuccess';
   static const onboardingView = '/onboardingView';
   static const welcomeView = '/welcomeView';
+  static const loginView = '/loginView';
+  static const signupView = '/signupView';
 }
