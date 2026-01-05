@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routing.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
 import 'core/theme/app_theme.dart';
 
 void main() {
@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppThemes.light,
-      initialRoute: AppRoutes.flightBooking,
-      onGenerateRoute: AppRouter.onGenerateRoute,
+      home: HotelView(),
+      // initialRoute: AppRoutes.flightBooking,
+      // onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }
