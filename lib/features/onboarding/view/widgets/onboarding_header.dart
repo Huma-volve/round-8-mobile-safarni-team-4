@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:round_8_mobile_safarni_team4/core/extensions/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/extensions/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/model/onboarding_model.dart';
 import '../../../../../core/colors/app_colors.dart';
 import '../../../../../core/routing/app_routes.dart';

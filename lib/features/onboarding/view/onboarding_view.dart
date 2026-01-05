@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:round_8_mobile_safarni_team4/core/extensions/size_config_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/view/widgets/onboarding_header.dart';
 
 import 'widgets/onboarding_carousel.dart';

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
-import 'package:round_8_mobile_safarni_team4/core/extensions/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/extensions/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
@@ -18,6 +16,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextEditingController? controller;
   final Function(String?) validator;
   final Function()? suffixIconTap;
+  final IconData? prefixIcon;
 
   const CustomTextFormField({
     super.key,
@@ -33,6 +32,7 @@ class CustomTextFormField extends StatelessWidget {
     this.controller,
     required this.validator,
     this.suffixIconTap,
+    this.prefixIcon,
   });
 
   @override
@@ -47,6 +47,15 @@ class CustomTextFormField extends StatelessWidget {
               horizontal: context.w(16),
               vertical: context.h(12),
             ),
+
+        disabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(4),
+          borderSide: BorderSide(color: Colors.grey),
+        ),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.grey),
+          borderRadius: BorderRadius.circular(4.0),
+        ),
         focusedBorder:
             focusedBorder ??
             OutlineInputBorder(
@@ -56,7 +65,7 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder:
             enabledBorder ??
             OutlineInputBorder(
-              borderSide: BorderSide(color: AppColors.gray),
+              borderSide: BorderSide(color: Colors.grey),
               borderRadius: BorderRadius.circular(4.0),
             ),
         errorBorder: OutlineInputBorder(
@@ -69,14 +78,13 @@ class CustomTextFormField extends StatelessWidget {
         ),
         hintStyle:
             hintStyle ??
-            context.textTheme.displayMedium?.copyWith(
-              color: AppColors.black[60],
-            ),
+            context.textTheme.displayMedium?.copyWith(color: Colors.grey),
         hintText: hintText,
         suffixIcon: GestureDetector(
           onTap: suffixIconTap,
           child: Icon(suffixIcon),
         ),
+        prefixIcon: Icon(prefixIcon, color: Colors.grey),
         fillColor: backgroundColor ?? AppColors.white,
         filled: true,
       ),
