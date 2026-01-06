@@ -16,8 +16,6 @@ void main() {
       builder: (context) => const MyApp(),
     ),
   );
-  WidgetsFlutterBinding.ensureInitialized(); // !kReleaseMode
-  runApp(DevicePreview(enabled: false, builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -40,6 +38,5 @@ class MyApp extends StatelessWidget {
         );
       }
     );
- 
   }
 }
