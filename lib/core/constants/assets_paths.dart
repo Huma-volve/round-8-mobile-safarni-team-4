@@ -28,6 +28,7 @@ abstract class AssetsPaths {
   static const _mailIcon = 'assets/icons/mail.svg';
   static const _lockIcon = 'assets/icons/lock.svg';
   static const _successIcon = 'assets/icons/success.svg';
+  static const _ticketImage = 'assets/images/ticket_image.png';
   static const _profileImage = 'assets/images/profile_image.png';
   static const _cameraIcon = 'assets/icons/camera.svg';
   static const _logoutIcon = 'assets/icons/logout.svg';
@@ -76,6 +77,7 @@ abstract class AssetsPaths {
 
   static String get canadaLogo => _canadaLogo;
 
+  static String get ticketImage => _ticketImage;
 
   static String get mailIcon => _mailIcon;
   static String get lockIcon => _lockIcon;
