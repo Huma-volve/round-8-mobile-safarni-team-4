@@ -15,4 +15,5 @@ abstract class AppRoutes {
   static const String verifyCodeView = '/verifyCodeView';
   static const String setNewPasswordView = '/setNewPasswordView';
   static const String successResetPasswordView = '/successResetPasswordView';
+  static const String profileView = '/profileView';
 }
