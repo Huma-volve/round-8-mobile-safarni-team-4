@@ -10,11 +10,13 @@ class CustomTextFormField extends StatelessWidget {
   final TextStyle? inputTextStyle;
   final TextStyle? hintStyle;
   final String hintText;
+  final String? initialValue;
   final bool? isObscureText;
+  final bool isReadOnly;
   final IconData? suffixIcon;
   final Color? backgroundColor;
   final TextEditingController? controller;
-  final Function(String?) validator;
+  final String? Function(String?)? validator;
   final Function()? suffixIconTap;
   final IconData? prefixIcon;
 
@@ -26,19 +28,23 @@ class CustomTextFormField extends StatelessWidget {
     this.inputTextStyle,
     this.hintStyle,
     required this.hintText,
+    this.initialValue,
     this.isObscureText,
     this.suffixIcon,
     this.backgroundColor,
     this.controller,
-    required this.validator,
+    this.validator,
     this.suffixIconTap,
     this.prefixIcon,
+    this.isReadOnly = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly: isReadOnly,
       controller: controller,
+      initialValue: initialValue,
       decoration: InputDecoration(
         isDense: true,
         contentPadding:
@@ -47,13 +53,12 @@ class CustomTextFormField extends StatelessWidget {
               horizontal: context.w(16),
               vertical: context.h(12),
             ),
-
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
         border: OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: const BorderSide(color: Colors.grey),
           borderRadius: BorderRadius.circular(4.0),
         ),
         focusedBorder:
@@ -65,7 +70,7 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder:
             enabledBorder ??
             OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey),
+              borderSide: const BorderSide(color: Colors.grey),
               borderRadius: BorderRadius.circular(4.0),
             ),
         errorBorder: OutlineInputBorder(
@@ -80,19 +85,17 @@ class CustomTextFormField extends StatelessWidget {
             hintStyle ??
             context.textTheme.displayMedium?.copyWith(color: Colors.grey),
         hintText: hintText,
-        suffixIcon: GestureDetector(
-          onTap: suffixIconTap,
-          child: Icon(suffixIcon),
-        ),
-        prefixIcon: Icon(prefixIcon, color: Colors.grey),
+        suffixIcon:
+            suffixIcon != null
+                ? GestureDetector(onTap: suffixIconTap, child: Icon(suffixIcon))
+                : null,
+        prefixIcon:
+            prefixIcon != null ? Icon(prefixIcon, color: Colors.grey) : null,
         fillColor: backgroundColor ?? AppColors.white,
         filled: true,
       ),
       obscureText: isObscureText ?? false,
-      style: context.textTheme.bodyMedium,
-      validator: (value) {
-        return validator(value);
-      },
+      validator: validator ?? (value) => null,
     );
   }
 }

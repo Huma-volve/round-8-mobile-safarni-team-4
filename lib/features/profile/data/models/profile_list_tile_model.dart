@@ -1,32 +1,36 @@
 import 'package:round_8_mobile_safarni_team4/core/constants/assets_paths.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 
 class ProfileListTileModel {
-  final String subtitle;
+  final String title;
   final String iconPath;
+  final String? routeName;
 
-  ProfileListTileModel({required this.subtitle, required this.iconPath});
+  ProfileListTileModel({
+    required this.title,
+    required this.iconPath,
+    this.routeName,
+  });
 
- static List<ProfileListTileModel> getProfileListTiles = [
-      ProfileListTileModel(
-        subtitle: 'Personal Info',
-        iconPath: AssetsPaths.personalIcon,
-      ),
-      ProfileListTileModel(
-        subtitle: 'Account & Security',
-        iconPath: AssetsPaths.lockIcon,
-      ),
-      ProfileListTileModel(
-        subtitle: 'My Booking',
-        iconPath: AssetsPaths.myBookingIcon,
-      ),
-      ProfileListTileModel(
-        subtitle: 'App Language',
-        iconPath: AssetsPaths.languageIcon,
-      ),
-      ProfileListTileModel(
-        subtitle: 'Logout',
-        iconPath: AssetsPaths.logoutIcon,
-      ),
-    ];
-  }
-
+  static List<ProfileListTileModel> getProfileListTiles = [
+    ProfileListTileModel(
+      title: 'Personal Info',
+      iconPath: AssetsPaths.personalIcon,
+      routeName: AppRoutes.personalInfoView,
+    ),
+    ProfileListTileModel(
+      title: 'Account & Security',
+      iconPath: AssetsPaths.lockIcon,
+    ),
+    ProfileListTileModel(
+      title: 'My Booking',
+      iconPath: AssetsPaths.myBookingIcon,
+      routeName: AppRoutes.myBooking,
+    ),
+    ProfileListTileModel(
+      title: 'App Language',
+      iconPath: AssetsPaths.languageIcon,
+    ),
+    ProfileListTileModel(title: 'Logout', iconPath: AssetsPaths.logoutIcon),
+  ];
+}

@@ -21,6 +21,7 @@ class SetNewPasswordFormFieldsSec extends StatelessWidget {
             if (value == null || value.isEmpty) {
               return 'Please enter a valid password';
             }
+            return null;
           },
         ),
         context.gapH(16),
@@ -37,6 +38,7 @@ class SetNewPasswordFormFieldsSec extends StatelessWidget {
             if (value == null || value.isEmpty) {
               return 'Please enter a valid password';
             }
+            return null;
           },
         ),
       ],
