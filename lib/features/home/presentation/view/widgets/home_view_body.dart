@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
-import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/widgets/section_search_bar.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/widgets/section_welcome.dart';
 
@@ -53,7 +50,7 @@ class HomeViewBody extends StatelessWidget {
 
               ),
 
-              Container(
+              SizedBox(
 
                 height: 300.h,
                 child: ListView.builder(

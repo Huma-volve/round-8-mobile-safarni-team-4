@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           theme: AppThemes.light,
-          initialRoute: AppRoutes.home,
+          initialRoute: AppRoutes.onboardingView,
           onGenerateRoute: AppRouter.onGenerateRoute,
         );
       },

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/colors/app_colors.dart';
@@ -8,7 +7,7 @@ import '../../../data/model/model_category.dart';
 class CategoryItem extends StatelessWidget {
   final CategoryModel category;
 
-  const CategoryItem({required this.category});
+  const CategoryItem({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {

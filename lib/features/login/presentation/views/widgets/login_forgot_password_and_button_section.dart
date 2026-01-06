@@ -16,17 +16,22 @@ class LoginForgotPasswordAndButtonSection extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: InkWell(
             onTap: () {
-              context.pushNamed(AppRoutes.forgetPasswordView);  
+              context.pushNamed(AppRoutes.forgetPasswordView);
             },
             child: Text(
               'Forgot Password ?',
-              style: AppTextStyles.font14MainColorLightw600(context),
+              style: AppTextStyles.font13Blackw600(context),
             ),
           ),
         ),
 
         context.gapH(24),
-        CustomButton(buttonName: 'Log In', onPressed: () {}),
+        CustomButton(
+          buttonName: 'Log In',
+          onPressed: () {
+            context.pushNamed(AppRoutes.home);
+          },
+        ),
       ],
     );
   }
