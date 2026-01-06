@@ -28,6 +28,12 @@ abstract class AssetsPaths {
   static const _mailIcon = 'assets/icons/mail.svg';
   static const _lockIcon = 'assets/icons/lock.svg';
   static const _successIcon = 'assets/icons/success.svg';
+  static const _profileImage = 'assets/images/profile_image.png';
+  static const _cameraIcon = 'assets/icons/camera.svg';
+  static const _logoutIcon = 'assets/icons/logout.svg';
+  static const _personalIcon = 'assets/icons/personal.svg';
+  static const _myBookingIcon = 'assets/icons/my_booking.svg';
+  static const _languageIcon = 'assets/icons/language.svg';
 
   static String get roundTripIcon => _roundTripIcon;
 
@@ -74,4 +80,10 @@ abstract class AssetsPaths {
   static String get mailIcon => _mailIcon;
   static String get lockIcon => _lockIcon;
   static String get successIcon => _successIcon;
+  static String get profileImage => _profileImage;
+  static String get cameraIcon => _cameraIcon;
+  static String get personalIcon => _personalIcon;
+  static String get myBookingIcon => _myBookingIcon;
+  static String get languageIcon => _languageIcon;
+  static String get logoutIcon => _logoutIcon;
 }
