@@ -3,79 +3,46 @@ import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/constants/assets_paths.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
-
 import '../../../../core/widgets/flight_booking_details.dart';
-import '../../../flight_appointment/presentation/widgets/flight_card.dart';
 
 class BoardingPassCard extends StatelessWidget {
   const BoardingPassCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 24),
-          height: 10,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            gradient: LinearGradient(
-              colors: [
-                const Color(0xFF1E429F).withOpacity(0.6),
-                const Color(0xFF1E429F).withOpacity(0.3),
-                const Color(0xFF1E429F).withOpacity(0.6),
-              ],
-            ),
-          ),
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 24),
+      padding: EdgeInsets.symmetric(
+        horizontal: context.w(36),
+        vertical: context.h(24),
+      ),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AssetsPaths.ticketImage),
+          fit: BoxFit.fill,
         ),
-        Expanded(
-          child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 40),
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            decoration: ShapeDecoration(
-              color: AppColors.white,
-              shape: const TicketShapeBorder(radius: 16, notchRadius: 12),
-              shadows: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      FlightBookingDetails(),
-                      SizedBox(height: context.h(16)),
-                      Divider(
-                        height: 0,
-                        color: AppColors.gray.withOpacity(0.3),
-                        thickness: 1,
-                      ),
-                      SizedBox(height: context.h(16)),
-                      PassengerRow(),
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: context.h(16)),
-                        child: DashedLine(),
-                      ),
-                      Expanded(child: Image.asset(AssetsPaths.qrImage)),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+      ),
+      child: Column(
+        children: [
+          FlightBookingDetails(),
+          SizedBox(height: context.h(16)),
+          Divider(
+            height: 0,
+            color: AppColors.gray.withOpacity(0.3),
+            thickness: 1,
           ),
-        ),
-      ],
+          SizedBox(height: context.h(16)),
+          PassengerRow(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: context.h(16)),
+            child: DashedLine(),
+          ),
+          Expanded(child: Image.asset(AssetsPaths.qrImage)),
+        ],
+      ),
     );
   }
 }
-
-
 
 class PassengerRow extends StatelessWidget {
   const PassengerRow({super.key});
@@ -85,7 +52,7 @@ class PassengerRow extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
-      spacing: 8,
+      spacing: 6,
       children: [
         CircleAvatar(radius: 25, backgroundColor: AppColors.gray),
         Column(
@@ -95,9 +62,7 @@ class PassengerRow extends StatelessWidget {
           children: [
             Text(
               'Mahmoud hassan',
-              style: context.textTheme.titleMedium?.copyWith(
-                fontSize: 12,
-              ),
+              style: context.textTheme.titleMedium?.copyWith(fontSize: 12),
             ),
             Text(
               '50 years,male',
