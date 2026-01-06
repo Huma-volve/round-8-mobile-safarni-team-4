@@ -38,19 +38,8 @@ class MyApp extends StatelessWidget {
           initialRoute: AppRoutes.onboardingView,
           onGenerateRoute: AppRouter.onGenerateRoute,
         );
-      },
-    return ScreenUtilInit(
-      child: MaterialApp(
-        useInheritedMediaQuery: true,
-        locale: DevicePreview.locale(context),
-        builder: DevicePreview.appBuilder,
-        debugShowCheckedModeBanner: false,
-        theme: AppThemes.light,
-        home: RoomDetailesView(),
-
-        // initialRoute: AppRoutes.flightBooking,
-        // onGenerateRoute: AppRouter.onGenerateRoute,
-      ),
+      }
     );
+ 
   }
 }
