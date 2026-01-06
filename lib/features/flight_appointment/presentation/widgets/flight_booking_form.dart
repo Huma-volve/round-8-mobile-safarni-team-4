@@ -9,7 +9,7 @@ class FlightBookingForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.only(left: 16,right: 16,bottom: 12),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,7 +74,6 @@ class FlightBookingForm extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 32),
           ],
         ),
       ),
