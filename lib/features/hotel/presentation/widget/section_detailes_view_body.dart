@@ -10,22 +10,26 @@ class SectionDetailesViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          CustomDiscountAndReview(),
-          Text("room_1", style: AppThemes.light.textTheme.titleLarge),
-          SizedBox(height: 4),
-          Text(
-            "1012 oscean avanue, New Yourk ,USA",
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w400,
-              color: Color(0xff6B7280),
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomDiscountAndReview(),
+              Text("room_1", style: AppThemes.light.textTheme.titleLarge),
+              SizedBox(height: 4),
+              Text(
+                "1012 oscean avanue, New Yourk ,USA",
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff6B7280),
+                ),
+              ),
+              const CustomTabSection(),
+
+            ],
           ),
-          const CustomTabSection(),
-          
         ],
       ),
     );
