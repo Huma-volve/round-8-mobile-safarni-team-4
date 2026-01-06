@@ -11,4 +11,9 @@ abstract class AppRoutes {
   static const seatSelection = '/seatSelection';
   static const forgetPasswordView = '/forgetPasswordView';
   static const boardingPass = '/boardingPass';
+  static const SearchView = '/SearchView';
+  static const ResultSearch = '/ResultSearch';
+  static const String verifyCodeView = '/verifyCodeView';
+  static const String setNewPasswordView = '/setNewPasswordView';
+  static const String successResetPasswordView = '/successResetPasswordView';
 }
