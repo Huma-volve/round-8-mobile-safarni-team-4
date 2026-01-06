@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/utils/extesions/date_ex.dart';
 import '../../../../core/colors/app_colors.dart';
 
@@ -8,7 +9,7 @@ class FlightBookingForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.only(left: 16,right: 16,bottom: 12),
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,7 +62,9 @@ class FlightBookingForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: FilledButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, AppRoutes.selectFlight);
+                },
                 child: Text(
                   'Search Flights',
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -71,7 +74,6 @@ class FlightBookingForm extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 32),
           ],
         ),
       ),

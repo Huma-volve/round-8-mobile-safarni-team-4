@@ -123,11 +123,7 @@ dependencies:
   # 🍎 Platform / System
   # =========================
   cupertino_icons: any
-
-  # =========================
-  # 📦 splash
-  # =========================
-  flutter_native_splash: any
+  smooth_page_indicator: any
 
 
 dev_dependencies:
@@ -164,6 +160,8 @@ flutter:
   assets:
      - assets/icons/
      - assets/images/
+     - assets/category/
+     - assets/icon_country/
   # To add assets to your application, add an assets section, like this:
     
 

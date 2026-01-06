@@ -5,14 +5,14 @@ import '../colors/app_colors.dart';
 abstract class AppThemes {
   static ThemeData light = ThemeData(
     useMaterial3: true,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: AppColors.scaffoldBg,
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.transparent,
       surfaceTintColor: AppColors.transparent,
       centerTitle: true,
       titleSpacing: 0,
       titleTextStyle: GoogleFonts.poppins(
-        fontSize: 20,
+        fontSize: 18,
         color: AppColors.black,
         fontWeight: FontWeight.w700,
       ),
@@ -58,13 +58,18 @@ abstract class AppThemes {
         color: AppColors.black,
         fontWeight: FontWeight.w400,
       ),
-      bodyMedium: GoogleFonts.poppins(
+      bodyMedium: GoogleFonts.spaceMono(
         fontSize: 14,
         color: AppColors.black,
         fontWeight: FontWeight.w400,
       ),
       bodySmall: GoogleFonts.poppins(
         fontSize: 12,
+        color: AppColors.black,
+        fontWeight: FontWeight.w400,
+      ),
+      displayMedium: GoogleFonts.poppins(
+        fontSize: 14,
         color: AppColors.black,
         fontWeight: FontWeight.w400,
       ),
@@ -117,15 +122,11 @@ abstract class AppThemes {
       }),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(
-          color: AppColors.gray,
-        ),
+        borderSide: BorderSide(color: AppColors.gray),
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(
-          color: AppColors.gray,
-        ),
+        borderSide: BorderSide(color: AppColors.gray),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
@@ -133,9 +134,7 @@ abstract class AppThemes {
       ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(
-          color: AppColors.gray,
-        ),
+        borderSide: BorderSide(color: AppColors.gray),
       ),
 
       errorBorder: OutlineInputBorder(
@@ -148,13 +147,43 @@ abstract class AppThemes {
         borderSide: const BorderSide(color: Colors.red),
       ),
       hintStyle: GoogleFonts.poppins(
-        fontSize: 13,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppColors.gray,
       ),
     ),
 
     filledButtonTheme: FilledButtonThemeData(
+      style: ButtonStyle(
+        padding: const WidgetStatePropertyAll(
+          EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+        ),
+        shape: WidgetStatePropertyAll(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        ),
+        textStyle: WidgetStatePropertyAll(
+          GoogleFonts.poppins(
+            fontSize: 16,
+            color: AppColors.white,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: AppColors.black[20],
+        padding: const EdgeInsetsDirectional.symmetric(
+          vertical: 12,
+          horizontal: 24,
+        ),
+        textStyle: GoogleFonts.poppins(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         padding: const WidgetStatePropertyAll(
           EdgeInsets.symmetric(vertical: 12, horizontal: 24),
@@ -171,18 +200,9 @@ abstract class AppThemes {
         ),
       ),
     ),
-    outlinedButtonTheme: OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        foregroundColor: AppColors.black[20],
-        padding: const EdgeInsetsDirectional.symmetric(
-          vertical: 12,
-          horizontal: 24,
-        ),
-        textStyle: GoogleFonts.geo(fontSize: 16, fontWeight: FontWeight.w800),
-      ),
-    ),
     iconButtonTheme: IconButtonThemeData(
       style: IconButton.styleFrom(
+        padding: EdgeInsets.zero,
         foregroundColor: AppColors.black,
         disabledForegroundColor: AppColors.black[40],
       ),
