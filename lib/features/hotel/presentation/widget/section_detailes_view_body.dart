@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_discount_and_review.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_tab_section.dart';
 
 class SectionDetailesViewBody extends StatelessWidget {
   const SectionDetailesViewBody({super.key});
@@ -23,25 +24,8 @@ class SectionDetailesViewBody extends StatelessWidget {
               color: Color(0xff6B7280),
             ),
           ),
-          DefaultTabController(
-            length: 3,
-            child: Column(
-              children: [
-                TabBar(
-                  tabs: [
-                    Tab(text: "About"),
-                    Tab(text: "Gallery"),
-                    Tab(text: "Reviews"),
-                  ],
-                ),
-                 Expanded(
-                  child: TabBarView(
-                    children: [Text("About"), Text("Gallery"), Text("Reviews")],
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const CustomTabSection(),
+          
         ],
       ),
     );
