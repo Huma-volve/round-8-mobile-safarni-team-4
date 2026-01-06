@@ -14,7 +14,7 @@ abstract class AppThemes {
       titleTextStyle: GoogleFonts.poppins(
         fontSize: 18,
         color: AppColors.black,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
       ),
     ),
     textTheme: TextTheme(

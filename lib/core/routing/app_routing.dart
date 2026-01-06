@@ -6,6 +6,7 @@ import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/l
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/set_new_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/success_reset_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/verify_code_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/personal_info_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/profile_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/search/presentation/view/result_search.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/sign_up_view.dart';
@@ -98,6 +99,12 @@ abstract class AppRouter {
         case AppRoutes.boardingPass:
           return MaterialPageRoute(
             builder: (context) => const BoardingPassView(),
+          );
+
+        case AppRoutes.personalInfoView:
+          // ignore: todo
+          return MaterialPageRoute(
+            builder: (context) => const PersonalInfoView(),
           );
 
         default:

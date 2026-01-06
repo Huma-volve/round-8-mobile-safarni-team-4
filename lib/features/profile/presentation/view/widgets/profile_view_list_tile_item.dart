@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
-import 'package:round_8_mobile_safarni_team4/core/constants/assets_paths.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart'
+    show NavigationAndThemeEx;
 import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/data/models/profile_list_tile_model.dart';
 
 class ProfileViewListTileItem extends StatelessWidget {
   const ProfileViewListTileItem({
     super.key,
-    required this.title,
-    required this.iconPath,
-    required this.onTap,
-    this.isLogout = false,
+    required this.profileListTileModel,
+     this.isLogout = false,
   });
-  final String title;
-  final String iconPath;
-  final VoidCallback onTap;
-  final bool isLogout;
+  final ProfileListTileModel profileListTileModel;
+  final bool isLogout ;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        if (profileListTileModel.routeName != null) {
+          context.pushNamed(profileListTileModel.routeName!);
+        }
+      },
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: context.w(16),
@@ -41,14 +43,14 @@ class ProfileViewListTileItem extends StatelessWidget {
         child: Row(
           children: [
             SvgPicture.asset(
-              iconPath,
+              profileListTileModel.iconPath,
               width: context.w(12.5),
               height: context.h(16.25),
               color: isLogout ? Colors.red : AppColors.black[80],
             ),
             context.gapW(8),
             Text(
-              title,
+              profileListTileModel.title,
               style: AppTextStyles.font18Blackw600(context).copyWith(
                 fontSize: context.sp(14),
                 fontWeight: FontWeight.w400,

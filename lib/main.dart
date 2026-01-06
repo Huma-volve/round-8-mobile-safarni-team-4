@@ -1,11 +1,8 @@
 import 'package:device_preview/device_preview.dart';
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routing.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/room_detailes.dart';
 import 'core/theme/app_theme.dart';
 
 void main() {
@@ -33,10 +30,10 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           theme: AppThemes.light,
-          initialRoute: AppRoutes.onboardingView,
+          initialRoute: AppRoutes.profileView,
           onGenerateRoute: AppRouter.onGenerateRoute,
         );
-      }
+      },
     );
   }
 }

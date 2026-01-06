@@ -28,6 +28,7 @@ class ForgetPasswordFormFieldSection extends StatelessWidget {
                 !AppRegex.isEmailValid(value)) {
               return 'Please enter a valid email';
             }
+            return null;
           },
         ),
       ],
