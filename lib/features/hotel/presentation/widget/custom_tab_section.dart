@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/about_section.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/gallery_section.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_section.dart';
 
 class CustomTabSection extends StatefulWidget {
   const CustomTabSection({super.key});
@@ -45,10 +47,10 @@ class _CustomTabSectionState extends State<CustomTabSection> {
           children: [
             AboutSection(),
             // Gallery Tab
-            const Center(child: Text("Gallery Content")),
+            GallerySection(),
 
             // Review Tab
-            const Center(child: Text("Review Content")),
+            const ReviewSection(),
           ],
         ),
       ],

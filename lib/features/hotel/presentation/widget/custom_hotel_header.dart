@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_text_header.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/search_text_field.dart';
 
 class CustomHotelHeader extends StatelessWidget {
