@@ -3,6 +3,7 @@ import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/forget_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/search/presentation/view/result_search.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/sign_up_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views/welcome_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
@@ -67,6 +68,12 @@ abstract class AppRouter {
         case AppRoutes.SearchView:
           return MaterialPageRoute(
             builder: (context) => const SearchView(),
+          );
+
+          //ResultSearch
+        case AppRoutes.ResultSearch:
+          return MaterialPageRoute(
+            builder: (context) => const ResultSearch(),
           );
 
         default:

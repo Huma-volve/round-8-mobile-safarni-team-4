@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 
 import '../../../data/model_country/country.dart';
-import 'country_search_item.dart';
+import 'custom_country_search_item.dart';
 
 class SearchViewBody extends StatefulWidget {
   const SearchViewBody({super.key});
