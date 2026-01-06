@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/routing/app_routes.dart';
+
 class SectionSearchBar extends StatelessWidget {
   const SectionSearchBar({
     super.key,
@@ -17,6 +19,7 @@ class SectionSearchBar extends StatelessWidget {
               readOnly: true, // يمنع الكتابة
               onTap: () {
                 // الكود اللي بيودي لصفحة تانية
+                Navigator.pushNamed(context, AppRoutes.SearchView);
                 print("Navigate to Search Page");
                 // Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()));
               },
