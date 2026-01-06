@@ -16,6 +16,7 @@ import 'package:round_8_mobile_safarni_team4/features/onboarding/view/onboarding
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 import '../../features/payment/presentation/views/checkout_view.dart';
 import '../../features/payment/presentation/views/payment_success_view.dart';
+import '../../features/boarding_pass/presentation/views/boarding_pass_view.dart';
 import '../../features/search/presentation/view/search_view.dart';
 
 abstract class AppRouter {
@@ -93,6 +94,11 @@ abstract class AppRouter {
 
         case AppRoutes.profileView:
           return MaterialPageRoute(builder: (context) => const ProfileView());
+
+        case AppRoutes.boardingPass:
+          return MaterialPageRoute(
+            builder: (context) => const BoardingPassView(),
+          );
 
         default:
           return _errorRoute();

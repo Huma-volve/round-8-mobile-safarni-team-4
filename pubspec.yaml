@@ -34,7 +34,7 @@ dependencies:
   # =========================
   # 🎨 UI & Design
   # =========================
-  flutter_screenutil: any
+  flutter_screenutil: ^5.9.3
   flutter_svg: any
   google_fonts: any
   lottie: any
@@ -164,7 +164,6 @@ flutter:
      - assets/icon_country/
   # To add assets to your application, add an assets section, like this:
     
-  #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
