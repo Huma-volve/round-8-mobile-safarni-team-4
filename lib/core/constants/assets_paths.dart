@@ -23,6 +23,9 @@ abstract class AssetsPaths {
   static const _welcomeImage = 'assets/images/welcome_image.png';
   static const _loginImage = 'assets/images/login_image.png';
   static const _keyIcon = 'assets/icons/key.svg';
+  static const _mailIcon = 'assets/icons/mail.svg';
+  static const _lockIcon = 'assets/icons/lock.svg';
+  static const _successIcon = 'assets/icons/success.svg';
 
   static String get roundTripIcon => _roundTripIcon;
 
@@ -60,4 +63,7 @@ abstract class AssetsPaths {
   static String get onboardingBackgroundShape => _onboardingBackgroundShape;
   static String get welcomeImage => _welcomeImage;
   static String get loginImage => _loginImage;
+  static String get mailIcon => _mailIcon;
+  static String get lockIcon => _lockIcon;
+  static String get successIcon => _successIcon;
 }

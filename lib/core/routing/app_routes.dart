@@ -10,6 +10,9 @@ abstract class AppRoutes {
   static const signupView = '/signupView';
   static const seatSelection = '/seatSelection';
   static const forgetPasswordView = '/forgetPasswordView';
-  static const SearchView='/SearchView';
-  static const ResultSearch='/ResultSearch';
+  static const SearchView = '/SearchView';
+  static const ResultSearch = '/ResultSearch';
+  static const String verifyCodeView = '/verifyCodeView';
+  static const String setNewPasswordView = '/setNewPasswordView';
+  static const String successResetPasswordView = '/successResetPasswordView';
 }
