@@ -4,6 +4,7 @@ import 'package:round_8_mobile_safarni_team4/core/constants/assets_paths.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 
+import '../../../../core/widgets/flight_booking_details.dart';
 import '../../../flight_appointment/presentation/widgets/flight_card.dart';
 
 class BoardingPassCard extends StatelessWidget {
@@ -48,17 +49,7 @@ class BoardingPassCard extends StatelessWidget {
                 Expanded(
                   child: Column(
                     children: [
-                      BoardingPassHeader(),
-                      SizedBox(height: context.h(16)),
-                      RouteInformation(),
-                      SizedBox(height: context.h(16)),
-                      Divider(
-                        height: 0,
-                        color: AppColors.gray.withOpacity(0.3),
-                        thickness: 1,
-                      ),
-                      SizedBox(height: context.h(16)),
-                      FlightDetails(),
+                      FlightBookingDetails(),
                       SizedBox(height: context.h(16)),
                       Divider(
                         height: 0,
@@ -83,6 +74,8 @@ class BoardingPassCard extends StatelessWidget {
     );
   }
 }
+
+
 
 class PassengerRow extends StatelessWidget {
   const PassengerRow({super.key});
@@ -187,8 +180,8 @@ class BoardingPassHeader extends StatelessWidget {
   }
 }
 
-class RouteInformation extends StatelessWidget {
-  const RouteInformation({super.key});
+class RouteInfo extends StatelessWidget {
+  const RouteInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
