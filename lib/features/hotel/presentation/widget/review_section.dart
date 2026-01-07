@@ -13,81 +13,116 @@ class ReviewSection extends StatefulWidget {
 
 class _ReviewSectionState extends State<ReviewSection> {
   double rating = 3.5;
+
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            Text(
-              "Review",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w500,
-                color: Colors.black,
-              ),
-            ),
-            Expanded(child: SizedBox()),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.add, color: Color(0xff1E429F)),
-            ),
-            Text(
-              "Add Review",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                color: Color(0xff1E429F),
-              ),
-            ),
-          ],
-        ),
+        const ReviewHeader(),
         const SizedBox(height: 12),
-        SearchTextField(),
+        const SearchTextField(),
+        const SizedBox(height: 16),
+        const ReviewUserTile(),
         const SizedBox(height: 12),
-        ListTile(
-          leading: Image.asset(
-            "assets/images/user_review.jpg",
-            width: 50,
-            height: 50,
-          ),
-          title: Text(
-            "Mohamed Hussein",
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.w500,
-              color: Colors.black,
-            ),
-          ),
-          trailing: Text(
-            "11 months ago",
-            style: TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w500,
-              color: Color(0xff4B5563),
-            ),
-          ),
-        ),
-        const SizedBox(height: 12),
-
-        StarRating(
-          mainAxisAlignment: MainAxisAlignment.start,
+        ReviewRating(
           rating: rating,
-          allowHalfRating: true,
-          onRatingChanged: (rating) => setState(() => this.rating = rating),
+          onChanged: (value) => setState(() => rating = value),
         ),
         const SizedBox(height: 12),
+        const ReviewComment(),
+      ],
+    );
+  }
+}
+class ReviewHeader extends StatelessWidget {
+  const ReviewHeader({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: const [
         Text(
-          "I really enjoyed my stay—the room was clean, the staff were friendly, and everything I needed was nearby.",
+          "Review",
+          style: TextStyle(
+            fontSize: 17,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        Spacer(),
+        Icon(Icons.add, color: Color(0xff1E429F)),
+        SizedBox(width: 4),
+        Text(
+          "Add Review",
           style: TextStyle(
             fontSize: 15,
             fontWeight: FontWeight.w500,
-            color: Colors.black,
+            color: Color(0xff1E429F),
           ),
         ),
       ],
+    );
+  }
+}
+class ReviewUserTile extends StatelessWidget {
+  const ReviewUserTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: CircleAvatar(
+        radius: 25,
+        backgroundImage: AssetImage("assets/images/user_review.jpg"),
+      ),
+      title: const Text(
+        "Mohamed Hussein",
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      trailing: const Text(
+        "11 months ago",
+        style: TextStyle(
+          fontSize: 13,
+          color: Color(0xff4B5563),
+        ),
+      ),
+    );
+  }
+}
+class ReviewRating extends StatelessWidget {
+  final double rating;
+  final ValueChanged<double> onChanged;
+
+  const ReviewRating({
+    super.key,
+    required this.rating,
+    required this.onChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return StarRating(
+      rating: rating,
+      allowHalfRating: true,
+      mainAxisAlignment: MainAxisAlignment.start,
+      onRatingChanged: onChanged,
+    );
+  }
+}
+class ReviewComment extends StatelessWidget {
+  const ReviewComment({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      "I really enjoyed my stay—the room was clean, the staff were friendly, and everything I needed was nearby.",
+      style: TextStyle(
+        fontSize: 15,
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 }
