@@ -19,6 +19,7 @@ import '../../features/car_booking/presentation/views/car_details.dart';
 import '../../features/destination/presentation/view/destination_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 import '../../features/home/presentation/view/search_tour_view.dart';
+import '../../features/onboarding/view/onboarding_view.dart';
 import '../../features/payment/presentation/views/checkout_view.dart';
 import '../../features/payment/presentation/views/payment_success_view.dart';
 import '../../features/boarding_pass/presentation/views/boarding_pass_view.dart';
@@ -32,10 +33,10 @@ abstract class AppRouter {
         case AppRoutes.home:
           return MaterialPageRoute(builder: (context) => HomeView());
 
-        // case AppRoutes.onboardingView:
-        //   return MaterialPageRoute(
-        //     builder: (context) => const OnboardingView(),
-        //   );
+        case AppRoutes.onboardingView:
+          return MaterialPageRoute(
+            builder: (context) => const OnboardingView(),
+          );
 
         case AppRoutes.paymentMethod:
           return MaterialPageRoute(builder: (context) => const CheckoutView());
