@@ -15,7 +15,9 @@ class AvailableRoomBody extends StatelessWidget {
           child: CustomTextHeader(
             title: 'Available Rooms',
             textButton: 'See All',
-            onPressed: () {},
+            onPressed: () {
+              
+            },
           ),
         ),
         SliverGrid.builder(

@@ -31,7 +31,7 @@ class BottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
@@ -121,7 +121,7 @@ class BottomSheetCheckOutItem extends StatelessWidget {
                 cackGroundIconColor: Colors.grey[100]!,
                 iconColor: Colors.black,
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 5),
               const Text(
                 "1",
                 style: TextStyle(
@@ -130,7 +130,7 @@ class BottomSheetCheckOutItem extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 5),
               CustomContainerIcon(
                 onPressed: () {},
                 icon: Icons.add,

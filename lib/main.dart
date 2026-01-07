@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/features/compare/presentation/view/compare_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/check_in&out.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/review_screen.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/room_detailes.dart';
 import 'core/theme/app_theme.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
               builder: DevicePreview.appBuilder,
               debugShowCheckedModeBanner: false,
               theme: AppThemes.light,
-              home: CompareView(),
+              home: HotelView(),
               // initialRoute: AppRoutes.onboardingView,
               // onGenerateRoute: AppRouter.onGenerateRoute,
             );

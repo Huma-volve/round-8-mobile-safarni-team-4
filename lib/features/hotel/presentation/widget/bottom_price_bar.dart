@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/check_in&out.dart';
 
 class BottomPriceBar extends StatelessWidget {
   const BottomPriceBar({super.key});
@@ -46,7 +47,14 @@ class BottomPriceBar extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CheckInAndOutScreen(),
+                ),
+              );
+            },
             child: Text(
               "Book Now",
               style: TextStyle(

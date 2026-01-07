@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/review_screen.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/search_text_field.dart';
 
 class ReviewSection extends StatefulWidget {
@@ -41,7 +42,7 @@ class ReviewHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
+      children:  [
         Text(
           "Review",
           style: TextStyle(
@@ -52,13 +53,23 @@ class ReviewHeader extends StatelessWidget {
         Spacer(),
         Icon(Icons.add, color: Color(0xff1E429F)),
         SizedBox(width: 4),
-        Text(
-          "Add Review",
-          style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w500,
-            color: Color(0xff1E429F),
-          ),
+        TextButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ReviewScreen(),
+              ),
+            );
+          },
+      child: Text(
+        "Add Review",
+        style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w500,
+          color: Color(0xff1E429F),
+        ),
+      )
         ),
       ],
     );
