@@ -11,7 +11,7 @@ class SearchView extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Search",),
       ),
-      body:  SearchViewBody(),
+      body:  const SearchViewBody(),
     );
   }
 }

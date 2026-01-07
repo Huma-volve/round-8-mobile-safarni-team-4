@@ -10,7 +10,7 @@ class AvailableRoomBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: CustomHotelHeader()),
+        const SliverToBoxAdapter(child: CustomHotelHeader()),
         SliverToBoxAdapter(
           child: CustomTextHeader(
             title: 'Available Rooms',
@@ -22,7 +22,7 @@ class AvailableRoomBody extends StatelessWidget {
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
-          itemBuilder: (context, index) => AvailableRoomItem(),
+          itemBuilder: (context, index) => const AvailableRoomItem(),
           itemCount: 10,
         ),
       ],

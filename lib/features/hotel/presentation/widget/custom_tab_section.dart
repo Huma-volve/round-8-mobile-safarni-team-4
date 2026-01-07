@@ -42,13 +42,13 @@ class _CustomTabSectionState extends State<CustomTabSection> {
         // Content based on selected tab
         IndexedStack(
           index: selectedIndex,
-          children: [
+          children: const [
             AboutSection(),
             // Gallery Tab
-            const Center(child: Text("Gallery Content")),
+            Center(child: Text("Gallery Content")),
 
             // Review Tab
-            const Center(child: Text("Review Content")),
+            Center(child: Text("Review Content")),
           ],
         ),
       ],

@@ -2,19 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart'
-    show NavigationAndThemeEx;
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/data/models/profile_list_tile_model.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/widgets/logout_dialog.dart';
 
 class ProfileViewListTileItem extends StatelessWidget {
   const ProfileViewListTileItem({
     super.key,
     required this.profileListTileModel,
-     this.isLogout = false,
+    this.isLogout = false,
   });
   final ProfileListTileModel profileListTileModel;
-  final bool isLogout ;
+  final bool isLogout;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,8 @@ class ProfileViewListTileItem extends StatelessWidget {
       onTap: () {
         if (profileListTileModel.routeName != null) {
           context.pushNamed(profileListTileModel.routeName!);
+        } else if (isLogout) {
+          logoutDialog(context);
         }
       },
       child: Container(
@@ -35,7 +38,7 @@ class ProfileViewListTileItem extends StatelessWidget {
             BoxShadow(
               color: AppColors.black[10]!,
               blurRadius: 8,
-              offset: Offset(0, 1),
+              offset: const Offset(0, 1),
             ),
           ],
           borderRadius: BorderRadius.circular(8),
@@ -57,7 +60,7 @@ class ProfileViewListTileItem extends StatelessWidget {
                 color: isLogout ? Colors.red : AppColors.black[90],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             if (!isLogout)
               Icon(
                 Icons.arrow_forward_ios,
@@ -69,4 +72,6 @@ class ProfileViewListTileItem extends StatelessWidget {
       ),
     );
   }
+
+ 
 }

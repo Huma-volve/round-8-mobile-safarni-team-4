@@ -18,6 +18,6 @@ abstract class AppRoutes {
   static const String successResetPasswordView = '/successResetPasswordView';
   static const String profileView = '/profileView';
   static const String personalInfoView = '/personalInfoView';
-  static const String myBooking = '/myBooking';
-  static const FilterView='/FilterView';
+  static const String myBookingView = '/myBooking';
+  static const FilterView = '/FilterView';
 }

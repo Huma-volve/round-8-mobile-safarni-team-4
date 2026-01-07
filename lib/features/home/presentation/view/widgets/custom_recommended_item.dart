@@ -14,8 +14,8 @@ class customRecomendeItem extends StatelessWidget {
     return Container(
       width: 217.w,
 
-      margin: EdgeInsets.only(right: 8),
-      padding: EdgeInsets.all(8),
+      margin: const EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -41,7 +41,7 @@ class customRecomendeItem extends StatelessWidget {
 
             ),
           ),
-          SizedBox(height: 8,),
+          const SizedBox(height: 8,),
           Row(
             children: [
               Text('The Pyramids',
@@ -49,8 +49,8 @@ class customRecomendeItem extends StatelessWidget {
                     color: AppColors.mainColorLight[90]
                 ),
               ),
-              Spacer(),
-              Icon(Icons.star,
+              const Spacer(),
+              const Icon(Icons.star,
                 color: Color(0xffFCBA42),),
               Text('4.8',
                 style: AppThemes.light.textTheme.titleMedium!.copyWith(
@@ -62,7 +62,7 @@ class customRecomendeItem extends StatelessWidget {
 
             ],
           ),
-          Spacer(),
+          const Spacer(),
           Row(
             children: [
               Icon(Icons.location_on_outlined,

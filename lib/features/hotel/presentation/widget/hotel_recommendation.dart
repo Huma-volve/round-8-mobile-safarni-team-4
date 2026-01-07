@@ -47,7 +47,7 @@ class HotelRecommendation extends StatelessWidget {
               ),
             ),
           ),
-          FittedBox(child: CustomLocation()),
+          const FittedBox(child: CustomLocation()),
         ],
       ),
     );

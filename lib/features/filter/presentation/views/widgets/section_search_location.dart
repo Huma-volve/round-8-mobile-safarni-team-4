@@ -4,6 +4,8 @@ import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 
 class LocationSearchWidget extends StatefulWidget {
+  const LocationSearchWidget({super.key});
+
   @override
   _LocationSearchWidgetState createState() => _LocationSearchWidgetState();
 }
@@ -40,19 +42,19 @@ class _LocationSearchWidgetState extends State<LocationSearchWidget> {
                   color: AppColors.mainColorLight[100]
                 )
               ),
-              Spacer(),
-              Icon(Icons.map_outlined, color: Colors.blue)
+              const Spacer(),
+              const Icon(Icons.map_outlined, color: Colors.blue)
             ],
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
 
         // خانة البحث
         TextField(
           controller: _controller,
           decoration: InputDecoration(
             hintText: "Search ...",
-            prefixIcon: Icon(Icons.search),
+            prefixIcon: const Icon(Icons.search),
             // suffixIcon: Icon(Icons.map_outlined, color: Colors.blue),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
@@ -64,14 +66,14 @@ class _LocationSearchWidgetState extends State<LocationSearchWidget> {
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(color: Color(0xff3F83F8)),
+              borderSide: const BorderSide(color: Color(0xff3F83F8)),
             ),
           ),
           // دي أهم نقطة: لما يدوس Enter على الكيبورد
           onSubmitted: (value) => _addLocation(value),
         ),
 
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
 
         // عرض المدن المضافة
         Wrap(
@@ -82,14 +84,14 @@ class _LocationSearchWidgetState extends State<LocationSearchWidget> {
 
 
               label: Text(location),
-              deleteIcon: Icon(Icons.close, size: 14),
+              deleteIcon: const Icon(Icons.close, size: 14),
               onDeleted: () {
                 setState(() {
                   selectedLocations.remove(location);
                 });
               },
               backgroundColor: Colors.white,
-              shape: StadiumBorder(side: BorderSide(color: Color(0xffEBF5FF))),
+              shape: const StadiumBorder(side: BorderSide(color: Color(0xffEBF5FF))),
             );
           }).toList(),
         ),

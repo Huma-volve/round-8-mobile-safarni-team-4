@@ -14,8 +14,8 @@ class cutomToursItem extends StatelessWidget {
     return Container(
       height: 104.h,
 
-      margin: EdgeInsets.only(right: 8),
-      padding: EdgeInsets.all(8),
+      margin: const EdgeInsets.only(right: 8),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -55,8 +55,8 @@ class cutomToursItem extends StatelessWidget {
                             color: AppColors.gray
                         ),
                       ),
-                      Spacer(),
-                      Icon(Icons.star,
+                      const Spacer(),
+                      const Icon(Icons.star,
                         color: Color(0xffFCBA42),),
                       Text('4.8',
                         style: AppThemes.light.textTheme.titleMedium!.copyWith(

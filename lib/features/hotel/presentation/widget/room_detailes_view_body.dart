@@ -7,6 +7,6 @@ class RoomDetailesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [CustomDetailesImage(), const SectionDetailesViewBody()]);
+    return const Column(children: [CustomDetailesImage(), SectionDetailesViewBody()]);
   }
 }

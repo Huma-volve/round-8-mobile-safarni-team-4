@@ -10,7 +10,7 @@ class CustomLocation extends StatelessWidget {
     return Row(
           children: [
             Icon(Icons.location_on_outlined, color: Colors.grey[600], size: 24.0),
-            SizedBox(width: 4.0),
+            const SizedBox(width: 4.0),
             Text("Downtown, NYC", style: TextStyle(color: Colors.grey[600])),
           ],
         );

@@ -20,9 +20,9 @@ class SetNewPasswordView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               context.gapH(64),
-              SetNewPasswordViewHeaderSec(),
+              const SetNewPasswordViewHeaderSec(),
               context.gapH(36),
-              SetNewPasswordFormFieldsSec(),
+              const SetNewPasswordFormFieldsSec(),
               context.gapH(16),
               CustomButton(
                 buttonName: 'Reset Password',
@@ -31,7 +31,7 @@ class SetNewPasswordView extends StatelessWidget {
                 },
               ),
               context.gapH(16),
-              SetNewPasswordBackToLoginSec(),
+              const SetNewPasswordBackToLoginSec(),
             ],
           ),
         ),

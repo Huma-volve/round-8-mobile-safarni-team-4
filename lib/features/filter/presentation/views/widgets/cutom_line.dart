@@ -13,7 +13,7 @@ class customLine extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 1,
       color: AppColors.black[20],
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
           bottom: 12,top:20
       ),
     );

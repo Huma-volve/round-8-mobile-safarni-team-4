@@ -43,7 +43,7 @@ class CreditCardView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ImageContainer(image: AssetsPaths.chipIcon),
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       spacing: 4,
                       children: [
@@ -55,7 +55,7 @@ class CreditCardView extends StatelessWidget {
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Text(
                   '**** **** **** 1234',
                   style: theme.textTheme.bodyMedium?.copyWith(
@@ -65,7 +65,7 @@ class CreditCardView extends StatelessWidget {
                     fontWeight: FontWeight.w600,
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -95,7 +95,7 @@ class CreditCardView extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Text(
                               '01/22',
                               style: theme.textTheme.bodyMedium?.copyWith(
@@ -116,7 +116,7 @@ class CreditCardView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     ImageContainer(image: AssetsPaths.masterCardCreditIcon),
                   ],
                 ),

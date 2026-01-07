@@ -35,6 +35,12 @@ abstract class AssetsPaths {
   static const _personalIcon = 'assets/icons/personal.svg';
   static const _myBookingIcon = 'assets/icons/my_booking.svg';
   static const _languageIcon = 'assets/icons/language.svg';
+  static const _flightIcon = 'assets/icons/flight.svg';
+  static const _carIcon = 'assets/icons/cars.svg';
+  static const _hotelIcon = 'assets/icons/hotels.svg';
+  static const _tourIcon = 'assets/icons/toures.svg';
+  static const _carImage = 'assets/images/car_image.png';
+  static const _tourImage = 'assets/images/tour_image.png';
 
   static String get roundTripIcon => _roundTripIcon;
 
@@ -88,4 +94,10 @@ abstract class AssetsPaths {
   static String get myBookingIcon => _myBookingIcon;
   static String get languageIcon => _languageIcon;
   static String get logoutIcon => _logoutIcon;
+  static String get flightIcon => _flightIcon;
+  static String get carIcon => _carIcon;
+  static String get tourIcon => _tourIcon;
+  static String get hotelIcon => _hotelIcon;
+  static String get carImage => _carImage;
+  static String get tourImage => _tourImage;
 }

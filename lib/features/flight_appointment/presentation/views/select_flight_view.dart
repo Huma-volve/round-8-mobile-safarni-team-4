@@ -12,14 +12,14 @@ class SelectFlightView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: const Column(
         spacing: 4,
         children: [
           Expanded(
             flex: 3,
-            child: const FlightBookingHeader(title: 'Select Your Flight'),
+            child: FlightBookingHeader(title: 'Select Your Flight'),
           ),
-          Expanded(child: const DateSelectorStrip()),
+          Expanded(child: DateSelectorStrip()),
           Expanded(flex: 8, child: TicketsList()),
         ],
       ),
@@ -105,9 +105,9 @@ class _TicketsListState extends State<TicketsList> {
         bottom: MediaQuery.of(context).size.height * 0.11,
       ),
       child: ListView.separated(
-        padding: EdgeInsets.only(bottom: 8),
+        padding: const EdgeInsets.only(bottom: 8),
         itemBuilder: (context, index) => cards[index],
-        separatorBuilder: (context, index) => SizedBox(height: 8),
+        separatorBuilder: (context, index) => const SizedBox(height: 8),
         itemCount: cards.length,
       ),
     );

@@ -23,7 +23,7 @@ class ResultSearch extends StatelessWidget {
 
           ),
         ),
-          SizedBox(width: 23,),
+          const SizedBox(width: 23,),
           InkWell(
             onTap: (){
               context.pushNamed(AppRoutes.FilterView);
@@ -32,10 +32,10 @@ class ResultSearch extends StatelessWidget {
             height: 17.h,
             ),
           ),
-          SizedBox(width: 16,),
+          const SizedBox(width: 16,),
         ],
       ),
-      body: ResultSearchViewBody(),
+      body: const ResultSearchViewBody(),
     );
   }
 }

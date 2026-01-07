@@ -29,14 +29,14 @@ class NearbyHotelItem extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(width: 12.0),
+            const SizedBox(width: 12.0),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   CustomDiscountAndRationg(hotelModel: hotelModel),
                   Text(hotelModel.hotelName),
-                  CustomLocation(),
+                  const CustomLocation(),
                 ],
               ),
             ),

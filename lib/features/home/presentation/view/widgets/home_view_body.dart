@@ -23,10 +23,10 @@ class HomeViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              SectionWelcome(),
-              SizedBox(height: 24,),
-              SectionSearchBar(),
-              SizedBox(height: 32,),
+              const SectionWelcome(),
+              const SizedBox(height: 24,),
+              const SectionSearchBar(),
+              const SizedBox(height: 32,),
             Center(
               child: Image.asset('assets/images/travel.png',
                 fit: BoxFit.fill,
@@ -35,7 +35,7 @@ class HomeViewBody extends StatelessWidget {
             ),
 
 
-              customSideTitile(
+              const customSideTitile(
                 title: "Category",
                 viewAll: false,
               ),
@@ -60,7 +60,7 @@ class HomeViewBody extends StatelessWidget {
                     vertical: 16.h
                     ),
                   itemBuilder: (context,index) {
-                   return customRecomendeItem();
+                   return const customRecomendeItem();
                   }
                 ),
               ),
@@ -82,7 +82,7 @@ class HomeViewBody extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
             ],
           ),
         ],

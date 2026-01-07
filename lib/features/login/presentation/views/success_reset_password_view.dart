@@ -17,7 +17,7 @@ class SuccessResetPasswordView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               context.gapH(64),
-              ResetPasswordSuccessViewHeaderSec(),
+              const ResetPasswordSuccessViewHeaderSec(),
               context.gapH(16),
               CustomButton(
                 buttonName: 'Login',

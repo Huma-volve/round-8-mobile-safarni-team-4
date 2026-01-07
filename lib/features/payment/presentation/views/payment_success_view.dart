@@ -21,11 +21,11 @@ class PaymentSuccessView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Spacer(),
+            const Spacer(),
             SizedBox(
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: Image.asset(AssetsPaths.correctIcon)),
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
             Column(
               children: [
                 Text(
@@ -43,7 +43,7 @@ class PaymentSuccessView extends StatelessWidget {
                   ).textTheme.titleMedium?.copyWith(color: Colors.grey[600]),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 32,),
+                const SizedBox(height: 32,),
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(
@@ -54,12 +54,12 @@ class PaymentSuccessView extends StatelessWidget {
                         (route) => false,
                       );
                     },
-                    child: Text('Back To Home'),
+                    child: const Text('Back To Home'),
                   ),
                 ),
               ],
             ),
-            Spacer()
+            const Spacer()
           ],
         ),
       ),

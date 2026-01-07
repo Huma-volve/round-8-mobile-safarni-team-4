@@ -9,9 +9,9 @@ class SignUpSocialSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomFaceGoogleContainer(isGoogle: true, title: 'Sign Up with Google'),
+        const CustomFaceGoogleContainer(isGoogle: true, title: 'Sign Up with Google'),
         context.gapH(16),
-        CustomFaceGoogleContainer(
+        const CustomFaceGoogleContainer(
           isGoogle: false,
           title: 'Sign Up with Facebook',
         ),
