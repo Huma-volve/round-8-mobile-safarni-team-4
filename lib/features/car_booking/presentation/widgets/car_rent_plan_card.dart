@@ -30,11 +30,11 @@ class CarRentPlanCard extends StatelessWidget {
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        spacing: 8,
         children: [
           Expanded(
             flex: 2,
             child: Container(
-              padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color:
                     isSelected ? const Color(0xFFEFF6FF) : Colors.grey.shade200,
@@ -59,30 +59,27 @@ class CarRentPlanCard extends StatelessWidget {
           ),
           Expanded(
             flex: 4,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12,horizontal: 8),
-              child: Column(
-                spacing: 4,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    title,
-                    style: context.textTheme.labelLarge?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      fontSize: context.sp(10),
-                    ),
+            child: Column(
+              spacing: 4,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: context.textTheme.labelLarge?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    fontSize: context.sp(10),
                   ),
-                  Text(
-                    subtitle,
-                    style: context.textTheme.labelSmall?.copyWith(
-                      color: Colors.grey.shade600,
-                      fontWeight: FontWeight.w300,
-                      fontSize: context.sp(8),
-                    ),
+                ),
+                Text(
+                  subtitle,
+                  style: context.textTheme.labelSmall?.copyWith(
+                    color: Colors.grey.shade600,
+                    fontWeight: FontWeight.w300,
+                    fontSize: context.sp(8),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],
