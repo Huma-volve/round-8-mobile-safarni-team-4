@@ -124,7 +124,8 @@ dependencies:
   # =========================
   cupertino_icons: any
   smooth_page_indicator: any
-
+  syncfusion_flutter_sliders: ^32.1.21
+  syncfusion_flutter_charts: ^32.1.21
 
 dev_dependencies:
   analyzer: any

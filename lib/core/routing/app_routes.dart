@@ -12,4 +12,5 @@ abstract class AppRoutes {
   static const forgetPasswordView = '/forgetPasswordView';
   static const SearchView='/SearchView';
   static const ResultSearch='/ResultSearch';
+  static const FilterView='/FilterView';
 }
