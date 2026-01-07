@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 
 import '../../../../../core/routing/app_routes.dart';
 
@@ -56,6 +57,7 @@ class SectionSearchBar extends StatelessWidget {
             padding: EdgeInsets.zero,
             icon: Icon(Icons.tune, color: Colors.grey[600], size: 20),
             onPressed: () {
+              context.pushNamed(AppRoutes.FilterView);
               print("Filter clicked");
             },
           ),
