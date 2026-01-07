@@ -4,9 +4,7 @@ import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 
 import '../../../../search/data/model_country/country.dart';
-import '../../../../search/presentation/view/widgets/custom_country_search_item.dart';
 import 'custom_tours_item.dart';
-
 
 class SearchTour extends StatefulWidget {
   const SearchTour({super.key});
@@ -24,10 +22,13 @@ class _SearchViewState extends State<SearchTour> {
       if (query.isEmpty) {
         displayedCountries = List.from(allCountries);
       } else {
-        displayedCountries = allCountries
-            .where((country) =>
-            country.name.toLowerCase().contains(query.toLowerCase()))
-            .toList();
+        displayedCountries =
+            allCountries
+                .where(
+                  (country) =>
+                      country.name.toLowerCase().contains(query.toLowerCase()),
+                )
+                .toList();
       }
     });
   }
@@ -40,9 +41,7 @@ class _SearchViewState extends State<SearchTour> {
         children: [
           // شكل الـ Search Bar
           TextField(
-            style: TextStyle(
-                fontSize: 20
-            ),
+            style: TextStyle(fontSize: 20),
             onChanged: (value) => updateSearch(value),
             decoration: InputDecoration(
               hintText: "Search cities...",
@@ -53,16 +52,12 @@ class _SearchViewState extends State<SearchTour> {
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color:Color(0xff3F83F8)),
+                borderSide: BorderSide(color: Color(0xff3F83F8)),
               ),
               focusedBorder: OutlineInputBorder(
-
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(
-                    width: 2,
-                    color:Color(0xff3F83F8)),
+                borderSide: BorderSide(width: 2, color: Color(0xff3F83F8)),
               ),
-
             ),
           ),
           SizedBox(height: 20.h),
@@ -72,10 +67,11 @@ class _SearchViewState extends State<SearchTour> {
               itemCount: 5,
               itemBuilder: (context, index) {
                 return InkWell(
-                    onTap: (){
-                      context.pushNamed(AppRoutes.DestinationView);
-                    },
-                    child: cutomToursItem());
+                  onTap: () {
+                    context.pushNamed(AppRoutes.DestinationView);
+                  },
+                  child: cutomToursItem(),
+                );
               },
             ),
           ),

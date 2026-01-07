@@ -14,8 +14,8 @@ import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views
 import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views/welcome_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/onboarding/view/onboarding_view.dart';
 import '../../features/car_booking/presentation/views/car_booking.dart';
+import '../../features/car_booking/presentation/views/car_details.dart';
 import '../../features/destination/presentation/view/destination_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 import '../../features/home/presentation/view/search_tour_view.dart';
@@ -26,7 +26,6 @@ import '../../features/search/presentation/view/search_view.dart';
 
 abstract class AppRouter {
   static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
-    var args = routeSettings.arguments;
     var name = routeSettings.name;
     try {
       switch (name) {
@@ -64,6 +63,10 @@ abstract class AppRouter {
             builder: (context) => const CarBookingView(),
           );
 
+        case AppRoutes.carDetails:
+          return MaterialPageRoute(
+            builder: (context) => const CarDetailsView(),
+          );
 
         case AppRoutes.welcomeView:
           return MaterialPageRoute(builder: (context) => const WelcomeView());
@@ -117,18 +120,16 @@ abstract class AppRouter {
             builder: (context) => const PersonalInfoView(),
           );
 
-          //FilterView
+        //FilterView
         case AppRoutes.FilterView:
-          return MaterialPageRoute(
-            builder: (context) => const FilterView(),
-          );
+          return MaterialPageRoute(builder: (context) => const FilterView());
 
-          //DestinationView
+        //DestinationView
         case AppRoutes.DestinationView:
           return MaterialPageRoute(
             builder: (context) => const DestinationView(),
           );
-          //SearchTourView
+        //SearchTourView
         case AppRoutes.SearchTourView:
           return MaterialPageRoute(
             builder: (context) => const SearchTourView(),

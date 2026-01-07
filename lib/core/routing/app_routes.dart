@@ -23,4 +23,5 @@ abstract class AppRoutes {
   static const DestinationView = '/DestinationView';
   static const SearchTourView = '/SearchTourView';
   static const String carBooking = '/carBooking';
+  static const String carDetails = '/carDetails';
 }
