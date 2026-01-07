@@ -5,13 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routing.dart';
-import 'package:round_8_mobile_safarni_team4/features/compare/presentation/view/compare_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/check_in&out.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/review_screen.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/room_detailes.dart';
-import 'core/theme/app_theme.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,44 +40,8 @@ class MyApp extends StatelessWidget {
         );
       },
     );
-    return ScreenUtilInit(
-      designSize: const Size(375, 812), // w:375 , h:812
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return ScreenUtilInit(
-          designSize: const Size(375, 812), // w:375 , h:812
-          minTextAdapt: true,
-          splitScreenMode: true,
-          builder: (context, child) {
-            return MaterialApp(
-              scrollBehavior: MyCustomScrollBehavior(),
-              locale: DevicePreview.locale(context),
-              builder: DevicePreview.appBuilder,
-              debugShowCheckedModeBanner: false,
-              theme: AppThemes.light,
-              home: HotelView(),
-              // initialRoute: AppRoutes.onboardingView,
-              // onGenerateRoute: AppRouter.onGenerateRoute,
-            );
-          },
-        );
-      },
-    );
   }
 }
-
-class MyCustomScrollBehavior extends MaterialScrollBehavior {
-  // Override behavior methods and getters like dragDevices
-  @override
-  Set<PointerDeviceKind> get dragDevices => {
-    PointerDeviceKind.touch,
-    PointerDeviceKind.mouse,
-    PointerDeviceKind.stylus,
-    PointerDeviceKind.unknown,
-  };
-}
-
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override

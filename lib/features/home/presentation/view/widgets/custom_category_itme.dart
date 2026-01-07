@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
 
 import '../../../../../core/colors/app_colors.dart';
 import '../../../../../core/theme/app_theme.dart';
@@ -59,7 +60,7 @@ class CategoryItem extends StatelessWidget {
         print("ذهاب لصفحة الجولات");
         break;
       case 'Hotel':
-        print("ذهاب لصفحة الفنادق");
+       Navigator.push(context, MaterialPageRoute(builder: (context) => HotelView()));
         break;
       default:
         print("صفحة غير معروفة");
