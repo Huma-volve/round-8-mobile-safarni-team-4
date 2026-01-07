@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
+import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/filter_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/forget_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
@@ -105,6 +106,12 @@ abstract class AppRouter {
           // ignore: todo
           return MaterialPageRoute(
             builder: (context) => const PersonalInfoView(),
+          );
+
+          //FilterView
+        case AppRoutes.FilterView:
+          return MaterialPageRoute(
+            builder: (context) => const FilterView(),
           );
 
         default:
