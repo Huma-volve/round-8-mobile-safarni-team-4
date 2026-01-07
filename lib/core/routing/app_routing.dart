@@ -15,7 +15,9 @@ import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/view/onboarding_view.dart';
+import '../../features/destination/presentation/view/destination_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
+import '../../features/home/presentation/view/search_tour_view.dart';
 import '../../features/payment/presentation/views/checkout_view.dart';
 import '../../features/payment/presentation/views/payment_success_view.dart';
 import '../../features/boarding_pass/presentation/views/boarding_pass_view.dart';
@@ -114,6 +116,16 @@ abstract class AppRouter {
             builder: (context) => const FilterView(),
           );
 
+          //DestinationView
+        case AppRoutes.DestinationView:
+          return MaterialPageRoute(
+            builder: (context) => const DestinationView(),
+          );
+          //SearchTourView
+        case AppRoutes.SearchTourView:
+          return MaterialPageRoute(
+            builder: (context) => const SearchTourView(),
+          );
         default:
           return _errorRoute();
       }
