@@ -15,6 +15,7 @@ import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/view/onboarding_view.dart';
+import '../../features/car_booking/presentation/views/car_booking.dart';
 import '../../features/destination/presentation/view/destination_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 import '../../features/home/presentation/view/search_tour_view.dart';
@@ -32,10 +33,10 @@ abstract class AppRouter {
         case AppRoutes.home:
           return MaterialPageRoute(builder: (context) => HomeView());
 
-        case AppRoutes.onboardingView:
-          return MaterialPageRoute(
-            builder: (context) => const OnboardingView(),
-          );
+        // case AppRoutes.onboardingView:
+        //   return MaterialPageRoute(
+        //     builder: (context) => const OnboardingView(),
+        //   );
 
         case AppRoutes.paymentMethod:
           return MaterialPageRoute(builder: (context) => const CheckoutView());
@@ -57,6 +58,12 @@ abstract class AppRouter {
           return MaterialPageRoute(
             builder: (context) => const SeatSelectionView(),
           );
+
+        case AppRoutes.carBooking:
+          return MaterialPageRoute(
+            builder: (context) => const CarBookingView(),
+          );
+
 
         case AppRoutes.welcomeView:
           return MaterialPageRoute(builder: (context) => const WelcomeView());
