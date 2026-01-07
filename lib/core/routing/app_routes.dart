@@ -10,9 +10,18 @@ abstract class AppRoutes {
   static const signupView = '/signupView';
   static const seatSelection = '/seatSelection';
   static const forgetPasswordView = '/forgetPasswordView';
+  static const boardingPass = '/boardingPass';
   static const SearchView = '/SearchView';
   static const ResultSearch = '/ResultSearch';
   static const String verifyCodeView = '/verifyCodeView';
   static const String setNewPasswordView = '/setNewPasswordView';
   static const String successResetPasswordView = '/successResetPasswordView';
+  static const String profileView = '/profileView';
+  static const String personalInfoView = '/personalInfoView';
+  static const String myBooking = '/myBooking';
+  static const FilterView = '/FilterView';
+  static const DestinationView = '/DestinationView';
+  static const SearchTourView = '/SearchTourView';
+  static const String carBooking = '/carBooking';
+  static const String carDetails = '/carDetails';
 }

@@ -5,7 +5,7 @@ import '../colors/app_colors.dart';
 abstract class AppThemes {
   static ThemeData light = ThemeData(
     useMaterial3: true,
-    scaffoldBackgroundColor: AppColors.scaffoldBg,
+    scaffoldBackgroundColor: AppColors.white,
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.transparent,
       surfaceTintColor: AppColors.transparent,
@@ -14,7 +14,7 @@ abstract class AppThemes {
       titleTextStyle: GoogleFonts.poppins(
         fontSize: 18,
         color: AppColors.black,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w500,
       ),
     ),
     textTheme: TextTheme(
@@ -121,29 +121,29 @@ abstract class AppThemes {
         }
       }),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(color: AppColors.gray),
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: Colors.grey.shade200),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(color: AppColors.gray),
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: Colors.grey.shade200),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(10),
         borderSide: BorderSide(color: AppColors.mainColorLight),
       ),
       disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
-        borderSide: BorderSide(color: AppColors.gray),
+        borderRadius: BorderRadius.circular(10),
+        borderSide: BorderSide(color: Colors.grey.shade200),
       ),
 
       errorBorder: OutlineInputBorder(
         borderSide: const BorderSide(color: Colors.red),
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(10),
       ),
 
       focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(10),
         borderSide: const BorderSide(color: Colors.red),
       ),
       hintStyle: GoogleFonts.poppins(
@@ -172,10 +172,15 @@ abstract class AppThemes {
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: AppColors.black[20],
+        side: BorderSide(color: AppColors.mainColorLight),
+        foregroundColor: AppColors.mainColorLight,
         padding: const EdgeInsetsDirectional.symmetric(
           vertical: 12,
           horizontal: 24,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+          side: BorderSide(color: AppColors.mainColorLight),
         ),
         textStyle: GoogleFonts.poppins(
           fontSize: 16,

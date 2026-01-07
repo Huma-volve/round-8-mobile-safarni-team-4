@@ -23,6 +23,7 @@ class LoginTextFormFieldsSec extends StatelessWidget {
                 !AppRegex.isEmailValid(value)) {
               return 'Please enter a valid email';
             }
+            return null;
           },
         ),
         context.gapH(16),
@@ -36,6 +37,7 @@ class LoginTextFormFieldsSec extends StatelessWidget {
             if (value == null || value.isEmpty) {
               return 'Please enter a valid password';
             }
+            return null;
           },
         ),
       ],
