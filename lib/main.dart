@@ -6,6 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routing.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
+import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
 
 
 void main() {
@@ -35,8 +36,9 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           theme: AppThemes.light,
-          initialRoute: AppRoutes.carDetails,
-          onGenerateRoute: AppRouter.onGenerateRoute,
+          home: HomeView(),
+          // initialRoute: AppRoutes.carDetails,
+          // onGenerateRoute: AppRouter.onGenerateRoute,
         );
       },
     );
