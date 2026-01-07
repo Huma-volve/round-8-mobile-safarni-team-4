@@ -15,21 +15,31 @@ class CheckInItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          day,
-          style: AppThemes.light.textTheme.titleLarge?.copyWith(
-            color: isSelected ? Colors.white : Colors.black,
+    return Container(
+      alignment: Alignment.center,
+      margin: const EdgeInsets.only(right: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: isSelected ? Colors.blue : Colors.grey.shade200,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            day,
+            style: AppThemes.light.textTheme.titleLarge?.copyWith(
+              color: isSelected ? Colors.white : Colors.black,
+            ),
           ),
-        ),
-        Text(
-          date,
-          style: AppThemes.light.textTheme.titleLarge?.copyWith(
-            color: isSelected ? Colors.white : Colors.black,
+          Text(
+            date,
+            style: AppThemes.light.textTheme.titleLarge?.copyWith(
+              color: isSelected ? Colors.white : Colors.black,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

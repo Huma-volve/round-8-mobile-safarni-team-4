@@ -3,11 +3,19 @@ import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_and_checkin_widget/__room_info.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_and_checkin_widget/__sheet_handle.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_and_checkin_widget/check_in_item.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_and_checkin_widget/list_view_check_in_item.dart';
 
-class ReviewBottomSheet extends StatelessWidget {
+class ReviewBottomSheet extends StatefulWidget {
   const ReviewBottomSheet({
     super.key, // Added key
   });
+
+  @override
+  State<ReviewBottomSheet> createState() => _ReviewBottomSheetState();
+}
+
+class _ReviewBottomSheetState extends State<ReviewBottomSheet> {
+  int selectedCheckInIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -62,20 +70,18 @@ class ReviewBottomSheet extends StatelessWidget {
                       fontFamily: "Pippons",
                     ),
                   ),
-                  SizedBox(
-                    height: 200,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 10,
-                      itemBuilder: (context, index) {
-                        return CheckInItem(
-                          day: "Today",
-                          date: "4 Oct",
-                          isSelected: index == 0,
-                        );
-                      },
+                  ListViewCheckInItem(),
+                  SizedBox(height: 16),
+                  Text(
+                    "Check Out",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                      fontFamily: "Pippons",
                     ),
                   ),
+                  ListViewCheckInItem(),
                 ],
               ),
             ),
