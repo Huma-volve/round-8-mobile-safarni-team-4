@@ -21,8 +21,8 @@ class ProfileHeader extends StatelessWidget {
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
                   colors: [Color(0xff3F52B4), Color(0xffB22459)],
-                  begin: AlignmentGeometry.topCenter,
-                  end: AlignmentGeometry.bottomCenter,
+                  // begin: AlignmentGeometry.topCenter,
+                  // end: AlignmentGeometry.bottomCenter,
                 ),
               ),
               child: CircleAvatar(

@@ -19,7 +19,9 @@ abstract class AppRoutes {
   static const String profileView = '/profileView';
   static const String personalInfoView = '/personalInfoView';
   static const String myBooking = '/myBooking';
-  static const FilterView='/FilterView';
-  static const DestinationView='/DestinationView';
-  static const SearchTourView='/SearchTourView';
+  static const FilterView = '/FilterView';
+  static const DestinationView = '/DestinationView';
+  static const SearchTourView = '/SearchTourView';
+  static const String carBooking = '/carBooking';
+  static const String carDetails = '/carDetails';
 }
