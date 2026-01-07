@@ -13,7 +13,9 @@ class CustomHotelHeader extends StatelessWidget {
         children: [
           SizedBox(height: 16.0),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: Icon(Icons.arrow_back_ios_new_rounded),
           ),
           SizedBox(height: 8.0),

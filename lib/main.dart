@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:round_8_mobile_safarni_team4/features/compare/presentation/view/compare_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/check_in&out.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/review_screen.dart';
@@ -24,27 +25,35 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          scrollBehavior: MyCustomScrollBehavior(),
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
-          debugShowCheckedModeBanner: false,
-          theme: AppThemes.light,
-          home: FavoriteView(),
-          // initialRoute: AppRoutes.onboardingView,
-          // onGenerateRoute: AppRouter.onGenerateRoute,
+        return ScreenUtilInit(
+          designSize: const Size(375, 812), // w:375 , h:812
+          minTextAdapt: true,
+          splitScreenMode: true,
+          builder: (context, child) {
+            return MaterialApp(
+              scrollBehavior: MyCustomScrollBehavior(),
+              locale: DevicePreview.locale(context),
+              builder: DevicePreview.appBuilder,
+              debugShowCheckedModeBanner: false,
+              theme: AppThemes.light,
+              home: CompareView(),
+              // initialRoute: AppRoutes.onboardingView,
+              // onGenerateRoute: AppRouter.onGenerateRoute,
+            );
+          },
         );
       },
     );
   }
 }
+
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override
   Set<PointerDeviceKind> get dragDevices => {
-        PointerDeviceKind.touch,
-        PointerDeviceKind.mouse,
-        PointerDeviceKind.stylus,
-        PointerDeviceKind.unknown,
-      };
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+    PointerDeviceKind.stylus,
+    PointerDeviceKind.unknown,
+  };
 }
