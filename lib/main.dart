@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/check_in&out.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/review_screen.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/room_detailes.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           theme: AppThemes.light,
-          home: CheckInAndOutScreen(),
+          home: FavoriteView(),
           // initialRoute: AppRoutes.onboardingView,
           // onGenerateRoute: AppRouter.onGenerateRoute,
         );
