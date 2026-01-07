@@ -18,20 +18,38 @@ class CarBookingView extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios_new, size: 20),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(flex: 2, child: const CarSearchBar()),
-            context.gapH(16),
-            Expanded(flex: 9, child: const CarHeroBanner()),
-            context.gapH(12),
-            Expanded(flex: 8, child: const BrandsSection()),
-            context.gapH(12),
-            Expanded(flex: 12, child: const PopularCarsSection()),
-          ],
-        ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          final height = constraints.maxHeight;
+          return CustomScrollView(
+            slivers: [
+              SliverPadding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                sliver: SliverList(
+                  delegate: SliverChildListDelegate([
+                    SizedBox(
+                      height: height * 0.085,
+                      child: const CarSearchBar(),
+                    ),
+                    context.gapH(16),
+                    SizedBox(
+                      height: height * 0.27,
+                      child: const CarHeroBanner(),
+                    ),
+                    context.gapH(12),
+                    SizedBox(
+                      height: height * 0.23,
+                      child: const BrandsSection(),
+                    ),
+                    context.gapH(12),
+                    const PopularCarsSection(),
+                    context.gapH(12),
+                  ]),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
@@ -47,7 +65,7 @@ class BrandsSection extends StatelessWidget {
       children: [
         const CarSectionHeader(title: 'Brands'),
         context.gapH(12),
-        Expanded(child: const BrandsList()),
+        const Expanded(child: BrandsList()),
       ],
     );
   }
@@ -62,7 +80,8 @@ class PopularCarsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CarSectionHeader(title: 'Popular Cars'),
-        Expanded(child: const PopularCarsList()),
+        context.gapH(12),
+        const PopularCarsList(),
       ],
     );
   }

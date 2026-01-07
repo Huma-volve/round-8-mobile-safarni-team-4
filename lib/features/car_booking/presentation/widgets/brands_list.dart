@@ -22,6 +22,7 @@ class _BrandsListState extends State<BrandsList> {
   Widget build(BuildContext context) {
     return ListView.separated(
       scrollDirection: Axis.horizontal,
+      shrinkWrap: true,
       itemCount: brands.length,
       separatorBuilder: (context, index) => context.gapW(8),
       itemBuilder: (context, index) => BrandCard(model: brands[index]),

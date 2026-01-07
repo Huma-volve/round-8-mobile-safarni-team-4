@@ -38,6 +38,8 @@ class _PopularCarsListState extends State<PopularCarsList> {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: cars.length,
       separatorBuilder: (context, index) => context.gapH(8),
       itemBuilder: (context, index) => CarCard(model: cars[index]),
