@@ -15,10 +15,6 @@ class CustomHotelHeader extends StatelessWidget {
           IconButton(
             onPressed: () {},
             icon: const Icon(Icons.arrow_back_ios_new_rounded),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(Icons.arrow_back_ios_new_rounded),
           ),
           const SizedBox(height: 8.0),
           const SearchTextField(),

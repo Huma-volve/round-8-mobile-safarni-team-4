@@ -41,51 +41,22 @@ class NearbyHotelItem extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(width: 12.0),
+              const SizedBox(width: 12.0),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     CustomDiscountAndRationg(hotelModel: hotelModel),
                     Text(hotelModel.hotelName),
-                    CustomLocation(),
+                    const CustomLocation(),
                   ],
                 ),
               ),
             ],
           ),
-    return Card(
-      elevation: 4.0,
-
-      color: Colors.white,
-      shadowColor: Colors.grey.withOpacity(0.8),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4.0),
-        child: Row(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.asset(
-                'assets/images/hotel.png',
-                height: 96.h,
-                //width: 84.w,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const SizedBox(width: 12.0),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomDiscountAndRationg(hotelModel: hotelModel),
-                  Text(hotelModel.hotelName),
-                  const CustomLocation(),
-                ],
-              ),
-            ),
-          ],
         ),
       ),
     );
+    
   }
 }
