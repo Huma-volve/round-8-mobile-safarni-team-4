@@ -10,7 +10,7 @@ class ActivityCard extends StatelessWidget {
   final String imageUrl;
   final String title;
 
-  const ActivityCard({required this.imageUrl, required this.title});
+  const ActivityCard({super.key, required this.imageUrl, required this.title});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/widgets/search_tour.dart';
 

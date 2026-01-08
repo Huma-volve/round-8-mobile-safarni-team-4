@@ -10,7 +10,7 @@ class ReviewCard extends StatelessWidget {
   final String comment;
   final String avatar;
 
-  const ReviewCard({
+  const ReviewCard({super.key, 
     required this.name,
     required this.date,
     required this.comment,

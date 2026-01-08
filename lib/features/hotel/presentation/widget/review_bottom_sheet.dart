@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_discount_and_review.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_and_checkin_widget/__room_info.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_and_checkin_widget/__sheet_handle.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_and_checkin_widget/check_in_item.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_and_checkin_widget/list_view_check_in_item.dart';
 
 class ReviewBottomSheet extends StatefulWidget {

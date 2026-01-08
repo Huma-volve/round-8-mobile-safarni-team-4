@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/widgets/section_chart.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/widgets/section_search_location.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/widgets/section_sort_by.dart';

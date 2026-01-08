@@ -10,6 +10,8 @@ import 'package:round_8_mobile_safarni_team4/features/destination/presentation/v
 import 'activited_card.dart';
 
 class DestinationPage extends StatelessWidget {
+  const DestinationPage({super.key});
+
  // حالة زر القلب
   @override
   Widget build(BuildContext context) {

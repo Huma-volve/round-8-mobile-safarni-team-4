@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
-import 'package:round_8_mobile_safarni_team4/core/routing/app_routing.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
 

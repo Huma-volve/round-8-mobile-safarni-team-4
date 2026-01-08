@@ -66,7 +66,6 @@ class _ReviewBottomSheet extends StatelessWidget {
   final ValueChanged<double> onRatingChanged;
 
   const _ReviewBottomSheet({
-    super.key, // Added key
     required this.rating,
     required this.onRatingChanged,
   });

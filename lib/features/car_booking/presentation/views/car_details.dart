@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import '../../../../core/colors/app_colors.dart';
 import '../widgets/car_details_image_gallery.dart';
 import '../widgets/car_details_location.dart';

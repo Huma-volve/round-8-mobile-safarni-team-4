@@ -4,6 +4,8 @@ import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 
 class LocationSearchWidget extends StatefulWidget {
+  const LocationSearchWidget({super.key});
+
   @override
   _LocationSearchWidgetState createState() => _LocationSearchWidgetState();
 }
