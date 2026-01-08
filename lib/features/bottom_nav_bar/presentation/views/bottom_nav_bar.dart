@@ -90,7 +90,7 @@ class _MainLayoutState extends State<BottomNavBar> with SingleTickerProviderStat
                   child: Container(
                     width: 44.w,
                     height: 44.h,
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: LinearGradient(

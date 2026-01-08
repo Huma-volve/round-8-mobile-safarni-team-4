@@ -1,5 +1,4 @@
 // 1. كارت الأنشطة (Top Activities)
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,19 +9,19 @@ class ActivityCard extends StatelessWidget {
   final String imageUrl;
   final String title;
 
-  const ActivityCard({required this.imageUrl, required this.title});
+  const ActivityCard({super.key, required this.imageUrl, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width:MediaQuery.of(context).size.width*.45, // المقاس المطلوب
       height: 166.h,
-      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       // المقاس المطلوب
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-       boxShadow: [
+       boxShadow: const [
 
          BoxShadow(
            color: Colors.black12,
