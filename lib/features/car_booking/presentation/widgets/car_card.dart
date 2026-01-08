@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/features/car_booking/presentation/widgets/popular_cars_list.dart';
+import '../../../../core/routing/app_routes.dart';
 import 'car_divider.dart';
 import 'car_info_item.dart';
 
@@ -66,7 +67,13 @@ class CarCard extends StatelessWidget {
                   context.gapW(12),
                   Expanded(
                     child: OutlinedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(
+                          context,
+                          AppRoutes.carDetails,
+                          arguments: model,
+                        );
+                      },
                       child: const Text('Detail'),
                     ),
                   ),
