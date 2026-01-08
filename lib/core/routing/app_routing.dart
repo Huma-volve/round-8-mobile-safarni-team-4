@@ -37,10 +37,10 @@ abstract class AppRouter {
         case AppRoutes.home:
           return MaterialPageRoute(builder: (context) => const BottomNavBar());
 
-        // case AppRoutes.onboardingView:
-        //   return MaterialPageRoute(
-        //     builder: (context) => const OnboardingView(),
-        //   );
+        case AppRoutes.onboardingView:
+          return MaterialPageRoute(
+            builder: (context) => const OnboardingView(),
+          );
 
         case AppRoutes.paymentMethod:
           return MaterialPageRoute(builder: (context) => const CheckoutView());

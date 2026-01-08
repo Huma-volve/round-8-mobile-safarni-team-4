@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../../../core/colors/app_colors.dart';
+import '../../../../core/routing/app_routes.dart';
 import '../widgets/car_details_image_gallery.dart';
 import '../widgets/car_details_location.dart';
 import '../widgets/car_rent_plan_card.dart';
 import '../widgets/car_spec_card.dart';
 import '../widgets/car_section_header.dart';
+import '../widgets/popular_cars_list.dart';
 
 class CarDetailsView extends StatelessWidget {
   const CarDetailsView({super.key, required this.model});
