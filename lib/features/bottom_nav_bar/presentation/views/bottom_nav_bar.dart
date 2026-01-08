@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/bottom_nav_bar/presentation/views/widgets/dynamic_bar_painter.dart';
+import 'package:round_8_mobile_safarni_team4/features/compare/presentation/view/compare_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/search/presentation/view/search_view.dart';
 // استورد باقي الشاشات هنا (Favorite و Compare إذا كانت موجودة)
@@ -23,9 +25,9 @@ class _MainLayoutState extends State<BottomNavBar> with SingleTickerProviderStat
   // 1. قائمة الصفحات التي سيتم التنقل بينها
   final List<Widget> _pages = [
     const HomeView(),           // Index 0
-    const Center(child: Text("Favorite View")), // Index 1
-    const Center(child: Text("Compare View")),  // Index 2
-    const SearchView(),         // Index 3 (المرتبطة بـ Maps أو Search)
+    const FavoriteView(), // Index 1
+    const CompareView() ,  // Index 2
+    const Center(child: Text("Map")),         // Index 3 (المرتبطة بـ Maps أو Search)
   ];
 
   @override

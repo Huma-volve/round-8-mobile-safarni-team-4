@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/widgets/custom_button.dart';
 import 'package:round_8_mobile_safarni_team4/features/compare/data/compar_model.dart';
 import 'package:round_8_mobile_safarni_team4/features/compare/presentation/widget/compare_item.dart';
@@ -54,14 +56,16 @@ class CompareViewBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                context.pushNamed(AppRoutes.paymentMethod);
+              },
               buttonName: 'Compare',
               height: 50.h,
               width: 350.w,
             ),
           ),
         ),
-        SliverToBoxAdapter(child: SizedBox(height: 20.h)),
+        SliverToBoxAdapter(child: SizedBox(height: 100.h)),
       ],
     );
   }

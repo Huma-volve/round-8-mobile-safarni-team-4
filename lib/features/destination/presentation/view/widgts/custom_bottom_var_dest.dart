@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 
 import '../../../../../core/theme/app_theme.dart';
 
@@ -46,7 +48,9 @@ class CusotmBottomBarDest extends StatelessWidget {
                 ],
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(AppRoutes.paymentMethod);
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF1E429F),
                   padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 16),

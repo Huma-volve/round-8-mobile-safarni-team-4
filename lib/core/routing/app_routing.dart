@@ -19,7 +19,9 @@ import '../../features/car_booking/presentation/views/car_booking.dart';
 import '../../features/car_booking/presentation/views/car_details.dart';
 import '../../features/car_booking/presentation/views/pick_up_details.dart';
 import '../../features/car_booking/presentation/widgets/popular_cars_list.dart';
+import '../../features/compare/presentation/view/compare_view.dart';
 import '../../features/destination/presentation/view/destination_view.dart';
+import '../../features/favorite/presentation/view/favorite_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 import '../../features/home/presentation/view/search_tour_view.dart';
 import '../../features/onboarding/view/onboarding_view.dart';
@@ -151,6 +153,13 @@ abstract class AppRouter {
         case AppRoutes.myBookingView:
           return MaterialPageRoute(builder: (context) => const MyBookingView());
 
+          //CompareView
+        case AppRoutes.CompareView:
+          return MaterialPageRoute(builder: (context) => const CompareView());
+
+          //FavoriteView
+        case AppRoutes.FavoriteView:
+          return MaterialPageRoute(builder: (context) => const FavoriteView());
         default:
           return _errorRoute();
       }

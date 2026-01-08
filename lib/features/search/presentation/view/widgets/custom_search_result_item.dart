@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import '../../../../../core/colors/app_colors.dart';
 import 'custom_image_stack.dart';
 import 'item_detail_row.dart';
@@ -18,39 +20,44 @@ class _CustomSearchItemState extends State<CustomSearchItem> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return GestureDetector(
+      onTap: (){
+        context.pushNamed(AppRoutes.DestinationView);
+      },
+      child: Container(
 
-      height: 333.h,
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(16),
-          boxShadow: [
-            BoxShadow(
-              color: AppColors.black.withOpacity(.08),
-              spreadRadius: 2,
-              blurRadius: 15,
-            )
-          ]),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ItemImageStack(
-            isFavorite: isFavorite,
-            onFavoriteToggle: () {
-              setState(() {
-                isFavorite = !isFavorite;
-              });
-            },
-          ),
-          const SizedBox(height: 8),
-          const ItemTitleRating(),
-          const Spacer(),
-          const ItemDetailsRow(),
-          const Spacer(),
-          const ItemPriceRow(),
-        ],
+        height: 333.h,
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.black.withOpacity(.08),
+                spreadRadius: 2,
+                blurRadius: 15,
+              )
+            ]),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ItemImageStack(
+              isFavorite: isFavorite,
+              onFavoriteToggle: () {
+                setState(() {
+                  isFavorite = !isFavorite;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            const ItemTitleRating(),
+            const Spacer(),
+            const ItemDetailsRow(),
+            const Spacer(),
+            const ItemPriceRow(),
+          ],
+        ),
       ),
     );
   }

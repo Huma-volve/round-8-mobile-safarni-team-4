@@ -48,10 +48,12 @@ class CategoryItem extends StatelessWidget {
   void _navigateToPage(BuildContext context, String title) {
     switch (title) {
       case 'Flight':
+        context.pushNamed(AppRoutes.flightBooking);
       // Navigator.push(context, MaterialPageRoute(builder: (context) => FlightsScreen()));
 
         break;
       case 'Cars':
+        context.pushNamed(AppRoutes.carBooking);
       // Navigator.push(context, MaterialPageRoute(builder: (context) => CarsScreen()));
 
         break;

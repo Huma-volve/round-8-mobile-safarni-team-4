@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/widgets/price_footer.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/widgets/seat_grid.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/widgets/seat_legend.dart';
@@ -54,7 +56,9 @@ class _SeatSelectionViewState extends State<SeatSelectionView> {
               ticketPrice: ticketPrice,
               totalPrice: totalPrice,
               selectedSeats: selectedSeats,
-              onContinue: () {},
+              onContinue: () {
+                context.pushNamed(AppRoutes.paymentMethod);
+              },
             ),
           ),
         ],
