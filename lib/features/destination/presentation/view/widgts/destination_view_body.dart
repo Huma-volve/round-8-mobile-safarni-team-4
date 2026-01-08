@@ -67,15 +67,13 @@ class DestinationPage extends StatelessWidget {
                           color: AppColors.mainColorLight[100])),
                   SizedBox(height: 20),
                   CustomInfoContainer(
-                    child: CustomInfoContainer(
-                      child: Text(
-                        "Spring (April–June) and autumn (September–October) are perfect times to visit Paris, with mild weather and fewer tourists.",
+                    child: Text(
+                      "Spring (April–June) and autumn (September–October) are perfect times to visit Paris, with mild weather and fewer tourists.",
 
-                          style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.black[70])
-                      ),
+                        style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.black[70])
                     ),
                   ),
                   SizedBox(height: 25),

@@ -16,7 +16,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: ListView(
         children: [
           Column(
@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
             Center(
               child: Image.asset('assets/images/travel.png',
                 fit: BoxFit.fill,
-                // width: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
               ),
             ),
 
@@ -71,10 +71,10 @@ class HomeViewBody extends StatelessWidget {
 
               ),
               ListView.builder(
-                shrinkWrap: true, // مهم جداً: بيخلي الليستة تاخد حجم العناصر فقط
-                physics: const NeverScrollableScrollPhysics(), // بيخلي السكرول تابع للصفحة الكبيرة
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 5, // عدد التورز اللي عندك
-                padding: EdgeInsets.zero, // عشان ميحصلش مسافات إضافية مش مرغوبة
+
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.only(bottom: 16.h), // مسافة بين كل تور والتانية
@@ -83,6 +83,7 @@ class HomeViewBody extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 40,),
+
             ],
           ),
         ],

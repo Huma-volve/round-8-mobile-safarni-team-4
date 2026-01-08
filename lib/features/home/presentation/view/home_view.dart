@@ -4,13 +4,9 @@ import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/wid
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
+  // int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-
-          child: HomeViewBody())
-    );
+    return const Scaffold(backgroundColor: Colors.white, body: HomeViewBody());
   }
 }
