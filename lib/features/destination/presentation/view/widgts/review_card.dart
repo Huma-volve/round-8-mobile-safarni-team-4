@@ -31,29 +31,19 @@ class ReviewCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              CircleAvatar(backgroundImage: NetworkImage(avatar)),
+              CircleAvatar(
+                  radius: 20,
+                  backgroundImage: NetworkImage(avatar)),
               SizedBox(width: 10),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
 
-                    children: [
-                      Text(name, style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                                       fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,)),
-                      SizedBox(
-                        width: 70.w,
-                      ),
-                      Text(date,  style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                        fontSize: 13.sp,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w500,)),
-                    ],
-                  ),
-
-                ],
-              ),
+              Text(name, style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                               fontSize: 18.sp,
+              fontWeight: FontWeight.w600,)),
+              Spacer(),
+              Text(date,  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                fontSize: 13.sp,
+                color: Colors.grey,
+                fontWeight: FontWeight.w500,)),
             ],
           ),
           SizedBox(height: 10),

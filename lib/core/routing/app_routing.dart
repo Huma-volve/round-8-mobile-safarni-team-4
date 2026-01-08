@@ -14,6 +14,7 @@ import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views
 import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views/welcome_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
+import '../../features/bottom_nav_bar/presentation/views/bottom_nav_bar.dart';
 import '../../features/car_booking/presentation/views/car_booking.dart';
 import '../../features/car_booking/presentation/views/car_details.dart';
 import '../../features/destination/presentation/view/destination_view.dart';
@@ -31,7 +32,7 @@ abstract class AppRouter {
     try {
       switch (name) {
         case AppRoutes.home:
-          return MaterialPageRoute(builder: (context) => HomeView());
+          return MaterialPageRoute(builder: (context) => BottomNavBar());
 
         case AppRoutes.onboardingView:
           return MaterialPageRoute(

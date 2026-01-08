@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
+
+import '../../../../../core/theme/app_theme.dart';
 
 class CusotmBottomBarDest extends StatelessWidget {
   const CusotmBottomBarDest({
@@ -18,18 +22,43 @@ class CusotmBottomBarDest extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Total price", style: TextStyle(color: Colors.grey)),
-                  Text("\$150.00 /person", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xff1E429F))),
+                  Text("Total price",
+                      style:AppThemes.light.textTheme.titleMedium!.copyWith(
+                          color: AppColors.mainColorLight[100],
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16.sp)
+
+                  ),
+                  Row(
+                    children: [
+                      Text("\$150.00",
+                          style:AppThemes.light.textTheme.titleMedium!.copyWith(
+                              color: AppColors.mainColorLight[70],
+                              fontWeight: FontWeight.w400,
+                              fontSize: 17.sp)),
+                      Text(" /person",
+                          style:AppThemes.light.textTheme.titleMedium!.copyWith(
+                              color: AppColors.black[70],
+                              fontWeight: FontWeight.w600,
+                              fontSize: 13.sp)),
+
+                    ],
+                  ),
                 ],
               ),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF1E429F),
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  padding: EdgeInsets.symmetric(horizontal: 45, vertical: 16),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 ),
-                child: Text("Book Now", style: TextStyle(color: Colors.white)),
+                child: Text("Book Now",
+                    style:AppThemes.light.textTheme.titleMedium!.copyWith(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16.sp)
+                ),
               ),]));
   }
 }
