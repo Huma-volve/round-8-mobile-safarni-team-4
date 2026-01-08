@@ -16,6 +16,8 @@ import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentatio
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
 import '../../features/car_booking/presentation/views/car_booking.dart';
 import '../../features/car_booking/presentation/views/car_details.dart';
+import '../../features/car_booking/presentation/views/pick_up_details.dart';
+import '../../features/car_booking/presentation/widgets/popular_cars_list.dart';
 import '../../features/destination/presentation/view/destination_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 import '../../features/home/presentation/view/search_tour_view.dart';
@@ -28,15 +30,16 @@ import '../../features/search/presentation/view/search_view.dart';
 abstract class AppRouter {
   static Route<dynamic>? onGenerateRoute(RouteSettings routeSettings) {
     var name = routeSettings.name;
+    var args = routeSettings.arguments;
     try {
       switch (name) {
         case AppRoutes.home:
           return MaterialPageRoute(builder: (context) => HomeView());
 
-        case AppRoutes.onboardingView:
-          return MaterialPageRoute(
-            builder: (context) => const OnboardingView(),
-          );
+        // case AppRoutes.onboardingView:
+        //   return MaterialPageRoute(
+        //     builder: (context) => const OnboardingView(),
+        //   );
 
         case AppRoutes.paymentMethod:
           return MaterialPageRoute(builder: (context) => const CheckoutView());
@@ -66,7 +69,14 @@ abstract class AppRouter {
 
         case AppRoutes.carDetails:
           return MaterialPageRoute(
-            builder: (context) => const CarDetailsView(),
+            builder:
+                (context) => CarDetailsView(model: args as PopularCarModel),
+          );
+
+        case AppRoutes.pickUpDetails:
+          return MaterialPageRoute(
+            builder:
+                (context) => PickUpDetailsView(model: args as PopularCarModel),
           );
 
         case AppRoutes.welcomeView:

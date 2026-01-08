@@ -3,7 +3,9 @@ import 'package:round_8_mobile_safarni_team4/core/constants/assets_paths.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 
 class CarDetailsImageGallery extends StatelessWidget {
-  const CarDetailsImageGallery({super.key});
+  const CarDetailsImageGallery({super.key, required this.image});
+
+  final String image;
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +32,7 @@ class CarDetailsImageGallery extends StatelessWidget {
                     size: 20,
                   ),
                 ),
-                Expanded(
-                  child: Image.asset(
-                    AssetsPaths.mercedesSedan,
-                    fit: BoxFit.contain,
-                  ),
-                ),
+                Expanded(child: Image.asset(image, fit: BoxFit.contain)),
                 IconButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -85,7 +82,7 @@ class CarDetailsImageGallery extends StatelessWidget {
 
           // Indicator Circle with Arrows
           Positioned(
-            bottom: MediaQuery.of(context).size.height*0.018,
+            bottom: MediaQuery.of(context).size.height * 0.018,
             left: 0,
             right: 0,
             child: Center(
