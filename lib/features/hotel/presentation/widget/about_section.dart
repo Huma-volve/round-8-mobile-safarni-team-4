@@ -40,7 +40,8 @@ class AboutSection extends StatelessWidget {
             );
 
   }
-    Widget _buildInfoItem(IconData icon, String text) {
+
+  Widget _buildInfoItem(IconData icon, String text) {
     return Row(
       children: [
         Icon(icon, color: Colors.blue, size: 20),
