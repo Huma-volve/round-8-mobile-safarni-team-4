@@ -17,7 +17,7 @@ class SectionChart extends StatefulWidget {
 }
 
 class _FilterViewBodyState extends State<SectionChart> {
-  SfRangeValues _values = SfRangeValues(2000.0, 6000.0);
+  SfRangeValues _values = const SfRangeValues(2000.0, 6000.0);
 
   // بيانات وهمية للرسم البياني (تعبر عن توفر الأماكن في كل سعر)
 
@@ -34,7 +34,7 @@ class _FilterViewBodyState extends State<SectionChart> {
 
         // الجزء الخاص بالـ Range Selector مع الرسم البياني
         sf_sliders.SfRangeSelector(
-          activeColor: Color(0xff3F83F8),
+          activeColor: const Color(0xff3F83F8),
           inactiveColor: Colors.transparent,
 
           min: 0.0,

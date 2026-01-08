@@ -19,9 +19,9 @@ class VerifyCodeView extends StatelessWidget {
           child: Column(
             children: [
               context.gapH(20),
-              VerifyCodeViewHeaderSec(),
+              const VerifyCodeViewHeaderSec(),
               context.gapH(24),
-              VerifyCodeViewOtpFieldsSec(),
+              const VerifyCodeViewOtpFieldsSec(),
               context.gapH(16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

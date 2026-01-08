@@ -16,7 +16,7 @@ class CustomImageItem extends StatelessWidget {
       width: 95,
       height: 100,
       padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.white, // 👈 background لكل الصور
         //  borderRadius: BorderRadius.circular(14),
         // boxShadow: [

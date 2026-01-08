@@ -20,7 +20,7 @@ class PayPalBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          TextField(decoration: InputDecoration(hintText: 'Your full name')),
+          const TextField(decoration: InputDecoration(hintText: 'Your full name')),
           const SizedBox(height: 16),
           Text(
             'Your Email',
@@ -30,7 +30,7 @@ class PayPalBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          TextField(decoration: InputDecoration(hintText: 'Type your email')),
+          const TextField(decoration: InputDecoration(hintText: 'Type your email')),
         ],
       ),
     );

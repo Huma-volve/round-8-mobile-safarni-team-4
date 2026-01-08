@@ -16,21 +16,21 @@ class CustomDiscountAndRationg extends StatelessWidget {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
           decoration: BoxDecoration(
-            color: Color(0xffEBF5FF),
+            color: const Color(0xffEBF5FF),
             borderRadius: BorderRadius.circular(4.0),
           ),
           child: Text(
             hotelModel!.discount,
             style: AppThemes.light.textTheme.labelMedium!.copyWith(
-              color: Color(0xff007BFF),
+              color: const Color(0xff007BFF),
             ),
           ),
         ),
-        Expanded(child: SizedBox()),
+        const Expanded(child: SizedBox()),
         IconButton(
           padding: EdgeInsets.zero,
           onPressed: () {},
-          icon: Icon(Icons.star, color: Colors.amber),
+          icon: const Icon(Icons.star, color: Colors.amber),
         ),
         Text(
           text ??

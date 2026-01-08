@@ -49,21 +49,22 @@ class CategoryItem extends StatelessWidget {
     switch (title) {
       case 'Flight':
       // Navigator.push(context, MaterialPageRoute(builder: (context) => FlightsScreen()));
-        print("ذهاب لصفحة الطيران");
+
         break;
       case 'Cars':
       // Navigator.push(context, MaterialPageRoute(builder: (context) => CarsScreen()));
-        print("ذهاب لصفحة السيارات");
+
         break;
       case 'Tours':
         context.pushNamed(AppRoutes.SearchTourView);
-        print("ذهاب لصفحة الجولات");
+
         break;
       case 'Hotel':
+
        Navigator.push(context, MaterialPageRoute(builder: (context) => HotelView()));
         break;
       default:
-        print("صفحة غير معروفة");
+
     }
   }
 }

@@ -10,11 +10,11 @@ class FilterView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Filter'),
+        title: const Text('Filter'),
       ),
-      body:FilterViewBody() ,
+      body:const FilterViewBody() ,
 
-    bottomNavigationBar: SectionBottomBar());
+    bottomNavigationBar: const SectionBottomBar());
   }
 }
 

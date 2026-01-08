@@ -11,16 +11,18 @@ class CustomHotelHeader extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 16.0),
+          const SizedBox(height: 16.0),
           IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.arrow_back_ios_new_rounded),
             onPressed: () {
               Navigator.pop(context);
             },
             icon: Icon(Icons.arrow_back_ios_new_rounded),
           ),
-          SizedBox(height: 8.0),
-          SearchTextField(),
-          SizedBox(height: 8.0),
+          const SizedBox(height: 8.0),
+          const SearchTextField(),
+          const SizedBox(height: 8.0),
          
         ],
       ),

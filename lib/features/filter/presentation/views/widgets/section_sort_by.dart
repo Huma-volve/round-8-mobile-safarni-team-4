@@ -40,7 +40,7 @@ class _SectionSortByState extends State<SectionSortBy> {
                 color: AppColors.mainColorLight[100],
               ),
             ),
-            SizedBox(width: 10,),
+            const SizedBox(width: 10,),
             Text(
               widget.sidTitle,
               style: AppThemes.light.textTheme.titleLarge!.copyWith(
@@ -59,14 +59,14 @@ class _SectionSortByState extends State<SectionSortBy> {
             return ChoiceChip(
 
               showCheckmark: false,
-              padding: EdgeInsets.symmetric(vertical: 14, horizontal: 16),
+              padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
               label: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  option.icon==''? Text(''): SvgPicture.asset(option.icon,
+                  option.icon==''? const Text(''): SvgPicture.asset(option.icon,
                   color: option.isSelected ? AppColors.mainColorLight[60] : AppColors.black[70] ,
                   ),
-                  SizedBox(width: 5,),
+                  const SizedBox(width: 5,),
                   Text(option.label),
                 ],
               ),

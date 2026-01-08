@@ -46,7 +46,7 @@ class FlightBookingForm extends StatelessWidget {
                       _buildTextField(
                         hintText:
                             DateTime.now()
-                                .add(Duration(days: 1))
+                                .add(const Duration(days: 1))
                                 .toDayWithSuffix(),
                       ),
                     ],

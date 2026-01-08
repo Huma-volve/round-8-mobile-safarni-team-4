@@ -16,7 +16,7 @@ class NearbyHotel extends StatelessWidget {
             textButton: 'See All',
             onPressed: () {},
           ),
-          Flexible(child: ListViewNearbyHotelItem()),
+          const Flexible(child: ListViewNearbyHotelItem()),
         ],
       ),
     );

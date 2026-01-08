@@ -36,7 +36,7 @@ class _CheckoutViewState extends State<CheckoutView> {
           onTap: () => Navigator.pop(context),
           child: Icon(Icons.arrow_back_ios, color: AppColors.black, size: 20),
         ),
-        title: Text('Payment Method'),
+        title: const Text('Payment Method'),
       ),
       body: SafeArea(
         child: Padding(
@@ -47,14 +47,14 @@ class _CheckoutViewState extends State<CheckoutView> {
               spacing: 20,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(flex: 9, child: CreditCardView()),
+                const Expanded(flex: 9, child: CreditCardView()),
                 Expanded(
                   flex: 2,
                   child: PaymentSelector(
                     paymentSelectorModels: paymentSelectorModels,
                   ),
                 ),
-                Expanded(flex: 8, child: PaymentForm()),
+                const Expanded(flex: 8, child: PaymentForm()),
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(
@@ -82,13 +82,13 @@ class PaymentForm extends StatelessWidget {
       builder: (context, state) {
         switch (state.paymentType) {
           case PaymentTypes.initial:
-            return InitialBody();
+            return const InitialBody();
           case PaymentTypes.payPal:
-            return PayPalBody();
+            return const PayPalBody();
           case PaymentTypes.masterCard:
-            return MasterCardAndVisaBody();
+            return const MasterCardAndVisaBody();
           case PaymentTypes.visa:
-            return MasterCardAndVisaBody();
+            return const MasterCardAndVisaBody();
         }
       },
     );

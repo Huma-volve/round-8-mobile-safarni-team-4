@@ -36,7 +36,7 @@ class _SearchViewState extends State<SearchViewBody> {
           children: [
             // شكل الـ Search Bar
             TextField(
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20
               ),
               onChanged: (value) => updateSearch(value),
@@ -49,12 +49,12 @@ class _SearchViewState extends State<SearchViewBody> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(color:Color(0xff3F83F8)),
+                  borderSide: const BorderSide(color:Color(0xff3F83F8)),
                 ),
                   focusedBorder: OutlineInputBorder(
 
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(
+                  borderSide: const BorderSide(
                       width: 2,
                       color:Color(0xff3F83F8)),
                 ),

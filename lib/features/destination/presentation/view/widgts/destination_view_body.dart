@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
@@ -20,21 +19,21 @@ class DestinationPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // الجزء العلوي: الصورة والأزرار
-            SectionDesImage(),
+            const SectionDesImage(),
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  section_rate_city(),
-                  SizedBox(height: 8,),
+                  const section_rate_city(),
+                  const SizedBox(height: 8,),
                   Text("Eiffel Tower",
                       style: AppThemes.light.textTheme.titleMedium!.copyWith(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.mainColorLight[100]
                   )),
-                  SizedBox(height: 8,),
+                  const SizedBox(height: 8,),
                   Text("7 Days and 6 Nights",
                       style: AppThemes.light.textTheme.titleMedium!.copyWith(
                       fontSize: 14.sp,
@@ -48,45 +47,43 @@ class DestinationPage extends StatelessWidget {
                       color: AppColors.black[70]
                   )),
 
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Text("Top Activities",
                       style: AppThemes.light.textTheme.titleMedium!.copyWith(
                       fontSize: 17.sp,
                       fontWeight: FontWeight.w600,
                       color: AppColors.mainColorLight[100])),
-                  SizedBox(height: 10),
-                  Row(
+                  const SizedBox(height: 10),
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ActivityCard(title: "Go to the Top", imageUrl: "https://picsum.photos/200"),
                       ActivityCard(title: "Louvre at Night", imageUrl: "https://picsum.photos/201"),
                     ],
-                  ),SizedBox(height: 20),
+                  ),const SizedBox(height: 20),
                   Text("Best Time to Visit",
                       style: AppThemes.light.textTheme.titleMedium!.copyWith(
                           fontSize: 17.sp,
                           fontWeight: FontWeight.w600,
                           color: AppColors.mainColorLight[100])),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   CustomInfoContainer(
-                    child: CustomInfoContainer(
-                      child: Text(
-                        "Spring (April–June) and autumn (September–October) are perfect times to visit Paris, with mild weather and fewer tourists.",
+                    child: Text(
+                      "Spring (April–June) and autumn (September–October) are perfect times to visit Paris, with mild weather and fewer tourists.",
 
-                          style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.black[70])
-                      ),
+                        style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.black[70])
                     ),
                   ),
-                  SizedBox(height: 25),
-                  SctionSeeMore(),
+                  const SizedBox(height: 25),
+                  const SctionSeeMore(),
 
                   GridView.count(
 
                     shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     crossAxisCount: 2,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 8,
@@ -97,11 +94,11 @@ class DestinationPage extends StatelessWidget {
                           fit: BoxFit.cover),
                     )),
                   ),
-                  SizedBox(height: 16,),
+                  const SizedBox(height: 16,),
                   Center(
                     child: TextButton.icon(
                       onPressed: () {},
-                      icon: Icon(Icons.add_a_photo_outlined,size: 24,),
+                      icon: const Icon(Icons.add_a_photo_outlined,size: 24,),
                       label: Text("Add Photo",
                         style: AppThemes.light.textTheme.titleMedium!.copyWith(
                             fontSize: 15.sp,
@@ -111,20 +108,20 @@ class DestinationPage extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text("Reviews",
                     style: AppThemes.light.textTheme.titleMedium!.copyWith(
                         fontSize: 17.sp,
                         fontWeight: FontWeight.w500,
                         color: AppColors.mainColorLight[100]),),
-                  SizedBox(height: 10),
-                  ReviewCard(
+                  const SizedBox(height: 10),
+                  const ReviewCard(
                     name: "Dale Thiel",
                     date: "11 months ago",
                     comment: "Such a dreamy place! The views were stunning...",
                     avatar: "https://i.pravatar.cc/150?u=1",
                   ),
-                  ReviewCard(
+                  const ReviewCard(
                     name: "Léo Martin",
                     date: "6 months ago",
                     comment: "A beautiful escape from the ordinary. Everything was elegant...",
@@ -136,11 +133,11 @@ class DestinationPage extends StatelessWidget {
                     child: Container(
 
                       width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: Color(0xff1E429F)
+                            color: const Color(0xff1E429F)
                           )
                         ),
                         child: Center(
@@ -148,7 +145,7 @@ class DestinationPage extends StatelessWidget {
                               style: AppThemes.light.textTheme.titleMedium!.copyWith(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xff1E429F)
+                                  color: const Color(0xff1E429F)
 
                               )
                           ),
@@ -179,7 +176,7 @@ class SctionSeeMore extends StatelessWidget {
                 fontSize: 17.sp,
                 fontWeight: FontWeight.w600,
                 color: AppColors.mainColorLight[100])),
-        Spacer(),
+        const Spacer(),
         InkWell(
           onTap: (){},
           child: Text("See more",
@@ -209,7 +206,7 @@ class section_rate_city extends StatelessWidget {
           color: AppColors.black[70]
         )
         ),
-        Spacer(),
+        const Spacer(),
         Wrap(
           children: List.generate(5, (index) {
             return Icon(
@@ -219,7 +216,7 @@ class section_rate_city extends StatelessWidget {
             );
           }),
         ),
-        SizedBox(width: 5),
+        const SizedBox(width: 5),
         Text("4.5 (675)",   style: AppThemes.light.textTheme.titleMedium!.copyWith(
             fontSize: 12.sp,
             fontWeight: FontWeight.w600,

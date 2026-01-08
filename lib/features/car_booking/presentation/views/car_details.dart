@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import '../../../../core/colors/app_colors.dart';
+import '../../../../core/routing/app_routes.dart';
 import '../widgets/car_details_image_gallery.dart';
 import '../widgets/car_details_location.dart';
 import '../widgets/car_rent_plan_card.dart';
 import '../widgets/car_spec_card.dart';
 import '../widgets/car_section_header.dart';
+import '../widgets/popular_cars_list.dart';
 
 class CarDetailsView extends StatelessWidget {
-  const CarDetailsView({super.key});
+  const CarDetailsView({super.key, required this.model});
+
+  final PopularCarModel model;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,10 @@ class CarDetailsView extends StatelessWidget {
         child: Column(
           spacing: 16,
           children: [
-            Expanded(flex: 4, child: const CarDetailsImageGallery()),
+            Expanded(
+              flex: 4,
+              child: CarDetailsImageGallery(image: model.image),
+            ),
             Expanded(
               flex: 5,
               child: Padding(
@@ -44,7 +51,16 @@ class CarDetailsView extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: SizedBox(
           width: double.infinity,
-          child: FilledButton(onPressed: () {}, child: Text("Pick up")),
+          child: FilledButton(
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                AppRoutes.pickUpDetails,
+                arguments: model,
+              );
+            },
+            child: const Text("Pick up"),
+          ),
         ),
       ),
     );

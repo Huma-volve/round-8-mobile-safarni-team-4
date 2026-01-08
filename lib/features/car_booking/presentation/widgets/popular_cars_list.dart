@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import '../../../../core/constants/assets_paths.dart';
+import '../../../../core/routing/app_routes.dart';
 import 'car_card.dart';
 
 class PopularCarsList extends StatefulWidget {
@@ -42,7 +43,8 @@ class _PopularCarsListState extends State<PopularCarsList> {
       physics: const NeverScrollableScrollPhysics(),
       itemCount: cars.length,
       separatorBuilder: (context, index) => context.gapH(8),
-      itemBuilder: (context, index) => CarCard(model: cars[index]),
+      itemBuilder:
+          (context, index) => CarCard(model: cars[index]),
     );
   }
 }
