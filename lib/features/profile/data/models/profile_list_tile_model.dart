@@ -25,7 +25,7 @@ class ProfileListTileModel {
     ProfileListTileModel(
       title: 'My Booking',
       iconPath: AssetsPaths.myBookingIcon,
-      routeName: AppRoutes.myBooking,
+      routeName: AppRoutes.myBookingView,
     ),
     ProfileListTileModel(
       title: 'App Language',

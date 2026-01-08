@@ -26,11 +26,11 @@ class SectionSearchBar extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: 'Search ...',
                 hintStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
-                prefixIcon: Icon(Icons.search, color: Colors.grey, size: 20),
+                prefixIcon: const Icon(Icons.search, color: Colors.grey, size: 20),
                 filled: true,
                 fillColor: Colors.white,
                 // إزالة الشادو والحدود الخارجية ليكون بسيط
-                contentPadding: EdgeInsets.symmetric(vertical: 0), // عشان يظبط الكلام في النص مع الطول الصغير
+                contentPadding: const EdgeInsets.symmetric(vertical: 0), // عشان يظبط الكلام في النص مع الطول الصغير
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: Colors.grey.withOpacity(0.3)),
@@ -43,7 +43,7 @@ class SectionSearchBar extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
 
         // زرار الفلتر بنفس الطول
         Container(

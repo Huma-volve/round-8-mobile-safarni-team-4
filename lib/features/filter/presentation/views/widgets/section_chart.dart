@@ -1,14 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 // 1. أضف اسم مستعار لمكتبة السلايدرز
 import 'package:syncfusion_flutter_sliders/sliders.dart' as sf_sliders;
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 import '../../../data/model/chart_data.dart';
@@ -21,7 +17,7 @@ class SectionChart extends StatefulWidget {
 }
 
 class _FilterViewBodyState extends State<SectionChart> {
-  SfRangeValues _values = SfRangeValues(2000.0, 6000.0);
+  SfRangeValues _values = const SfRangeValues(2000.0, 6000.0);
 
   // بيانات وهمية للرسم البياني (تعبر عن توفر الأماكن في كل سعر)
 
@@ -38,7 +34,7 @@ class _FilterViewBodyState extends State<SectionChart> {
 
         // الجزء الخاص بالـ Range Selector مع الرسم البياني
         sf_sliders.SfRangeSelector(
-          activeColor: Color(0xff3F83F8),
+          activeColor: const Color(0xff3F83F8),
           inactiveColor: Colors.transparent,
 
           min: 0.0,

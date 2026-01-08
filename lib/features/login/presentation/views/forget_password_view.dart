@@ -19,9 +19,9 @@ class ForgetPasswordView extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               context.gapH(40),
-              ForgetPasswordViewHeaderSec(),
+              const ForgetPasswordViewHeaderSec(),
               context.gapH(36),
-              ForgetPasswordFormFieldSection(),
+              const ForgetPasswordFormFieldSection(),
               context.gapH(16),
               CustomButton(
                 buttonName: 'Reset Password', 

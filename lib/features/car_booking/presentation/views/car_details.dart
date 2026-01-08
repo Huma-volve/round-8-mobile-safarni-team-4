@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
-import 'package:round_8_mobile_safarni_team4/features/car_booking/presentation/widgets/popular_cars_list.dart';
 import '../../../../core/colors/app_colors.dart';
 import '../widgets/car_details_image_gallery.dart';
 import '../widgets/car_details_location.dart';
@@ -59,7 +57,7 @@ class CarDetailsView extends StatelessWidget {
                 arguments: model,
               );
             },
-            child: Text("Pick up"),
+            child: const Text("Pick up"),
           ),
         ),
       ),

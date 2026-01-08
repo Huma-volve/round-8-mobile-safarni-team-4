@@ -36,7 +36,7 @@ class _PaymentSelectorState extends State<PaymentSelector> {
               paymentSelectorModel: widget.paymentSelectorModels[index],
             ),
           ),
-      separatorBuilder: (context, index) => SizedBox(width: 8),
+      separatorBuilder: (context, index) => const SizedBox(width: 8),
       itemCount: widget.paymentSelectorModels.length,
     );
   }

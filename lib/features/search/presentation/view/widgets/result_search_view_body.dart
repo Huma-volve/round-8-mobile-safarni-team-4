@@ -12,12 +12,12 @@ class ResultSearchViewBody extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         children: [
-          SectionNumOfResult(),
+          const SectionNumOfResult(),
          Expanded(
            child: ListView.builder(
              itemCount: 5,
              itemBuilder: (context, index) {
-                return CustomSearchItem();
+                return const CustomSearchItem();
               }
             ),
          ),

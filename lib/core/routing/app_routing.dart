@@ -7,13 +7,14 @@ import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/l
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/set_new_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/success_reset_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/verify_code_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/my_booking_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/personal_info_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/profile_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/search/presentation/view/result_search.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/sign_up_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views/welcome_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
+import '../../features/bottom_nav_bar/presentation/views/bottom_nav_bar.dart';
 import '../../features/car_booking/presentation/views/car_booking.dart';
 import '../../features/car_booking/presentation/views/car_details.dart';
 import '../../features/car_booking/presentation/views/pick_up_details.dart';
@@ -34,7 +35,7 @@ abstract class AppRouter {
     try {
       switch (name) {
         case AppRoutes.home:
-          return MaterialPageRoute(builder: (context) => HomeView());
+          return MaterialPageRoute(builder: (context) => const BottomNavBar());
 
         // case AppRoutes.onboardingView:
         //   return MaterialPageRoute(
@@ -132,6 +133,7 @@ abstract class AppRouter {
           );
 
         //FilterView
+        //FilterView
         case AppRoutes.FilterView:
           return MaterialPageRoute(builder: (context) => const FilterView());
 
@@ -145,6 +147,10 @@ abstract class AppRouter {
           return MaterialPageRoute(
             builder: (context) => const SearchTourView(),
           );
+          return MaterialPageRoute(builder: (context) => const FilterView());
+        case AppRoutes.myBookingView:
+          return MaterialPageRoute(builder: (context) => const MyBookingView());
+
         default:
           return _errorRoute();
       }

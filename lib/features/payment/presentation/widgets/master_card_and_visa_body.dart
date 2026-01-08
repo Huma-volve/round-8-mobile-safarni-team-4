@@ -6,7 +6,6 @@ class MasterCardAndVisaBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -19,7 +18,7 @@ class MasterCardAndVisaBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          TextField(decoration: InputDecoration(hintText: 'Your full name')),
+          const TextField(decoration: InputDecoration(hintText: 'Your full name')),
           const SizedBox(height: 16),
           Text(
             'Your Email',
@@ -29,7 +28,7 @@ class MasterCardAndVisaBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          TextField(decoration: InputDecoration(hintText: 'Type your email')),
+          const TextField(decoration: InputDecoration(hintText: 'Type your email')),
           const SizedBox(height: 16),
           Row(
             spacing: 8,
@@ -46,7 +45,7 @@ class MasterCardAndVisaBody extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    TextField(
+                    const TextField(
                       decoration: InputDecoration(
                         hintText: '12-24',
 
@@ -68,7 +67,7 @@ class MasterCardAndVisaBody extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    TextField(
+                    const TextField(
                       decoration: InputDecoration(
                         hintText: '562',
                         suffixIcon: Icon(Icons.lock, size: 14),

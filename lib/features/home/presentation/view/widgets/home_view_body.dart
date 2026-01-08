@@ -16,26 +16,26 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
       child: ListView(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              SectionWelcome(),
-              SizedBox(height: 24,),
-              SectionSearchBar(),
-              SizedBox(height: 32,),
+              const SectionWelcome(),
+              const SizedBox(height: 24,),
+              const SectionSearchBar(),
+              const SizedBox(height: 32,),
             Center(
               child: Image.asset('assets/images/travel.png',
                 fit: BoxFit.fill,
-                // width: MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
               ),
             ),
 
 
-              customSideTitile(
+              const customSideTitile(
                 title: "Category",
                 viewAll: false,
               ),
@@ -60,7 +60,7 @@ class HomeViewBody extends StatelessWidget {
                     vertical: 16.h
                     ),
                   itemBuilder: (context,index) {
-                   return customRecomendeItem();
+                   return const customRecomendeItem();
                   }
                 ),
               ),
@@ -71,10 +71,10 @@ class HomeViewBody extends StatelessWidget {
 
               ),
               ListView.builder(
-                shrinkWrap: true, // مهم جداً: بيخلي الليستة تاخد حجم العناصر فقط
-                physics: const NeverScrollableScrollPhysics(), // بيخلي السكرول تابع للصفحة الكبيرة
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: 5, // عدد التورز اللي عندك
-                padding: EdgeInsets.zero, // عشان ميحصلش مسافات إضافية مش مرغوبة
+
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: EdgeInsets.only(bottom: 16.h), // مسافة بين كل تور والتانية
@@ -82,7 +82,8 @@ class HomeViewBody extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 40,),
+              const SizedBox(height: 40,),
+
             ],
           ),
         ],

@@ -25,4 +25,6 @@ abstract class AppRoutes {
   static const String carBooking = '/carBooking';
   static const String carDetails = '/carDetails';
   static const String pickUpDetails = '/pickUpDetails';
+  static const mainLayout = '/mainLayout';
+  static const String myBookingView = '/myBooking';
 }

@@ -17,7 +17,7 @@ class BoardingPassView extends StatelessWidget {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: Text('Boarding Pass'),
+        title: const Text('Boarding Pass'),
       ),
       body: SafeArea(
         child: Column(
@@ -26,7 +26,7 @@ class BoardingPassView extends StatelessWidget {
             Container(
               margin: EdgeInsets.all(context.sp(24)),
                 width: double.infinity,
-                child: FilledButton(onPressed: () {}, child: Text('Check out'))),
+                child: FilledButton(onPressed: () {}, child: const Text('Check out'))),
           ],
         ),
       ),

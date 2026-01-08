@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import '../../../../core/constants/assets_paths.dart';
 
 class CarHeroBanner extends StatelessWidget {

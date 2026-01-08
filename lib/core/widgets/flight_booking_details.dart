@@ -10,9 +10,9 @@ class FlightBookingDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        BoardingPassHeader(),
+        const BoardingPassHeader(),
         SizedBox(height: context.h(16)),
-        RouteInfo(),
+        const RouteInfo(),
         SizedBox(height: context.h(16)),
         Divider(
           height: 0,
@@ -20,7 +20,7 @@ class FlightBookingDetails extends StatelessWidget {
           thickness: 1,
         ),
         SizedBox(height: context.h(16)),
-        FlightDetails(),
+        const FlightDetails(),
       ],
     );
   }

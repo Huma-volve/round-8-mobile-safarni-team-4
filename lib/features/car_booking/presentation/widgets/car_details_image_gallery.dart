@@ -99,15 +99,15 @@ class CarDetailsImageGallery extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.arrow_left,
                       size: 18,
                       color: Color(0xFF05162C),
                     ),
-                    const Icon(
+                    Icon(
                       Icons.arrow_right,
                       size: 18,
                       color: Color(0xFF05162C),

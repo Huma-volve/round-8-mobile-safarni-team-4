@@ -27,7 +27,7 @@ class _SeatSelectionViewState extends State<SeatSelectionView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('choose Seats'),
+        title: const Text('choose Seats'),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {

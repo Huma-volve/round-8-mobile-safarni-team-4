@@ -11,7 +11,7 @@ class HotelViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: CustomHotelHeader()),
+        const SliverToBoxAdapter(child: CustomHotelHeader()),
         SliverToBoxAdapter(child:  CustomTextHeader(
             title: 'Recommended Hotels',
             textButton: 'See All',
@@ -19,8 +19,8 @@ class HotelViewBody extends StatelessWidget {
               // Get.toNamed('/all-hotels');
             },
           ),),
-        SliverToBoxAdapter(child: ListHotelRecommendation(),),
-        SliverFillRemaining(child: NearbyHotel()),
+        const SliverToBoxAdapter(child: ListHotelRecommendation(),),
+        const SliverFillRemaining(child: NearbyHotel()),
       ],
     );
   }

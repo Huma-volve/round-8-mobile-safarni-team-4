@@ -7,7 +7,7 @@ class InitialBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    Theme.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.end,
@@ -22,7 +22,7 @@ class InitialBody extends StatelessWidget {
         ),
         GestureDetector(
             onTap: (){},
-            child: Icon(Icons.add_circle_outline)),
+            child: const Icon(Icons.add_circle_outline)),
       ],
     );
   }

@@ -41,7 +41,7 @@ class _SearchViewState extends State<SearchTour> {
         children: [
           // شكل الـ Search Bar
           TextField(
-            style: TextStyle(fontSize: 20),
+            style: const TextStyle(fontSize: 20),
             onChanged: (value) => updateSearch(value),
             decoration: InputDecoration(
               hintText: "Search cities...",
@@ -52,11 +52,11 @@ class _SearchViewState extends State<SearchTour> {
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: Color(0xff3F83F8)),
+                borderSide: const BorderSide(color: Color(0xff3F83F8)),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(width: 2, color: Color(0xff3F83F8)),
+                borderSide: const BorderSide(width: 2, color: Color(0xff3F83F8)),
               ),
             ),
           ),
@@ -70,7 +70,7 @@ class _SearchViewState extends State<SearchTour> {
                   onTap: () {
                     context.pushNamed(AppRoutes.DestinationView);
                   },
-                  child: cutomToursItem(),
+                  child: const cutomToursItem(),
                 );
               },
             ),

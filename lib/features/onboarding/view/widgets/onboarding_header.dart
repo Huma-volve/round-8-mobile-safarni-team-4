@@ -29,7 +29,7 @@ class OnboardingHeader extends StatelessWidget {
               fontWeight: FontWeight.w700,
             ),
           ),
-          Spacer(),
+          const Spacer(),
           if (!isLastPage)
             Row(
               children: [
