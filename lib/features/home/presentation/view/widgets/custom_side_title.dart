@@ -37,7 +37,7 @@ class customSideTitile extends StatelessWidget {
               color: AppColors.mainColorLight[80]
             ),
             ),
-          ):Text('')
+          ):const Text('')
         ],
       ),
     );

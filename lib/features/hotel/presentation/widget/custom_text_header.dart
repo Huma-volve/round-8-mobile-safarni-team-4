@@ -21,7 +21,7 @@ class CustomTextHeader extends StatelessWidget {
           title,
           style: AppThemes.light.textTheme.titleMedium!.copyWith(fontSize: 18),
         ),
-        Expanded(child: SizedBox()),
+        const Expanded(child: SizedBox()),
         TextButton(onPressed: onPressed, child: Text(textButton)),
       ],
     );

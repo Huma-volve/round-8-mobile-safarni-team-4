@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
@@ -13,7 +12,7 @@ class CusotmBottomBarDest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(color: Colors.white, border: Border(top: BorderSide(color: Colors.grey.shade200))),
         child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,8 +48,8 @@ class CusotmBottomBarDest extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF1E429F),
-                  padding: EdgeInsets.symmetric(horizontal: 45, vertical: 16),
+                  backgroundColor: const Color(0xFF1E429F),
+                  padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 16),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                 ),
                 child: Text("Book Now",

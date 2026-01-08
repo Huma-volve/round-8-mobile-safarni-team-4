@@ -6,6 +6,6 @@ class HotelView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: const HotelViewBody());
+    return const Scaffold(body: HotelViewBody());
   }
 }

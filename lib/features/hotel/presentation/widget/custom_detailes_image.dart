@@ -19,8 +19,8 @@ class CustomDetailesImage extends StatelessWidget {
             ), // constraints: BoxConstraints(minWidth: 20, minHeight: 20),
           ],
         ),
-        Positioned(top: 64, left: 16, child: CustomArrawBack()),
-        Positioned(
+        const Positioned(top: 64, left: 16, child: CustomArrawBack()),
+        const Positioned(
           top: 220,
           left: 16,
           right: 16,

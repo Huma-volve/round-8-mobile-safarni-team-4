@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/widgets/section_chart.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/widgets/section_search_location.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/widgets/section_sort_by.dart';
@@ -23,17 +22,17 @@ class FilterViewBody extends StatelessWidget {
               title: "Sort By",
                 isMultiSelection: false,
               ),
-                customLine(),
-              SectionChart(),
-                customLine(),
-                SizedBox(height:20 ,),
+                const customLine(),
+              const SectionChart(),
+                const customLine(),
+                const SizedBox(height:20 ,),
                 SectionSortBy(sortOptions: AdevStyle,
                 title: 'Adventure Style',
                   sidTitle: 'Multi Select',
                 ),
-                customLine(),
-                LocationSearchWidget(),
-                customLine(),
+                const customLine(),
+                const LocationSearchWidget(),
+                const customLine(),
                 SectionSortBy(sortOptions: Rating,
                   title: 'Rating',
                   sidTitle: 'Multi Select',

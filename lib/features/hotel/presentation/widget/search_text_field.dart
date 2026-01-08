@@ -15,7 +15,7 @@ class SearchTextField extends StatelessWidget {
       onTapOutside: (event) {
         FocusScope.of(context).unfocus();
       },
-      cursorColor: Color(0xff1C64F2),
+      cursorColor: const Color(0xff1C64F2),
       style: TextStyle(
         color: Colors.grey[500],
         fontSize: 16,
@@ -24,15 +24,15 @@ class SearchTextField extends StatelessWidget {
       decoration: InputDecoration(
         filled: true,
         fillColor: Colors.transparent,
-        constraints: BoxConstraints(maxHeight: 48),
+        constraints: const BoxConstraints(maxHeight: 48),
         prefixIcon: Icon(
           Icons.search,
-          color: isFocused ? Color(0xff1C64F2) : Colors.grey[400],
+          color: isFocused ? const Color(0xff1C64F2) : Colors.grey[400],
         ),
         hintText: 'Search for hotels',
         hintStyle: TextStyle(color: Colors.grey[400]),
         border: _buildBorder(Colors.grey[400]),
-        focusedBorder: _buildBorder(Color(0xff3F83F8)),
+        focusedBorder: _buildBorder(const Color(0xff3F83F8)),
         enabledBorder: _buildBorder(Colors.grey[400]),
       ),
     );
@@ -41,7 +41,7 @@ class SearchTextField extends StatelessWidget {
   OutlineInputBorder _buildBorder(Color? color) {
     return OutlineInputBorder(
       borderSide: BorderSide(color: color ?? Colors.grey[400]!),
-      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
     );
   }
 }

@@ -11,15 +11,15 @@ class FlightBookingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      body: Column(
+      body: const Column(
         spacing: 14,
         children: [
           Expanded(
             flex: 5,
-            child: const FlightBookingHeader(title: 'Book Your Flight'),
+            child: FlightBookingHeader(title: 'Book Your Flight'),
           ),
-          Expanded(child: const TripTypeSelector()),
-          Expanded(flex: 12, child: const FlightBookingForm()),
+          Expanded(child: TripTypeSelector()),
+          Expanded(flex: 12, child: FlightBookingForm()),
         ],
       ),
     );

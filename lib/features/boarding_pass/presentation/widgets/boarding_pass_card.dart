@@ -11,7 +11,7 @@ class BoardingPassCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 24),
+      margin: const EdgeInsets.symmetric(horizontal: 24),
       padding: EdgeInsets.symmetric(
         horizontal: context.w(36),
         vertical: context.h(24),
@@ -24,7 +24,7 @@ class BoardingPassCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          FlightBookingDetails(),
+          const FlightBookingDetails(),
           SizedBox(height: context.h(16)),
           Divider(
             height: 0,
@@ -32,10 +32,10 @@ class BoardingPassCard extends StatelessWidget {
             thickness: 1,
           ),
           SizedBox(height: context.h(16)),
-          PassengerRow(),
+          const PassengerRow(),
           Padding(
             padding: EdgeInsets.symmetric(vertical: context.h(16)),
-            child: DashedLine(),
+            child: const DashedLine(),
           ),
           Expanded(child: Image.asset(AssetsPaths.qrImage)),
         ],
@@ -73,7 +73,7 @@ class PassengerRow extends StatelessWidget {
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         Row(
           spacing: 8,
           children: [
@@ -133,7 +133,7 @@ class BoardingPassHeader extends StatelessWidget {
             ),
           ],
         ),
-        Spacer(),
+        const Spacer(),
         Text(
           'December 16h, 2022',
           style: context.textTheme.titleSmall?.copyWith(
@@ -217,7 +217,7 @@ class FlightDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         BuildInfoItem(value: '9', label: 'Gate'),

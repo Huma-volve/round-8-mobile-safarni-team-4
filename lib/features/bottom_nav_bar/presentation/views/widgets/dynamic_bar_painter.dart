@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DynamicBarPainter extends CustomPainter {
@@ -44,7 +43,7 @@ class DynamicBarPainter extends CustomPainter {
     path.lineTo(0, size.height);
 
     path.lineTo(0, top + 20);
-    path.arcToPoint(Offset(20, top), radius: const Radius.circular(15));
+    path.arcToPoint(const Offset(20, top), radius: const Radius.circular(15));
     path.close();
 
     canvas.save();

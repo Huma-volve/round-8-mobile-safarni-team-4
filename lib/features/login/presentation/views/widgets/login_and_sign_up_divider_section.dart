@@ -11,7 +11,7 @@ class LoginAndSignUpDividerSection extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: context.w(30)),
       child: Row(
         children: [
-          Expanded(child: Divider(color: Colors.grey, thickness: 2)),
+          const Expanded(child: Divider(color: Colors.grey, thickness: 2)),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: context.w(8)),
             child: Text(
@@ -19,7 +19,7 @@ class LoginAndSignUpDividerSection extends StatelessWidget {
               style: AppTextStyles.font13Blackw600(context),
             ),
           ),
-          Expanded(child: Divider(color: Colors.grey, thickness: 2)),
+          const Expanded(child: Divider(color: Colors.grey, thickness: 2)),
         ],
       ),
     );

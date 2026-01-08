@@ -9,9 +9,9 @@ class LoginSocialSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        CustomFaceGoogleContainer(isGoogle: true, title: 'Sign in with Google'),
+        const CustomFaceGoogleContainer(isGoogle: true, title: 'Sign in with Google'),
         context.gapH(16),
-        CustomFaceGoogleContainer(isGoogle: false, title: 'Sign in with Facebook'),
+        const CustomFaceGoogleContainer(isGoogle: false, title: 'Sign in with Facebook'),
       ],
     );
   }
