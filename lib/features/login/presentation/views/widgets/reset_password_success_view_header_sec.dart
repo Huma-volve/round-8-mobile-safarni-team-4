@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/constants/assets_paths.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 
 class ResetPasswordSuccessViewHeaderSec extends StatelessWidget {
@@ -20,17 +20,15 @@ class ResetPasswordSuccessViewHeaderSec extends StatelessWidget {
         context.gapH(24),
         Text(
           'Password Reset',
-          style: context.textTheme.displayLarge?.copyWith(
-            fontSize: context.sp(18),
-          ),
+          style: AppTextStyles.font18grayColor100SemiBold(context),
         ),
         context.gapH(8),
         Text(
           'Your Password Has Been Successfully Reset Click Below To Log In Magically.',
           textAlign: TextAlign.center,
-          style: AppTextStyles.font14Black90w600(
+          style: AppTextStyles.font14grayColor70Regular(
             context,
-          ).copyWith(fontWeight: FontWeight.w400),
+          ).copyWith(color: AppColors.grayColor[60]),
         ),
       ],
     );

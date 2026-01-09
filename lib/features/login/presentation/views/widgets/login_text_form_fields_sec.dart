@@ -9,38 +9,40 @@ class LoginTextFormFieldsSec extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const CustomLabelText(labelText: 'Email'),
-        context.gapH(4),
-        CustomTextFormField(
-          hintText: 'kneeDue@untitledui.com',
-          prefixIcon: Icons.email_outlined,
-          validator: (value) {
-            if (value == null ||
-                value.isEmpty ||
-                !AppRegex.isEmailValid(value)) {
-              return 'Please enter a valid email';
-            }
-            return null;
-          },
-        ),
-        context.gapH(16),
-        const CustomLabelText(labelText: 'Password'),
-        context.gapH(4),
-        CustomTextFormField(
-          hintText: '***********',
-          isObscureText: true,
-          prefixIcon: Icons.lock_outline,
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter a valid password';
-            }
-            return null;
-          },
-        ),
-      ],
+    return Form(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const CustomLabelText(labelText: 'Email'),
+          context.gapH(4),
+          CustomTextFormField(
+            hintText: 'kneeDue@untitledui.com',
+            prefixIcon: Icons.email_outlined,
+            validator: (value) {
+              if (value == null ||
+                  value.isEmpty ||
+                  !AppRegex.isEmailValid(value)) {
+                return 'Please enter a valid email';
+              }
+              return null;
+            },
+          ),
+          context.gapH(16),
+          const CustomLabelText(labelText: 'Password'),
+          context.gapH(4),
+          CustomTextFormField(
+            hintText: '***********',
+            isObscureText: true,
+            prefixIcon: Icons.lock_outline,
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter a valid password';
+              }
+              return null;
+            },
+          ),
+        ],
+      ),
     );
   }
 }

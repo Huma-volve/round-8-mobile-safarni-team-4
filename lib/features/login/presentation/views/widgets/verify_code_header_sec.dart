@@ -33,17 +33,22 @@ class VerifyCodeViewHeaderSec extends StatelessWidget {
           height: context.h(15),
         ),
         context.gapH(24),
-        Text('Verify Code', style: AppTextStyles.font18Blackw600(context)),
+        Text(
+          'Verify Code',
+          style: AppTextStyles.font18grayColor100SemiBold(context),
+        ),
         context.gapH(16),
         Text(
           'Please enter the code we just sent to email',
-          style: AppTextStyles.font14Black90w600(
+          style: AppTextStyles.font14grayColor70Regular(
             context,
-          ).copyWith(fontWeight: FontWeight.w400),
+          ).copyWith(color: AppColors.grayColor[60]),
         ),
         Text(
           'kneedue@untitledui.com',
-          style: AppTextStyles.font14Black90w600(context),
+          style: AppTextStyles.font14grayColor70Regular(
+            context,
+          ).copyWith(color: AppColors.grayColor[100]),
         ),
         context.gapH(30),
         Text('00:30', style: context.textTheme.titleLarge),

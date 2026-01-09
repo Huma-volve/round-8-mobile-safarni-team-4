@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 
@@ -16,7 +17,9 @@ class SignUpWelcomeTitleSection extends StatelessWidget {
         context.gapH(8),
         Text(
           'Welcome back! please Fill Your data',
-          style: AppTextStyles.font14grayColor70Regular(context),
+          style: AppTextStyles.font14grayColor70Regular(
+            context,
+          ).copyWith(color: AppColors.grayColor[60]),
         ),
       ],
     );

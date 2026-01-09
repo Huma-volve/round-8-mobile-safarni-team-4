@@ -42,6 +42,7 @@ class AppTextStyles {
         fontSize: context.sp(14),
         fontWeight: FontWeightHelper.regular,
       );
+
   static TextStyle font18Blackw600(BuildContext context) => context
       .textTheme
       .displayLarge!

@@ -20,7 +20,7 @@ class SuccessResetPasswordView extends StatelessWidget {
               const ResetPasswordSuccessViewHeaderSec(),
               context.gapH(16),
               CustomButton(
-                buttonName: 'Login',
+                buttonName: 'Log In',
                 onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(
                     context,

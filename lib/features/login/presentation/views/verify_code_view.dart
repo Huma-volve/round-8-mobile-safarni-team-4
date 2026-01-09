@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/font_weight_helper.dart';
 import 'package:round_8_mobile_safarni_team4/core/widgets/custom_button.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/verify_code_header_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/verify_code_view_otp_fields_sec.dart';
@@ -28,13 +30,16 @@ class VerifyCodeView extends StatelessWidget {
                 children: [
                   Text(
                     'OTP not receive ? ',
-                    style: AppTextStyles.font14Black90w600(
-                      context,
-                    ).copyWith(fontWeight: FontWeight.w500),
+                    style: AppTextStyles.font14grayColor70Regular(context),
                   ),
                   Text(
                     ' Send Again',
-                    style: AppTextStyles.font14MainColorLightw600(context),
+                    style: AppTextStyles.font14grayColor70Regular(
+                      context,
+                    ).copyWith(
+                      color: AppColors.mainColorLight,
+                      fontWeight: FontWeightHelper.bold,
+                    ),
                   ),
                 ],
               ),
