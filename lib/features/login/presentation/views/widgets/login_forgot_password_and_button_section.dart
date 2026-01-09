@@ -20,7 +20,7 @@ class LoginForgotPasswordAndButtonSection extends StatelessWidget {
             },
             child: Text(
               'Forgot Password ?',
-              style: AppTextStyles.font13Blackw600(context),
+              style: AppTextStyles.font13Gray80SemiBold(context),
             ),
           ),
         ),

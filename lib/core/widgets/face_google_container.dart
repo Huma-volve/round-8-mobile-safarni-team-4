@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/font_weight_helper.dart';
 
 class CustomFaceGoogleContainer extends StatelessWidget {
   const CustomFaceGoogleContainer({
     super.key,
     required this.isGoogle,
-    this.onTap, required this.title,
+    this.onTap,
+    required this.title,
   });
 
   final bool isGoogle;
@@ -40,11 +41,9 @@ class CustomFaceGoogleContainer extends StatelessWidget {
             context.gapW(10),
             Text(
               title,
-              style: AppThemes.light.textTheme.displayMedium?.copyWith(
-                color: AppColors.black[80],
-                fontSize: context.sp(14),
-                fontWeight: FontWeight.w600,
-              ),
+              style: AppTextStyles.font14grayColor70Regular(
+                context,
+              ).copyWith(fontWeight: FontWeightHelper.semiBold),
             ),
           ],
         ),

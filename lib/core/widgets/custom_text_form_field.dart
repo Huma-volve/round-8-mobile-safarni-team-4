@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 
 class CustomTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
@@ -55,10 +55,10 @@ class CustomTextFormField extends StatelessWidget {
             ),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(4),
-          borderSide: const BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: AppColors.grayColor[50]!),
         ),
         border: OutlineInputBorder(
-          borderSide: const BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: AppColors.grayColor[50]!),
           borderRadius: BorderRadius.circular(4.0),
         ),
         focusedBorder:
@@ -70,7 +70,7 @@ class CustomTextFormField extends StatelessWidget {
         enabledBorder:
             enabledBorder ??
             OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.grey),
+              borderSide: BorderSide(color: AppColors.grayColor[50]!),
               borderRadius: BorderRadius.circular(4.0),
             ),
         errorBorder: OutlineInputBorder(
@@ -83,14 +83,29 @@ class CustomTextFormField extends StatelessWidget {
         ),
         hintStyle:
             hintStyle ??
-            context.textTheme.displayMedium?.copyWith(color: Colors.grey),
+            AppTextStyles.font14grayColor70Regular(
+              context,
+            ).copyWith(color: AppColors.grayColor[60]),
         hintText: hintText,
         suffixIcon:
             suffixIcon != null
-                ? GestureDetector(onTap: suffixIconTap, child: Icon(suffixIcon))
+                ? GestureDetector(
+                  onTap: suffixIconTap,
+                  child: Icon(
+                    suffixIcon,
+                    size: context.sp(20),
+                    color: AppColors.grayColor[50],
+                  ),
+                )
                 : null,
         prefixIcon:
-            prefixIcon != null ? Icon(prefixIcon, color: Colors.grey) : null,
+            prefixIcon != null
+                ? Icon(
+                  prefixIcon,
+                  size: context.sp(20),
+                  color: AppColors.grayColor[50],
+                )
+                : null,
         fillColor: backgroundColor ?? AppColors.white,
         filled: true,
       ),
