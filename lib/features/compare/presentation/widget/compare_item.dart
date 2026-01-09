@@ -17,7 +17,7 @@ class CompareItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(comparModel.image, width: 100, height: 100),
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

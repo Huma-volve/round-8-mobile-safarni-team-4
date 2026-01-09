@@ -24,7 +24,7 @@ class _CheckInAndOutBodyState extends State<CheckInAndOutBody> {
             width: double.infinity,
             fit: BoxFit.cover,
           ),
-          Positioned(top: 70, left: 20, child: CustomArrawBack()),
+          const Positioned(top: 70, left: 20, child: CustomArrawBack()),
 
           /// 🔹 Bottom Sheet
           Positioned(
@@ -32,7 +32,7 @@ class _CheckInAndOutBodyState extends State<CheckInAndOutBody> {
             left: 0,
             right: 0,
             bottom: 0, // This forces the container to stretch to the bottom
-            child: ReviewBottomSheet(),
+            child: const ReviewBottomSheet(),
           ),
         ],
       ),

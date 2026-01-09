@@ -50,7 +50,7 @@ class _CustomTabSectionState extends State<CustomTabSection> {
             GallerySection(),
 
             // Review Tab
-            const ReviewSection(),
+            ReviewSection(),
           ],
         ),
       ],

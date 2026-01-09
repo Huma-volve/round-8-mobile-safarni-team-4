@@ -63,7 +63,7 @@ class CategoryItem extends StatelessWidget {
         break;
       case 'Hotel':
 
-       Navigator.push(context, MaterialPageRoute(builder: (context) => HotelView()));
+       Navigator.push(context, MaterialPageRoute(builder: (context) => const HotelView()));
         break;
       default:
 

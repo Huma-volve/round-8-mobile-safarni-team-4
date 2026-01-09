@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -43,11 +43,9 @@ class CustomButton extends StatelessWidget {
             buttonName,
             style:
                 style ??
-                context.textTheme.titleLarge?.copyWith(
-                  color: Colors.white,
-                  fontSize: context.sp(16),
-                  fontWeight: FontWeight.w600,
-                ),
+                AppTextStyles.font16mainColorLightSemiBold(
+                  context,
+                ).copyWith(color: Colors.white),
           ),
         ),
       ),

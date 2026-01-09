@@ -17,7 +17,7 @@ class HotelRecommendation extends StatelessWidget {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => AvailableRoom(
+            builder: (context) => const AvailableRoom(
              
             ),
           ),
@@ -59,7 +59,7 @@ class HotelRecommendation extends StatelessWidget {
                 ),
               ),
             ),
-            FittedBox(child: CustomLocation()),
+            const FittedBox(child: CustomLocation()),
           ],
         ),
       ),

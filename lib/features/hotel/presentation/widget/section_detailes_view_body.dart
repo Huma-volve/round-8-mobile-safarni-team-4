@@ -15,10 +15,10 @@ class SectionDetailesViewBody extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomDiscountAndReview(),
+              const CustomDiscountAndReview(),
               Text("room_1", style: AppThemes.light.textTheme.titleLarge),
-              SizedBox(height: 4),
-              Text(
+              const SizedBox(height: 4),
+              const Text(
                 "1012 oscean avanue, New Yourk ,USA",
                 style: TextStyle(
                   fontSize: 13,

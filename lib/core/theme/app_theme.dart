@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import '../colors/app_colors.dart';
 
 abstract class AppThemes {
@@ -74,6 +75,7 @@ abstract class AppThemes {
         fontWeight: FontWeight.w400,
       ),
     ),
+    fontFamily: GoogleFonts.poppins().fontFamily,
     colorScheme: ColorScheme(
       brightness: Brightness.light,
       primary: AppColors.mainColorLight,

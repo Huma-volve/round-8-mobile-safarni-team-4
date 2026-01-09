@@ -20,10 +20,10 @@ class BottomPriceBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Column(
+          const Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+            children: [
               Text("Total price"),
               SizedBox(height: 8),
               Text(
@@ -40,7 +40,7 @@ class BottomPriceBar extends StatelessWidget {
           const Expanded(child: SizedBox()),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xff1E429F),
+              backgroundColor: const Color(0xff1E429F),
               fixedSize: const Size(170, 50),
               //foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
@@ -55,7 +55,7 @@ class BottomPriceBar extends StatelessWidget {
                 ),
               );
             },
-            child: Text(
+            child: const Text(
               "Book Now",
               style: TextStyle(
                 color: Colors.white,

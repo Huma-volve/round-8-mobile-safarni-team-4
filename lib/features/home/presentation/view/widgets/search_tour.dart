@@ -70,9 +70,9 @@ class _SearchViewState extends State<SearchTour> {
                   onTap: () {
                     context.pushNamed(AppRoutes.DestinationView);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: const cutomToursItem(),
+                  child: const Padding(
+                    padding: EdgeInsets.only(bottom: 15),
+                    child: cutomToursItem(),
                   ),
                 );
               },

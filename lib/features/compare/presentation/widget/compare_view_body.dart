@@ -20,13 +20,13 @@ class CompareViewBody extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            icon: Icon(Icons.arrow_back_ios_new_outlined),
+            icon: const Icon(Icons.arrow_back_ios_new_outlined),
           ),
         ),
         SliverToBoxAdapter(child: SizedBox(height: 20.h)),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0),
             child: SearchTextField(),
           ),
         ),
@@ -42,8 +42,8 @@ class CompareViewBody extends StatelessWidget {
 
         SliverList(
           delegate: SliverChildBuilderDelegate(
-            (context, index) => Padding(
-              padding: const EdgeInsets.symmetric(
+            (context, index) => const Padding(
+              padding: EdgeInsets.symmetric(
                 horizontal: 16.0,
                 vertical: 8.0,
               ),

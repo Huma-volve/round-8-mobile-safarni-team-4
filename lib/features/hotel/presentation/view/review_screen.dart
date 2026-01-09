@@ -40,7 +40,7 @@ class _ReviewScreenBodyState extends State<ReviewScreenBody> {
             width: double.infinity,
             fit: BoxFit.cover,
           ),
-          Positioned(top: 70, left: 20, child: CustomArrawBack()),
+          const Positioned(top: 70, left: 20, child: CustomArrawBack()),
 
           /// 🔹 Bottom Sheet
           Positioned(
@@ -99,13 +99,13 @@ class _ReviewBottomSheet extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _RoomInfo(),
-                  SizedBox(height: 16),
-                  Divider(),
-                  _RatingSection(),
-                  SizedBox(height: 24),
-                  _ReviewInput(),
-                  SizedBox(height: 50),
+                  const _RoomInfo(),
+                  const SizedBox(height: 16),
+                  const Divider(),
+                  const _RatingSection(),
+                  const SizedBox(height: 24),
+                  const _ReviewInput(),
+                  const SizedBox(height: 50),
                   CustomButton(buttonName: "Submit", onPressed: () {}),
                 ],
               ),
@@ -166,7 +166,7 @@ class _RatingSection extends StatelessWidget {
           "Your Overall Rating Of This Product",
           style: AppThemes.light.textTheme.titleLarge!.copyWith(
             fontSize: 14,
-            color: Color(0xff6B7280),
+            color: const Color(0xff6B7280),
           ),
         ),
         const SizedBox(height: 8),

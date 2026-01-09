@@ -6,7 +6,7 @@ class CheckInAndOutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       //    backgroundColor: Colors.red,
       body: Stack(
         children: [
@@ -46,8 +46,8 @@ class BottomSheet extends StatelessWidget {
         children: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xff1E429F),
-              fixedSize: Size(270, 50),
+              backgroundColor: const Color(0xff1E429F),
+              fixedSize: const Size(270, 50),
               //foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -66,11 +66,11 @@ class BottomSheet extends StatelessWidget {
                 isScrollControlled: true,
                 context: context,
                 builder: (context) {
-                  return BottomSheetCheckOutList();
+                  return const BottomSheetCheckOutList();
                 },
               );
             },
-            child: Text(
+            child: const Text(
               "Continue",
               style: TextStyle(
                 color: Colors.white,
@@ -80,7 +80,7 @@ class BottomSheet extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -94,7 +94,7 @@ class BottomSheetCheckOutList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      children: List.generate(3, (index) => BottomSheetCheckOutItem()),
+      children: List.generate(3, (index) => const BottomSheetCheckOutItem()),
     );
   }
 }
@@ -120,7 +120,7 @@ class BottomSheetCheckOutItem extends StatelessWidget {
                 cackGroundIconColor: Colors.grey[100]!,
                 iconColor: Colors.black,
               ),
-              SizedBox(width: 5),
+              const SizedBox(width: 5),
               const Text(
                 "1",
                 style: TextStyle(
@@ -129,11 +129,11 @@ class BottomSheetCheckOutItem extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(width: 5),
+              const SizedBox(width: 5),
               CustomContainerIcon(
                 onPressed: () {},
                 icon: Icons.add,
-                cackGroundIconColor: Color(0xff1E429F),
+                cackGroundIconColor: const Color(0xff1E429F),
                 iconColor: Colors.white,
               ),
             ],
