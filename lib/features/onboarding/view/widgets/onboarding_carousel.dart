@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/model/onboarding_model.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -62,11 +62,7 @@ class OnboardingCarousel extends StatelessWidget {
               child: Text(
                 item.text,
                 textAlign: TextAlign.center,
-                style: context.textTheme.titleMedium?.copyWith(
-                  fontSize: context.sp(24),
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
-                ),
+                style: AppTextStyles.font24grayColor90SemiBold(context),
               ),
             ),
           ],

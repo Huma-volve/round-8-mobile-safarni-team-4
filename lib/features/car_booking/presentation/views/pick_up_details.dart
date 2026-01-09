@@ -14,7 +14,7 @@ class PickUpDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Pick Up')),
+      appBar: AppBar(title: const Text('Pick Up')),
       body: Center(
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -24,7 +24,7 @@ class PickUpDetailsView extends StatelessWidget {
               width: double.infinity,
             ),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 24),
+              margin: const EdgeInsets.symmetric(horizontal: 24),
               padding: const EdgeInsets.all(16),
               height: MediaQuery.of(context).size.height * 0.25,
               decoration: BoxDecoration(
@@ -81,7 +81,7 @@ class PickUpDetailsView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -108,7 +108,7 @@ class PickUpDetailsView extends StatelessWidget {
                       onPressed: () {
 
                       },
-                      child: Text('Confirm'),
+                      child: const Text('Confirm'),
                     ),
                   ),
                 ],

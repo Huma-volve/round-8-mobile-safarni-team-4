@@ -11,9 +11,11 @@ import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/personal_info_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/profile_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/search/presentation/view/result_search.dart';
+import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/sign_up_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views/welcome_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
+
+import '../../features/boarding_pass/presentation/views/boarding_pass_view.dart';
 import '../../features/bottom_nav_bar/presentation/views/bottom_nav_bar.dart';
 import '../../features/car_booking/presentation/views/car_booking.dart';
 import '../../features/car_booking/presentation/views/car_details.dart';
@@ -27,7 +29,6 @@ import '../../features/home/presentation/view/search_tour_view.dart';
 import '../../features/onboarding/view/onboarding_view.dart';
 import '../../features/payment/presentation/views/checkout_view.dart';
 import '../../features/payment/presentation/views/payment_success_view.dart';
-import '../../features/boarding_pass/presentation/views/boarding_pass_view.dart';
 import '../../features/search/presentation/view/search_view.dart';
 
 abstract class AppRouter {
@@ -153,11 +154,11 @@ abstract class AppRouter {
         case AppRoutes.myBookingView:
           return MaterialPageRoute(builder: (context) => const MyBookingView());
 
-          //CompareView
+        //CompareView
         case AppRoutes.CompareView:
           return MaterialPageRoute(builder: (context) => const CompareView());
 
-          //FavoriteView
+        //FavoriteView
         case AppRoutes.FavoriteView:
           return MaterialPageRoute(builder: (context) => const FavoriteView());
         default:

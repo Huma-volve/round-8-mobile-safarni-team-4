@@ -7,7 +7,6 @@ import 'package:round_8_mobile_safarni_team4/features/bottom_nav_bar/presentatio
 import 'package:round_8_mobile_safarni_team4/features/compare/presentation/view/compare_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/search/presentation/view/search_view.dart';
 // استورد باقي الشاشات هنا (Favorite و Compare إذا كانت موجودة)
 
 class BottomNavBar extends StatefulWidget {

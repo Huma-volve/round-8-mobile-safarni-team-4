@@ -12,7 +12,7 @@ class AvailableRoomItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => RoomDetailesView(
+            builder: (context) => const RoomDetailesView(
               
             ),
           ),
@@ -59,7 +59,7 @@ class AvailableRoomItem extends StatelessWidget {
                       text: '\$120',
                       style: AppThemes.light.textTheme.titleLarge!.copyWith(
                         fontSize: 12,
-                        color: Color(0xff1C64F2),
+                        color: const Color(0xff1C64F2),
                       ),
                     ),
                     TextSpan(

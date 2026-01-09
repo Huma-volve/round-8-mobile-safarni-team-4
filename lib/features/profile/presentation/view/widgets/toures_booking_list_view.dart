@@ -57,7 +57,7 @@ class TouresBookingListView extends StatelessWidget {
                       context.gapH(8),
                       Text(
                         'Eiffel Tower',
-                        style: AppTextStyles.font13Blackw600(
+                        style: AppTextStyles.font13Gray80SemiBold(
                           context,
                         ).copyWith(fontSize: context.sp(16)),
                       ),

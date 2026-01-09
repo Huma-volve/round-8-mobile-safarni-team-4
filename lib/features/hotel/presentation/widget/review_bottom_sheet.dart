@@ -28,23 +28,23 @@ class _ReviewBottomSheetState extends State<ReviewBottomSheet> {
           top: Radius.circular(32), // Increased for smoother look
         ),
       ),
-      child: Column(
+      child: const Column(
         // Removed SingleChildScrollView here to prevent layout collapse
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SheetHandle(),
-          const SizedBox(height: 20),
+          SheetHandle(),
+          SizedBox(height: 20),
 
-          const CustomDiscountAndReview(),
+          CustomDiscountAndReview(),
 
-          const SizedBox(height: 16),
+          SizedBox(height: 16),
           // Wrap the rest in Expanded + ScrollView if content is long
           Expanded(
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const RoomInfo(),
+                  RoomInfo(),
                   SizedBox(height: 16),
                   Divider(),
                   SizedBox(height: 16),

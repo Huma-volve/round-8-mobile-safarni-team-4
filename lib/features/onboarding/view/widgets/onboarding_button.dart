@@ -22,7 +22,7 @@ class OnboardingButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: context.w(16),
-        vertical: (context.w(24)),
+        vertical: context.w(24),
       ),
       child: CustomButton(
         onPressed: () {

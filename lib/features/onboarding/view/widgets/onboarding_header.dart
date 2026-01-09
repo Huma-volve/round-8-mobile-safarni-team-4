@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 import 'package:round_8_mobile_safarni_team4/features/onboarding/model/onboarding_model.dart';
+
 import '../../../../../core/colors/app_colors.dart';
 import '../../../../../core/routing/app_routes.dart';
 
@@ -23,11 +25,7 @@ class OnboardingHeader extends StatelessWidget {
         children: [
           Text(
             "Safarni",
-            style: context.textTheme.titleLarge?.copyWith(
-              color: AppColors.mainColorLight,
-              fontSize: context.sp(24),
-              fontWeight: FontWeight.w700,
-            ),
+            style: AppTextStyles.font24mainColorLightBold(context),
           ),
           const Spacer(),
           if (!isLastPage)
@@ -37,12 +35,9 @@ class OnboardingHeader extends StatelessWidget {
                   onTap: () {
                     context.pushNamed(AppRoutes.welcomeView);
                   },
-                  child: Text(
+                  child:  Text(
                     "Skip",
-                    style: context.textTheme.displayLarge?.copyWith(
-                      color: AppColors.mainColorLight,
-                      fontSize: context.sp(16),
-                    ),
+                    style: AppTextStyles.font16mainColorLightSemiBold(context),
                   ),
                 ),
                 context.gapW(8),

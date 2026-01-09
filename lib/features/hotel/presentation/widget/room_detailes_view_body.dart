@@ -7,13 +7,13 @@ class RoomDetailesViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return const Stack(
       children: [
         SingleChildScrollView(
           child: Column(
             children: [
               CustomDetailesImage(),
-              const SectionDetailesViewBody(),
+              SectionDetailesViewBody(),
             ],
           ),
         ),

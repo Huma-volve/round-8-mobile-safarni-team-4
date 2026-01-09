@@ -42,26 +42,26 @@ class ReviewHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children:  [
-        Text(
+        const Text(
           "Review",
           style: TextStyle(
             fontSize: 17,
             fontWeight: FontWeight.w500,
           ),
         ),
-        Spacer(),
-        Icon(Icons.add, color: Color(0xff1E429F)),
-        SizedBox(width: 4),
+        const Spacer(),
+        const Icon(Icons.add, color: Color(0xff1E429F)),
+        const SizedBox(width: 4),
         TextButton(
           onPressed: () {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ReviewScreen(),
+                builder: (context) => const ReviewScreen(),
               ),
             );
           },
-      child: Text(
+      child: const Text(
         "Add Review",
         style: TextStyle(
           fontSize: 15,
@@ -79,20 +79,20 @@ class ReviewUserTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
+    return const ListTile(
       contentPadding: EdgeInsets.zero,
       leading: CircleAvatar(
         radius: 25,
         backgroundImage: AssetImage("assets/images/user_review.jpg"),
       ),
-      title: const Text(
+      title: Text(
         "Mohamed Hussein",
         style: TextStyle(
           fontSize: 18,
           fontWeight: FontWeight.w500,
         ),
       ),
-      trailing: const Text(
+      trailing: Text(
         "11 months ago",
         style: TextStyle(
           fontSize: 13,

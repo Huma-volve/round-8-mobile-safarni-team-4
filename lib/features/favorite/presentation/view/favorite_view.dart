@@ -21,13 +21,13 @@ class FavoriteViewBody extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_back_ios_new_outlined,
                 color: Colors.black,
               ),
             ),
-            SizedBox(width: 100),
-            Center(
+            const SizedBox(width: 100),
+            const Center(
               child: Text(
                 "Favorite",
                 style: TextStyle(
@@ -39,7 +39,7 @@ class FavoriteViewBody extends StatelessWidget {
             ),
           ],
         ),
-        ListViewItemFavoriteCard(),
+        const ListViewItemFavoriteCard(),
       ],
     );
   }
@@ -82,7 +82,7 @@ class ItemFavoriteCard extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -96,7 +96,7 @@ class ItemFavoriteCard extends StatelessWidget {
                 ),
                 Text(
                   favoriteModel.cardTitle,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     color: Colors.black,
@@ -104,7 +104,7 @@ class ItemFavoriteCard extends StatelessWidget {
                 ),
                 Text(
                   favoriteModel.price,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                     color: Colors.black,
@@ -115,7 +115,7 @@ class ItemFavoriteCard extends StatelessWidget {
             Expanded(
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.favorite, color: Colors.red),
+                icon: const Icon(Icons.favorite, color: Colors.red),
               ),
             ),
           ],

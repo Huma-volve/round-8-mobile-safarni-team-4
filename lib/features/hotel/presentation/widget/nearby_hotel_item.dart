@@ -17,7 +17,7 @@ class NearbyHotelItem extends StatelessWidget {
          Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AvailableRoom(
+            builder: (context) => const AvailableRoom(
              
             ),
           ),
