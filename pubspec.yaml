@@ -91,6 +91,7 @@ dependencies:
   # =========================
   # 💾 Local Storage
   # =========================
+  flutter_secure_storage: any
   hive: any
   hive_flutter: any
   shared_preferences: any
