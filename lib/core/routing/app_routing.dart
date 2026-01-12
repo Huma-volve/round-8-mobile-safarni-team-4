@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:round_8_mobile_safarni_team4/core/di/service_locator.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/filter_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
@@ -12,6 +14,8 @@ import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/profile_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/search/presentation/view/result_search.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/use_case/sign_up_use_case.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/cubit/sign_up_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/sign_up_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views/welcome_view.dart';
 
@@ -90,7 +94,15 @@ abstract class AppRouter {
           return MaterialPageRoute(builder: (context) => const LoginView());
 
         case AppRoutes.signupView:
-          return MaterialPageRoute(builder: (context) => const SignUpView());
+          return MaterialPageRoute(
+            builder:
+                (context) => BlocProvider<SignUpCubit>(
+                  create:
+                      (context) =>
+                          SignUpCubit(signUpUseCase: getIt<SignUpUseCase>()),
+                  child: const SignUpView(),
+                ),
+          );
 
         case AppRoutes.forgetPasswordView:
           return MaterialPageRoute(
