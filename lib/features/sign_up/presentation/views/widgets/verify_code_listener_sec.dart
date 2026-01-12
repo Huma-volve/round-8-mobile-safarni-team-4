@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
@@ -26,7 +28,9 @@ class VerifyCodeListenerSec extends StatelessWidget {
           );
         }
         if (state is VerifyCodeFailure) {
+          log(state.errorMessage);
           Navigator.pop(context);
+
           setupErrorState(context, state.errorMessage);
         }
         if (state is VerifyCodeSuccess) {

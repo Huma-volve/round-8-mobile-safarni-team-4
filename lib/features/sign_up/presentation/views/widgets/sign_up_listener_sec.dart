@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/verify_code_request_entity.dart';
@@ -32,13 +33,11 @@ class SignUpListenerSec extends StatelessWidget {
         }
         if (state is SignUpSuccess) {
           Navigator.pop(context);
-          Navigator.pushNamedAndRemoveUntil(
-            context,
+          context.pushNamed(
             AppRoutes.verifyCodeView,
-            (route) => false,
             arguments: VerifyCodeRequestEntity(
               userId: state.signUpResponseEntity.userId,
-              otp: '1234',
+              otp: '',
               email: context.read<SignUpCubit>().emailController.text,
             ),
           );

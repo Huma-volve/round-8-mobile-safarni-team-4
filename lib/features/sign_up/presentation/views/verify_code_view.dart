@@ -21,43 +21,52 @@ class VerifyCodeView extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: context.w(16)),
-          child: Column(
-            children: [
-              context.gapH(20),
-              VerifyCodeViewHeaderSec(email: verifyCodeRequestEntity.email),
-              context.gapH(24),
-              const VerifyCodeViewOtpFieldsSec(),
-              context.gapH(16),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'OTP not receive ? ',
-                    style: AppTextStyles.font14grayColor70Regular(context),
-                  ),
-                  Text(
-                    ' Send Again',
-                    style: AppTextStyles.font14grayColor70Regular(
-                      context,
-                    ).copyWith(
-                      color: AppColors.mainColorLight,
-                      fontWeight: FontWeightHelper.bold,
+          child: Form(
+            key: context.read<VerifyCodeCubit>().formKey,
+            child: Column(
+              children: [
+                context.gapH(20),
+                VerifyCodeViewHeaderSec(email: verifyCodeRequestEntity.email),
+                context.gapH(24),
+                const VerifyCodeViewOtpFieldsSec(),
+                context.gapH(16),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'OTP not receive ? ',
+                      style: AppTextStyles.font14grayColor70Regular(context),
                     ),
-                  ),
-                ],
-              ),
-              context.gapH(16),
-              CustomButton(
-                onPressed: () {
-                  context.read<VerifyCodeCubit>().verifyCode(
-                    userId: verifyCodeRequestEntity.userId,
-                    email: verifyCodeRequestEntity.email,
-                  );
-                },
-                buttonName: 'Verify',
-              ),
-              const VerifyCodeListenerSec(),
-            ],
+                    Text(
+                      ' Send Again',
+                      style: AppTextStyles.font14grayColor70Regular(
+                        context,
+                      ).copyWith(
+                        color: AppColors.mainColorLight,
+                        fontWeight: FontWeightHelper.bold,
+                      ),
+                    ),
+                  ],
+                ),
+                context.gapH(16),
+                CustomButton(
+                  onPressed: () {
+                    if (context
+                        .read<VerifyCodeCubit>()
+                        .formKey
+                        .currentState!
+                        .validate()) {
+                      context.read<VerifyCodeCubit>().verifyCode(
+                        userId: verifyCodeRequestEntity.userId,
+                        email: verifyCodeRequestEntity.email,
+                      );
+                    }
+                  },
+                  buttonName: 'Verify',
+                ),
+                const VerifyCodeListenerSec(),
+              ],
+            ),
           ),
         ),
       ),
