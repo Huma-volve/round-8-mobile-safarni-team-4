@@ -12,19 +12,21 @@ class HotelViewBody extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         const SliverToBoxAdapter(child: CustomHotelHeader()),
-        SliverToBoxAdapter(child:  CustomTextHeader(
+        SliverToBoxAdapter(
+          child: CustomTextHeader(
             title: 'Recommended Hotels',
             textButton: 'See All',
             onPressed: () {
               // Get.toNamed('/all-hotels');
             },
-          ),),
-        const SliverToBoxAdapter(child: ListHotelRecommendation(),),
+          ),
+        ),
+        const SliverToBoxAdapter(child: ListHotelRecommendation()),
         const SliverFillRemaining(child: NearbyHotel()),
       ],
     );
   }
 }
- 
-              // Flexible(child: ListHotelRecommendation()),
-              // NearbyHotel(),
+
+// Flexible(child: ListHotelRecommendation()),
+// NearbyHotel(),

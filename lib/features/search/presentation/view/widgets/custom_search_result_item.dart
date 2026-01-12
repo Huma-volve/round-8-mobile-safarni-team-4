@@ -21,24 +21,24 @@ class _CustomSearchItemState extends State<CustomSearchItem> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         context.pushNamed(AppRoutes.DestinationView);
       },
       child: Container(
-
         height: 333.h,
         margin: const EdgeInsets.only(bottom: 16),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.black.withOpacity(.08),
-                spreadRadius: 2,
-                blurRadius: 15,
-              )
-            ]),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.black.withOpacity(.08),
+              spreadRadius: 2,
+              blurRadius: 15,
+            ),
+          ],
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

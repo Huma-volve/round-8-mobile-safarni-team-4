@@ -23,16 +23,17 @@ class PaymentSuccessView extends StatelessWidget {
           children: [
             const Spacer(),
             SizedBox(
-                height: MediaQuery.of(context).size.height * 0.2,
-                child: Image.asset(AssetsPaths.correctIcon)),
+              height: MediaQuery.of(context).size.height * 0.2,
+              child: Image.asset(AssetsPaths.correctIcon),
+            ),
             const SizedBox(height: 24),
             Column(
               children: [
                 Text(
                   'Payment Successful!',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    color: AppColors.black,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.headlineSmall?.copyWith(color: AppColors.black),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 8),
@@ -43,7 +44,7 @@ class PaymentSuccessView extends StatelessWidget {
                   ).textTheme.titleMedium?.copyWith(color: Colors.grey[600]),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 32,),
+                const SizedBox(height: 32),
                 SizedBox(
                   width: double.infinity,
                   child: FilledButton(
@@ -59,7 +60,7 @@ class PaymentSuccessView extends StatelessWidget {
                 ),
               ],
             ),
-            const Spacer()
+            const Spacer(),
           ],
         ),
       ),

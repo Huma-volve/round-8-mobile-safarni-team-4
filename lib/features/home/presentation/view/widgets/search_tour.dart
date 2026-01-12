@@ -56,7 +56,10 @@ class _SearchViewState extends State<SearchTour> {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: const BorderSide(width: 2, color: Color(0xff3F83F8)),
+                borderSide: const BorderSide(
+                  width: 2,
+                  color: Color(0xff3F83F8),
+                ),
               ),
             ),
           ),

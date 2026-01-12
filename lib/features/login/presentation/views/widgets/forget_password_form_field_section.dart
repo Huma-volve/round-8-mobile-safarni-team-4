@@ -13,10 +13,7 @@ class ForgetPasswordFormFieldSection extends StatelessWidget {
       children: [
         Align(
           alignment: Alignment.centerLeft,
-          child: Text(
-            'Email',
-            style: AppTextStyles.font14Black90w600(context),
-          ),
+          child: Text('Email', style: AppTextStyles.font14Black90w600(context)),
         ),
         context.gapH(4),
         CustomTextFormField(

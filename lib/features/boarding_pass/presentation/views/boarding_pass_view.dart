@@ -25,8 +25,12 @@ class BoardingPassView extends StatelessWidget {
             const Expanded(child: BoardingPassCard()),
             Container(
               margin: EdgeInsets.all(context.sp(24)),
-                width: double.infinity,
-                child: FilledButton(onPressed: () {}, child: const Text('Check out'))),
+              width: double.infinity,
+              child: FilledButton(
+                onPressed: () {},
+                child: const Text('Check out'),
+              ),
+            ),
           ],
         ),
       ),

@@ -26,7 +26,11 @@ class _SectionDesImageState extends State<SectionDesImage> {
           child: CircleAvatar(
             backgroundColor: Colors.white,
             child: IconButton(
-              icon: const Icon(Icons.arrow_back_ios_new, size: 18, color: Colors.black),
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                size: 18,
+                color: Colors.black,
+              ),
               onPressed: () => Navigator.pop(context),
             ),
           ),

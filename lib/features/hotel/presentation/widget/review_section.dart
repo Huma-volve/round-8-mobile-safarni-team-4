@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/review_screen.dart';
@@ -35,19 +34,17 @@ class _ReviewSectionState extends State<ReviewSection> {
     );
   }
 }
+
 class ReviewHeader extends StatelessWidget {
   const ReviewHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      children:  [
+      children: [
         const Text(
           "Review",
-          style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.w500,
-          ),
+          style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
         ),
         const Spacer(),
         const Icon(Icons.add, color: Color(0xff1E429F)),
@@ -56,24 +53,23 @@ class ReviewHeader extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) => const ReviewScreen(),
-              ),
+              MaterialPageRoute(builder: (context) => const ReviewScreen()),
             );
           },
-      child: const Text(
-        "Add Review",
-        style: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w500,
-          color: Color(0xff1E429F),
-        ),
-      )
+          child: const Text(
+            "Add Review",
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Color(0xff1E429F),
+            ),
+          ),
         ),
       ],
     );
   }
 }
+
 class ReviewUserTile extends StatelessWidget {
   const ReviewUserTile({super.key});
 
@@ -87,21 +83,16 @@ class ReviewUserTile extends StatelessWidget {
       ),
       title: Text(
         "Mohamed Hussein",
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w500,
-        ),
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
       ),
       trailing: Text(
         "11 months ago",
-        style: TextStyle(
-          fontSize: 13,
-          color: Color(0xff4B5563),
-        ),
+        style: TextStyle(fontSize: 13, color: Color(0xff4B5563)),
       ),
     );
   }
 }
+
 class ReviewRating extends StatelessWidget {
   final double rating;
   final ValueChanged<double> onChanged;
@@ -122,6 +113,7 @@ class ReviewRating extends StatelessWidget {
     );
   }
 }
+
 class ReviewComment extends StatelessWidget {
   const ReviewComment({super.key});
 
@@ -129,10 +121,7 @@ class ReviewComment extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Text(
       "I really enjoyed my stay—the room was clean, the staff were friendly, and everything I needed was nearby.",
-      style: TextStyle(
-        fontSize: 15,
-        fontWeight: FontWeight.w500,
-      ),
+      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
     );
   }
 }

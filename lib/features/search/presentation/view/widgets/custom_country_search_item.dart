@@ -18,7 +18,7 @@ class CountrySearchItem extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.h),
       child: InkWell(
-        onTap: (){
+        onTap: () {
           context.pushNamed(AppRoutes.ResultSearch);
         },
         child: Row(
@@ -40,16 +40,16 @@ class CountrySearchItem extends StatelessWidget {
                   style: AppThemes.light.textTheme.titleMedium!.copyWith(
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w500,
-                    color: AppColors.mainColorLight[90]
+                    color: AppColors.mainColorLight[90],
                   ),
                 ),
                 Text(
                   country.description,
-                style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                 fontSize: 12.sp,
-                 fontWeight: FontWeight.w500,
-                  color: AppColors.gray
-                     ),
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.gray,
+                  ),
                 ),
               ],
             ),

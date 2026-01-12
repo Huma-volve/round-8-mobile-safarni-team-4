@@ -7,13 +7,15 @@ class DynamicBarPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()
-      ..color = Colors.white
-      ..style = PaintingStyle.fill;
+    Paint paint =
+        Paint()
+          ..color = Colors.white
+          ..style = PaintingStyle.fill;
 
-    Paint shadowPaint = Paint()
-      ..color = Colors.black.withOpacity(0.15)
-      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
+    Paint shadowPaint =
+        Paint()
+          ..color = Colors.black.withOpacity(0.15)
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 8);
 
     double itemWidth = size.width / 4;
     double centerX = (itemWidth * position) + (itemWidth / 2);
@@ -36,7 +38,9 @@ class DynamicBarPainter extends CustomPainter {
 
     path.lineTo(size.width - 20, top);
     path.arcToPoint(
-        Offset(size.width, top + 20), radius: const Radius.circular(15));
+      Offset(size.width, top + 20),
+      radius: const Radius.circular(15),
+    );
 
     // التعديل هنا: النزول لآخر الارتفاع المتاح في الـ Size (نهاية الشاشة)
     path.lineTo(size.width, size.height);

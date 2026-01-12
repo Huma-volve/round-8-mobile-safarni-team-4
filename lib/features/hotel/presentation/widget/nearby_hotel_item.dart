@@ -13,19 +13,15 @@ class NearbyHotelItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap:(){
-         Navigator.push(
+      onTap: () {
+        Navigator.push(
           context,
-          MaterialPageRoute(
-            builder: (context) => const AvailableRoom(
-             
-            ),
-          ),
+          MaterialPageRoute(builder: (context) => const AvailableRoom()),
         );
       },
       child: Card(
         elevation: 4.0,
-      
+
         color: Colors.white,
         shadowColor: Colors.grey.withOpacity(0.8),
         child: Padding(
@@ -57,6 +53,5 @@ class NearbyHotelItem extends StatelessWidget {
         ),
       ),
     );
-    
   }
 }

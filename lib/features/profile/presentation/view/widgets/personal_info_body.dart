@@ -7,7 +7,8 @@ class PersonalInfoBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView( // Good practice to prevent overflow
+    return SingleChildScrollView(
+      // Good practice to prevent overflow
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: context.w(16)),
         child: Column(

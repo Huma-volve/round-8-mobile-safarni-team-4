@@ -3,7 +3,7 @@ import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/hotel_model.dart';
 
 class CustomDiscountAndRationg extends StatelessWidget {
-  const CustomDiscountAndRationg({super.key,  this.hotelModel , this.text});
+  const CustomDiscountAndRationg({super.key, this.hotelModel, this.text});
 
   final HotelModel? hotelModel;
   final String? text;
@@ -33,8 +33,7 @@ class CustomDiscountAndRationg extends StatelessWidget {
           icon: const Icon(Icons.star, color: Colors.amber),
         ),
         Text(
-          text ??
-          hotelModel!.rating  ,
+          text ?? hotelModel!.rating,
           style: AppThemes.light.textTheme.displayLarge!.copyWith(
             fontSize: 12.0,
           ),

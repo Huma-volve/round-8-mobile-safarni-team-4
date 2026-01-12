@@ -24,7 +24,7 @@ class ForgetPasswordView extends StatelessWidget {
               const ForgetPasswordFormFieldSection(),
               context.gapH(16),
               CustomButton(
-                buttonName: 'Reset Password', 
+                buttonName: 'Reset Password',
                 onPressed: () {
                   context.pushNamed(AppRoutes.verifyCodeView);
                 },

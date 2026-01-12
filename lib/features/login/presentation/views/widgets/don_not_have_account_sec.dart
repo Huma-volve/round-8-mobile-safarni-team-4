@@ -18,10 +18,10 @@ class DonNotHaveAccountSec extends StatelessWidget {
           children: [
             TextSpan(
               text: 'Don\'t have an account?',
-                style: AppTextStyles.font14grayColor70Regular(context).copyWith(
-                  color: AppColors.grayColor[100],
-                  fontWeight: FontWeightHelper.semiBold,
-                ),
+              style: AppTextStyles.font14grayColor70Regular(context).copyWith(
+                color: AppColors.grayColor[100],
+                fontWeight: FontWeightHelper.semiBold,
+              ),
             ),
             TextSpan(
               text: '  Sign Up',

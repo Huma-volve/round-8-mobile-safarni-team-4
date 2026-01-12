@@ -34,10 +34,10 @@ class CategoryItem extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-              category.title,
-              style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                  color: AppColors.mainColorLight[70]
-              )
+            category.title,
+            style: AppThemes.light.textTheme.titleMedium!.copyWith(
+              color: AppColors.mainColorLight[70],
+            ),
           ),
         ],
       ),
@@ -49,12 +49,12 @@ class CategoryItem extends StatelessWidget {
     switch (title) {
       case 'Flight':
         context.pushNamed(AppRoutes.flightBooking);
-      // Navigator.push(context, MaterialPageRoute(builder: (context) => FlightsScreen()));
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => FlightsScreen()));
 
         break;
       case 'Cars':
         context.pushNamed(AppRoutes.carBooking);
-      // Navigator.push(context, MaterialPageRoute(builder: (context) => CarsScreen()));
+        // Navigator.push(context, MaterialPageRoute(builder: (context) => CarsScreen()));
 
         break;
       case 'Tours':
@@ -62,11 +62,12 @@ class CategoryItem extends StatelessWidget {
 
         break;
       case 'Hotel':
-
-       Navigator.push(context, MaterialPageRoute(builder: (context) => const HotelView()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HotelView()),
+        );
         break;
       default:
-
     }
   }
 }

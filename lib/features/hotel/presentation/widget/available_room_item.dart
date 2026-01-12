@@ -11,11 +11,7 @@ class AvailableRoomItem extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
-            builder: (context) => const RoomDetailesView(
-              
-            ),
-          ),
+          MaterialPageRoute(builder: (context) => const RoomDetailesView()),
         );
       },
       child: Padding(
@@ -39,7 +35,10 @@ class AvailableRoomItem extends StatelessWidget {
             children: [
               Expanded(
                 child: Center(
-                  child: Image.asset('assets/images/room.png', fit: BoxFit.cover),
+                  child: Image.asset(
+                    'assets/images/room.png',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const SizedBox(height: 8.0),

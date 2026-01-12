@@ -13,9 +13,10 @@ class ItemDetailsRow extends StatelessWidget {
         Text(
           'Pickup Available',
           style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.w600,
-              fontSize: 14.sp,
-              color: AppColors.black[60]),
+            fontWeight: FontWeight.w600,
+            fontSize: 14.sp,
+            color: AppColors.black[60],
+          ),
         ),
         const Padding(
           padding: EdgeInsets.only(left: 15, right: 4),
@@ -24,9 +25,10 @@ class ItemDetailsRow extends StatelessWidget {
         Text(
           '5 Days',
           style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.w600,
-              fontSize: 14.sp,
-              color: AppColors.black[60]),
+            fontWeight: FontWeight.w600,
+            fontSize: 14.sp,
+            color: AppColors.black[60],
+          ),
         ),
       ],
     );

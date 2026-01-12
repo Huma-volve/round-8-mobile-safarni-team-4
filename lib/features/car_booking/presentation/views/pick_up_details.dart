@@ -100,14 +100,13 @@ class PickUpDetailsView extends StatelessWidget {
                             ),
                           ),
                         ],
-                      ),                    ],
+                      ),
+                    ],
                   ),
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton(
-                      onPressed: () {
-
-                      },
+                      onPressed: () {},
                       child: const Text('Confirm'),
                     ),
                   ),

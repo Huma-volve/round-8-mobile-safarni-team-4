@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:round_8_mobile_safarni_team4/core/network/api_service.dart';
 
-
 final getIt = GetIt.instance;
 
 Future<void> setupLocator() async {

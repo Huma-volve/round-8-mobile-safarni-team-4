@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WelcomeImageSection extends StatelessWidget {
-  const   WelcomeImageSection({super.key});
+  const WelcomeImageSection({super.key});
 
   @override
   Widget build(BuildContext context) {

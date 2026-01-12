@@ -6,7 +6,6 @@ import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routing.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
@@ -41,6 +40,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override

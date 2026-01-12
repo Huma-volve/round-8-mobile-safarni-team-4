@@ -50,7 +50,7 @@ class CarRentPlanCard extends StatelessWidget {
                     style: context.textTheme.labelLarge?.copyWith(
                       fontWeight: FontWeight.w500,
                       color: AppColors.mainColorLight,
-                      fontSize: context.sp(10)
+                      fontSize: context.sp(10),
                     ),
                   ),
                 ],

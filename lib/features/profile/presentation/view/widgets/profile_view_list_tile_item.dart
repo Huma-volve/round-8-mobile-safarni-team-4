@@ -71,6 +71,4 @@ class ProfileViewListTileItem extends StatelessWidget {
       ),
     );
   }
-
- 
 }

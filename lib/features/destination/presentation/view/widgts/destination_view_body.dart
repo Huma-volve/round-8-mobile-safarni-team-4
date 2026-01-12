@@ -11,179 +11,211 @@ import 'activited_card.dart';
 class DestinationPage extends StatelessWidget {
   const DestinationPage({super.key});
 
- // حالة زر القلب
+  // حالة زر القلب
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // الجزء العلوي: الصورة والأزرار
-            const SectionDesImage(),
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const section_rate_city(),
-                  const SizedBox(height: 8,),
-                  Text("Eiffel Tower",
-                      style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.mainColorLight[100]
-                  )),
-                  const SizedBox(height: 8,),
-                  Text("7 Days and 6 Nights",
-                      style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black[70]
-                  )),
-                  Text("Paris, France",
-                      style: AppThemes.light.textTheme.titleMedium!.copyWith(
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // الجزء العلوي: الصورة والأزرار
+          const SectionDesImage(),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const section_rate_city(),
+                const SizedBox(height: 8),
+                Text(
+                  "Eiffel Tower",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.mainColorLight[100],
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  "7 Days and 6 Nights",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.black[70],
+                  ),
+                ),
+                Text(
+                  "Paris, France",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.black[70],
+                  ),
+                ),
+
+                const SizedBox(height: 20),
+                Text(
+                  "Top Activities",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    fontSize: 17.sp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.mainColorLight[100],
+                  ),
+                ),
+                const SizedBox(height: 10),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ActivityCard(
+                      title: "Go to the Top",
+                      imageUrl: "https://picsum.photos/200",
+                    ),
+                    ActivityCard(
+                      title: "Louvre at Night",
+                      imageUrl: "https://picsum.photos/201",
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  "Best Time to Visit",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    fontSize: 17.sp,
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.mainColorLight[100],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                CustomInfoContainer(
+                  child: Text(
+                    "Spring (April–June) and autumn (September–October) are perfect times to visit Paris, with mild weather and fewer tourists.",
+
+                    style: AppThemes.light.textTheme.titleMedium!.copyWith(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
-                      color: AppColors.black[70]
-                  )),
-
-                  const SizedBox(height: 20),
-                  Text("Top Activities",
-                      style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                      fontSize: 17.sp,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.mainColorLight[100])),
-                  const SizedBox(height: 10),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ActivityCard(title: "Go to the Top", imageUrl: "https://picsum.photos/200"),
-                      ActivityCard(title: "Louvre at Night", imageUrl: "https://picsum.photos/201"),
-                    ],
-                  ),const SizedBox(height: 20),
-                  Text("Best Time to Visit",
-                      style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.mainColorLight[100])),
-                  const SizedBox(height: 20),
-                  CustomInfoContainer(
-                    child: Text(
-                      "Spring (April–June) and autumn (September–October) are perfect times to visit Paris, with mild weather and fewer tourists.",
-
-                        style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                            fontSize: 12.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.black[70])
+                      color: AppColors.black[70],
                     ),
                   ),
-                  const SizedBox(height: 25),
-                  const SctionSeeMore(),
+                ),
+                const SizedBox(height: 25),
+                const SctionSeeMore(),
 
-                  GridView.count(
-
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 8,
-                    mainAxisSpacing: 8,
-                    children: List.generate(4, (index) => ClipRRect(
+                GridView.count(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                  children: List.generate(
+                    4,
+                    (index) => ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.network("https://picsum.photos/20${index+2}",
+                      child: Image.network(
+                        "https://picsum.photos/20${index + 2}",
 
-                          fit: BoxFit.cover),
-                    )),
-                  ),
-                  const SizedBox(height: 16,),
-                  Center(
-                    child: TextButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(Icons.add_a_photo_outlined,size: 24,),
-                      label: Text("Add Photo",
-                        style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.mainColorLight[70])
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
-
-                  const SizedBox(height: 10),
-                  Text("Reviews",
-                    style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                        fontSize: 17.sp,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.mainColorLight[100]),),
-                  const SizedBox(height: 10),
-                  const ReviewCard(
-                    name: "Dale Thiel",
-                    date: "11 months ago",
-                    comment: "Such a dreamy place! The views were stunning...",
-                    avatar: "https://i.pravatar.cc/150?u=1",
+                ),
+                const SizedBox(height: 16),
+                Center(
+                  child: TextButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.add_a_photo_outlined, size: 24),
+                    label: Text(
+                      "Add Photo",
+                      style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w600,
+                        color: AppColors.mainColorLight[70],
+                      ),
+                    ),
                   ),
-                  const ReviewCard(
-                    name: "Léo Martin",
-                    date: "6 months ago",
-                    comment: "A beautiful escape from the ordinary. Everything was elegant...",
-                    avatar: "https://i.pravatar.cc/150?u=2",
+                ),
+
+                const SizedBox(height: 10),
+                Text(
+                  "Reviews",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    fontSize: 17.sp,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.mainColorLight[100],
                   ),
+                ),
+                const SizedBox(height: 10),
+                const ReviewCard(
+                  name: "Dale Thiel",
+                  date: "11 months ago",
+                  comment: "Such a dreamy place! The views were stunning...",
+                  avatar: "https://i.pravatar.cc/150?u=1",
+                ),
+                const ReviewCard(
+                  name: "Léo Martin",
+                  date: "6 months ago",
+                  comment:
+                      "A beautiful escape from the ordinary. Everything was elegant...",
+                  avatar: "https://i.pravatar.cc/150?u=2",
+                ),
 
-                  InkWell(
-                    onTap: (){},
-                    child: Container(
-
-                      width: MediaQuery.of(context).size.width,
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: const Color(0xff1E429F)
-                          )
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.all(16),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: const Color(0xff1E429F)),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "See More",
+                        style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w600,
+                          color: const Color(0xff1E429F),
                         ),
-                        child: Center(
-                          child: Text("See More",
-                              style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: const Color(0xff1E429F)
-
-                              )
-                          ),
-                        )),
+                      ),
+                    ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
 
-      // الجزء السفلي الثابت (السعر والزرار)
-
+    // الجزء السفلي الثابت (السعر والزرار)
   }
 }
 
 class SctionSeeMore extends StatelessWidget {
-  const SctionSeeMore({
-    super.key,
-  });
+  const SctionSeeMore({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text("Gallery (150)",
-            style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                fontSize: 17.sp,
-                fontWeight: FontWeight.w600,
-                color: AppColors.mainColorLight[100])),
+        Text(
+          "Gallery (150)",
+          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+            fontSize: 17.sp,
+            fontWeight: FontWeight.w600,
+            color: AppColors.mainColorLight[100],
+          ),
+        ),
         const Spacer(),
         InkWell(
-          onTap: (){},
-          child: Text("See more",
-              style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.mainColorLight[70])),
+          onTap: () {},
+          child: Text(
+            "See more",
+            style: AppThemes.light.textTheme.titleMedium!.copyWith(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.w600,
+              color: AppColors.mainColorLight[70],
+            ),
+          ),
         ),
       ],
     );
@@ -191,20 +223,19 @@ class SctionSeeMore extends StatelessWidget {
 }
 
 class section_rate_city extends StatelessWidget {
-  const section_rate_city({
-    super.key,
-  });
+  const section_rate_city({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text("City Breaks",
-            style: AppThemes.light.textTheme.titleMedium!.copyWith(
-          fontSize: 12.sp,
-          fontWeight: FontWeight.w600,
-          color: AppColors.black[70]
-        )
+        Text(
+          "City Breaks",
+          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+            fontSize: 12.sp,
+            fontWeight: FontWeight.w600,
+            color: AppColors.black[70],
+          ),
         ),
         const Spacer(),
         Wrap(
@@ -217,12 +248,14 @@ class section_rate_city extends StatelessWidget {
           }),
         ),
         const SizedBox(width: 5),
-        Text("4.5 (675)",   style: AppThemes.light.textTheme.titleMedium!.copyWith(
+        Text(
+          "4.5 (675)",
+          style: AppThemes.light.textTheme.titleMedium!.copyWith(
             fontSize: 12.sp,
             fontWeight: FontWeight.w600,
-            color: AppColors.black[70]
-        )),
-
+            color: AppColors.black[70],
+          ),
+        ),
       ],
     );
   }

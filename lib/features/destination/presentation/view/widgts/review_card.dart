@@ -9,7 +9,8 @@ class ReviewCard extends StatelessWidget {
   final String comment;
   final String avatar;
 
-  const ReviewCard({super.key, 
+  const ReviewCard({
+    super.key,
     required this.name,
     required this.date,
     required this.comment,
@@ -30,30 +31,42 @@ class ReviewCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              CircleAvatar(
-                  radius: 20,
-                  backgroundImage: NetworkImage(avatar)),
+              CircleAvatar(radius: 20, backgroundImage: NetworkImage(avatar)),
               const SizedBox(width: 10),
 
-              Text(name, style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                               fontSize: 18.sp,
-              fontWeight: FontWeight.w600,)),
+              Text(
+                name,
+                style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
               const Spacer(),
-              Text(date,  style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                fontSize: 13.sp,
-                color: Colors.grey,
-                fontWeight: FontWeight.w500,)),
+              Text(
+                date,
+                style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                  fontSize: 13.sp,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ],
           ),
           const SizedBox(height: 10),
           Row(
-            children: List.generate(5, (index) => const Icon(Icons.star, color: Colors.amber, size: 16)),
+            children: List.generate(
+              5,
+              (index) => const Icon(Icons.star, color: Colors.amber, size: 16),
+            ),
           ),
           const SizedBox(height: 8),
-          Text(comment, style: AppThemes.light.textTheme.titleMedium!.copyWith(
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w400,
-    )),
+          Text(
+            comment,
+            style: AppThemes.light.textTheme.titleMedium!.copyWith(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
         ],
       ),
     );

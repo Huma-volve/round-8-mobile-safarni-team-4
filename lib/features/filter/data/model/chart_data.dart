@@ -4,7 +4,6 @@ class DataModel {
   final double y;
 }
 
-
 final List<DataModel> chartData = [
   DataModel(x: 500, y: 5),
 

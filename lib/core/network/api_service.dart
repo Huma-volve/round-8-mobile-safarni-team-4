@@ -68,8 +68,6 @@ class ApiService {
     );
   }
 
-
-
   Future<Map<String, dynamic>> get({
     required String urlEndPoint,
     Map<String, dynamic>? queryParameters,
@@ -116,7 +114,6 @@ class ApiService {
     );
     return response.data;
   }
-
 
   Future<Map<String, dynamic>> patch({
     required String urlEndPoint,

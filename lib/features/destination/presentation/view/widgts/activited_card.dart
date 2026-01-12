@@ -14,21 +14,16 @@ class ActivityCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width:MediaQuery.of(context).size.width*.45, // المقاس المطلوب
+      width: MediaQuery.of(context).size.width * .45, // المقاس المطلوب
       height: 166.h,
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       // المقاس المطلوب
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-       boxShadow: const [
-
-         BoxShadow(
-           color: Colors.black12,
-           blurRadius: 10,
-           spreadRadius: 1,
-         ),
-       ]
+        boxShadow: const [
+          BoxShadow(color: Colors.black12, blurRadius: 10, spreadRadius: 1),
+        ],
       ),
       child: Column(
         children: [
@@ -45,10 +40,11 @@ class ActivityCard extends StatelessWidget {
             child: Center(
               child: Text(
                 title,
-               style: AppThemes.light.textTheme.titleMedium!.copyWith(
-    fontSize: 15.sp,
-    fontWeight: FontWeight.w500,
-    color: AppColors.mainColorLight[100])
+                style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.mainColorLight[100],
+                ),
               ),
             ),
           ),

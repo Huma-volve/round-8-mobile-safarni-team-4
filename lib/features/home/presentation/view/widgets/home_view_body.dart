@@ -22,53 +22,51 @@ class HomeViewBody extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               const SectionWelcome(),
-              const SizedBox(height: 24,),
+              const SizedBox(height: 24),
               const SectionSearchBar(),
-              const SizedBox(height: 32,),
-            Center(
-              child: Image.asset('assets/images/travel.png',
-                fit: BoxFit.fill,
-                width: MediaQuery.of(context).size.width,
+              const SizedBox(height: 32),
+              Center(
+                child: Image.asset(
+                  'assets/images/travel.png',
+                  fit: BoxFit.fill,
+                  width: MediaQuery.of(context).size.width,
+                ),
               ),
-            ),
 
-
-              const customSideTitile(
-                title: "Category",
-                viewAll: false,
-              ),
+              const customSideTitile(title: "Category", viewAll: false),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween, // لتوزيع الـ 4 خانات
-                children: categories.map((item) => CategoryItem(category: item)).toList(),
+                mainAxisAlignment:
+                    MainAxisAlignment.spaceBetween, // لتوزيع الـ 4 خانات
+                children:
+                    categories
+                        .map((item) => CategoryItem(category: item))
+                        .toList(),
               ),
               customSideTitile(
                 title: "Recommendation",
                 viewAll: true,
-                onTap:(){},
-
+                onTap: () {},
               ),
 
               SizedBox(
-
                 height: 300.h,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 4,
-                    padding: EdgeInsets.symmetric(horizontal: 16.w,
-                    vertical: 16.h
-                    ),
-                  itemBuilder: (context,index) {
-                   return const customRecomendeItem();
-                  }
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 16.w,
+                    vertical: 16.h,
+                  ),
+                  itemBuilder: (context, index) {
+                    return const customRecomendeItem();
+                  },
                 ),
               ),
               customSideTitile(
                 title: "Available Tours",
                 viewAll: true,
-                onTap:(){},
-
+                onTap: () {},
               ),
               ListView.builder(
                 shrinkWrap: true,
@@ -77,13 +75,14 @@ class HomeViewBody extends StatelessWidget {
 
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: EdgeInsets.only(bottom: 16.h), // مسافة بين كل تور والتانية
+                    padding: EdgeInsets.only(
+                      bottom: 16.h,
+                    ), // مسافة بين كل تور والتانية
                     child: const cutomToursItem(),
                   );
                 },
               ),
-              const SizedBox(height: 40,),
-
+              const SizedBox(height: 40),
             ],
           ),
         ],
@@ -91,5 +90,3 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/hotel_model.dart';
@@ -16,11 +15,7 @@ class HotelRecommendation extends StatelessWidget {
       onTap: () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(
-            builder: (context) => const AvailableRoom(
-             
-            ),
-          ),
+          MaterialPageRoute(builder: (context) => const AvailableRoom()),
         );
       },
       child: Container(
@@ -46,7 +41,7 @@ class HotelRecommendation extends StatelessWidget {
               child: Image.asset(
                 hotelModel.hotelImage,
                 fit: BoxFit.cover,
-              //  width: double.infinity,
+                //  width: double.infinity,
               ),
             ),
             const SizedBox(height: 4.0),

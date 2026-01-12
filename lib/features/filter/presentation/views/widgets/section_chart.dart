@@ -27,9 +27,13 @@ class _FilterViewBodyState extends State<SectionChart> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Budget Range", style: AppThemes.light.textTheme.titleMedium!.copyWith(
-          color: AppColors.mainColorLight[100],
-          fontSize: 16.sp,)),
+        Text(
+          "Budget Range",
+          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+            color: AppColors.mainColorLight[100],
+            fontSize: 16.sp,
+          ),
+        ),
         const SizedBox(height: 20),
 
         // الجزء الخاص بالـ Range Selector مع الرسم البياني
@@ -84,29 +88,41 @@ class _FilterViewBodyState extends State<SectionChart> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 Text("Min", style:AppThemes.light.textTheme.titleMedium!.copyWith(
-                   color: AppColors.black[80],
+                Text(
+                  "Min",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    color: AppColors.black[80],
                     fontWeight: FontWeight.w600,
-                    fontSize: 12.sp,)),
-                Text("\$${_values.start.toInt()}",
-                    style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                      color: AppColors.black[60],
-                      fontSize: 12.sp,)),
+                    fontSize: 12.sp,
+                  ),
+                ),
+                Text(
+                  "\$${_values.start.toInt()}",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    color: AppColors.black[60],
+                    fontSize: 12.sp,
+                  ),
+                ),
               ],
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                 Text("Max",
-                     style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                color: AppColors.black[60],
-              fontSize: 12.sp,)
-                   ),
-                Text("\$${_values.end.toInt()}",
-                    style:  AppThemes.light.textTheme.titleMedium!.copyWith(
-                  color: AppColors.black[80],
-                  fontWeight: FontWeight.w600,
-                  fontSize: 12.sp,)),
+                Text(
+                  "Max",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    color: AppColors.black[60],
+                    fontSize: 12.sp,
+                  ),
+                ),
+                Text(
+                  "\$${_values.end.toInt()}",
+                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                    color: AppColors.black[80],
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                  ),
+                ),
               ],
             ),
           ],

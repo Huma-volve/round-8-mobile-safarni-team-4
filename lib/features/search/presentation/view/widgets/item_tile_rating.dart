@@ -13,26 +13,29 @@ class ItemTitleRating extends StatelessWidget {
         Text(
           'Double Dreams in Paris',
           style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              color: AppColors.mainColorLight[150],
-              fontSize: 17.sp,
-              fontWeight: FontWeight.w600),
+            color: AppColors.mainColorLight[150],
+            fontSize: 17.sp,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         const Spacer(),
         const Icon(Icons.star, color: Color(0xffFCBA42)),
         Text(
           '4.8',
           style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.w600,
-              fontSize: 12.sp,
-              color: AppColors.black[80]),
+            fontWeight: FontWeight.w600,
+            fontSize: 12.sp,
+            color: AppColors.black[80],
+          ),
         ),
         Text(
           ' (650)',
           style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.w600,
-              fontSize: 10.sp,
-              color: AppColors.black[70]),
-        )
+            fontWeight: FontWeight.w600,
+            fontSize: 10.sp,
+            color: AppColors.black[70],
+          ),
+        ),
       ],
     );
   }

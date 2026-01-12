@@ -20,10 +20,7 @@ class PersonalInfoItem extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          label,
-          style: AppTextStyles.font14Black90w600(context),
-        ),
+        Text(label, style: AppTextStyles.font14Black90w600(context)),
         context.gapH(4),
         CustomTextFormField(
           isReadOnly: true,

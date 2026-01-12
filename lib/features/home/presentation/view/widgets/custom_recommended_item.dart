@@ -7,14 +7,12 @@ import '../../../../../core/colors/app_colors.dart';
 import '../../../../../core/theme/app_theme.dart';
 
 class customRecomendeItem extends StatelessWidget {
-  const customRecomendeItem({
-    super.key,
-  });
+  const customRecomendeItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         context.pushNamed(AppRoutes.DestinationView);
       },
       child: Container(
@@ -23,74 +21,71 @@ class customRecomendeItem extends StatelessWidget {
         margin: const EdgeInsets.only(right: 8),
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.black.withOpacity(.08),
-                spreadRadius: 2,
-                blurRadius: 15,
-
-
-              )
-            ]
-
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.black.withOpacity(.08),
+              spreadRadius: 2,
+              blurRadius: 15,
+            ),
+          ],
         ),
-        child:Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.asset('assets/images/p.png',
+              child: Image.asset(
+                'assets/images/p.png',
                 height: 199.h,
                 fit: BoxFit.cover,
-
               ),
             ),
-            const SizedBox(height: 8,),
+            const SizedBox(height: 8),
             Row(
               children: [
-                Text('The Pyramids',
+                Text(
+                  'The Pyramids',
                   style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                      color: AppColors.mainColorLight[90]
+                    color: AppColors.mainColorLight[90],
                   ),
                 ),
                 const Spacer(),
-                const Icon(Icons.star,
-                  color: Color(0xffFCBA42),),
-                Text('4.8',
+                const Icon(Icons.star, color: Color(0xffFCBA42)),
+                Text(
+                  '4.8',
                   style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                      color: AppColors.black[80]
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                    color: AppColors.black[80],
                   ),
-                )
-
+                ),
               ],
             ),
             const Spacer(),
             Row(
               children: [
-                Icon(Icons.location_on_outlined,
+                Icon(
+                  Icons.location_on_outlined,
                   color: AppColors.mainColorLight,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
-                  child: Text('Giza',
+                  child: Text(
+                    'Giza',
                     style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 14.sp,
-                        color: AppColors.black[60]
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14.sp,
+                      color: AppColors.black[60],
                     ),
                   ),
-                )
+                ),
               ],
             ),
-
           ],
         ),
       ),
     );
   }
 }
-

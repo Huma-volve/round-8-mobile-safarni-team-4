@@ -44,21 +44,23 @@ class FavoriteViewBody extends StatelessWidget {
     );
   }
 }
+
 class ListViewItemFavoriteCard extends StatelessWidget {
   const ListViewItemFavoriteCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-          child: ListView.builder(
-            itemCount: favoriteList.length,
-            itemBuilder: (context, index) {
-              return ItemFavoriteCard(favoriteModel: favoriteList[index]);
-            },
-          ),
-        );
+      child: ListView.builder(
+        itemCount: favoriteList.length,
+        itemBuilder: (context, index) {
+          return ItemFavoriteCard(favoriteModel: favoriteList[index]);
+        },
+      ),
+    );
   }
 }
+
 class ItemFavoriteCard extends StatelessWidget {
   const ItemFavoriteCard({super.key, required this.favoriteModel});
 

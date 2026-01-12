@@ -43,10 +43,7 @@ class CompareViewBody extends StatelessWidget {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             (context, index) => const Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 16.0,
-                vertical: 8.0,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: ParisCruiseCard(),
             ),
             childCount: 2,

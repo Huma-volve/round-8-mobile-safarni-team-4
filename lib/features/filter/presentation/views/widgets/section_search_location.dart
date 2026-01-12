@@ -39,11 +39,11 @@ class _LocationSearchWidgetState extends State<LocationSearchWidget> {
                 "Location",
                 style: AppThemes.light.textTheme.titleMedium!.copyWith(
                   fontSize: 16.sp,
-                  color: AppColors.mainColorLight[100]
-                )
+                  color: AppColors.mainColorLight[100],
+                ),
               ),
               const Spacer(),
-              const Icon(Icons.map_outlined, color: Colors.blue)
+              const Icon(Icons.map_outlined, color: Colors.blue),
             ],
           ),
         ),
@@ -79,21 +79,22 @@ class _LocationSearchWidgetState extends State<LocationSearchWidget> {
         Wrap(
           spacing: 8.0,
           runSpacing: 4.0,
-          children: selectedLocations.map((location) {
-            return InputChip(
-
-
-              label: Text(location),
-              deleteIcon: const Icon(Icons.close, size: 14),
-              onDeleted: () {
-                setState(() {
-                  selectedLocations.remove(location);
-                });
-              },
-              backgroundColor: Colors.white,
-              shape: const StadiumBorder(side: BorderSide(color: Color(0xffEBF5FF))),
-            );
-          }).toList(),
+          children:
+              selectedLocations.map((location) {
+                return InputChip(
+                  label: Text(location),
+                  deleteIcon: const Icon(Icons.close, size: 14),
+                  onDeleted: () {
+                    setState(() {
+                      selectedLocations.remove(location);
+                    });
+                  },
+                  backgroundColor: Colors.white,
+                  shape: const StadiumBorder(
+                    side: BorderSide(color: Color(0xffEBF5FF)),
+                  ),
+                );
+              }).toList(),
         ),
       ],
     );
