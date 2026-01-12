@@ -11,36 +11,37 @@ class FilterViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        Padding(
-          padding: const EdgeInsets.all(16),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-              SectionSortBy(sortOptions: sortOptions,
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SectionSortBy(
+              sortOptions: sortOptions,
               title: "Sort By",
-                isMultiSelection: false,
-              ),
-                const customLine(),
-              const SectionChart(),
-                const customLine(),
-                const SizedBox(height:20 ,),
-                SectionSortBy(sortOptions: AdevStyle,
-                title: 'Adventure Style',
-                  sidTitle: 'Multi Select',
-                ),
-                const customLine(),
-                const LocationSearchWidget(),
-                const customLine(),
-                SectionSortBy(sortOptions: Rating,
-                  title: 'Rating',
-                  sidTitle: 'Multi Select',
-                ),
-            ],),
-          ),
-        );
+              isMultiSelection: false,
+            ),
+            const customLine(),
+            const SectionChart(),
+            const customLine(),
+            const SizedBox(height: 20),
+            SectionSortBy(
+              sortOptions: AdevStyle,
+              title: 'Adventure Style',
+              sidTitle: 'Multi Select',
+            ),
+            const customLine(),
+            const LocationSearchWidget(),
+            const customLine(),
+            SectionSortBy(
+              sortOptions: Rating,
+              title: 'Rating',
+              sidTitle: 'Multi Select',
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
-
-

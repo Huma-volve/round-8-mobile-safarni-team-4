@@ -6,7 +6,6 @@ class AvailableRoom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold
-    (body: AvailableRoomBody());
+    return const Scaffold(body: AvailableRoomBody());
   }
 }

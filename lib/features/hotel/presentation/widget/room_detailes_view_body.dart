@@ -11,10 +11,7 @@ class RoomDetailesViewBody extends StatelessWidget {
       children: [
         SingleChildScrollView(
           child: Column(
-            children: [
-              CustomDetailesImage(),
-              SectionDetailesViewBody(),
-            ],
+            children: [CustomDetailesImage(), SectionDetailesViewBody()],
           ),
         ),
       ],

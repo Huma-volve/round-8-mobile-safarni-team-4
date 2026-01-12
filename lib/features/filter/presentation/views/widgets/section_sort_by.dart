@@ -11,7 +11,8 @@ class SectionSortBy extends StatefulWidget {
     super.key,
     required this.sortOptions,
     required this.title,
-    this.isMultiSelection = true,  this.sidTitle='', // الإضافة هنا: القيمة الافتراضية متعدد
+    this.isMultiSelection = true,
+    this.sidTitle = '', // الإضافة هنا: القيمة الافتراضية متعدد
   });
 
   final List<BottonData> sortOptions;
@@ -32,7 +33,6 @@ class _SectionSortByState extends State<SectionSortBy> {
       children: [
         Row(
           children: [
-
             Text(
               widget.title,
               style: AppThemes.light.textTheme.titleLarge!.copyWith(
@@ -40,7 +40,7 @@ class _SectionSortByState extends State<SectionSortBy> {
                 color: AppColors.mainColorLight[100],
               ),
             ),
-            const SizedBox(width: 10,),
+            const SizedBox(width: 10),
             Text(
               widget.sidTitle,
               style: AppThemes.light.textTheme.titleLarge!.copyWith(
@@ -49,64 +49,79 @@ class _SectionSortByState extends State<SectionSortBy> {
               ),
             ),
           ],
-
         ),
         const SizedBox(height: 15),
         Wrap(
           spacing: 8.0,
           runSpacing: 8.0,
-          children: widget.sortOptions.map((option) {
-            return ChoiceChip(
-
-              showCheckmark: false,
-              padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-              label: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  option.icon==''? const Text(''): SvgPicture.asset(option.icon,
-                  color: option.isSelected ? AppColors.mainColorLight[60] : AppColors.black[70] ,
+          children:
+              widget.sortOptions.map((option) {
+                return ChoiceChip(
+                  showCheckmark: false,
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 14,
+                    horizontal: 16,
                   ),
-                  const SizedBox(width: 5,),
-                  Text(option.label),
-                ],
-              ),
-              labelStyle: TextStyle(
-                fontFamily: AppThemes.light.textTheme.titleLarge!.fontFamily,
-                color: option.isSelected ? AppColors.mainColorLight[60] : AppColors.black[70],
-                fontSize: 12.sp,
-              ),
-              selected: option.isSelected,
-              selectedColor: const Color(0xffEBF5FF),
-              backgroundColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(38),
-                side: BorderSide(
-                  color: option.isSelected ? Colors.transparent : const Color(0xffEBF5FF),
-                ),
-              ),
-              onSelected: (bool selected) {
-                setState(() {
-                  if (widget.isMultiSelection) {
-                    // لو مسموح اختيار كذا واحد: بنغير حالة العنصر اللي اتداس عليه بس
-                    option.isSelected = selected;
-                  } else {
-                    // لو اختيار واحد بس:
-                    if (selected) {
-                      // 1. بنخلي كل الاختيارات false
-                      for (var item in widget.sortOptions) {
-                        item.isSelected = false;
+                  label: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      option.icon == ''
+                          ? const Text('')
+                          : SvgPicture.asset(
+                            option.icon,
+                            color:
+                                option.isSelected
+                                    ? AppColors.mainColorLight[60]
+                                    : AppColors.black[70],
+                          ),
+                      const SizedBox(width: 5),
+                      Text(option.label),
+                    ],
+                  ),
+                  labelStyle: TextStyle(
+                    fontFamily:
+                        AppThemes.light.textTheme.titleLarge!.fontFamily,
+                    color:
+                        option.isSelected
+                            ? AppColors.mainColorLight[60]
+                            : AppColors.black[70],
+                    fontSize: 12.sp,
+                  ),
+                  selected: option.isSelected,
+                  selectedColor: const Color(0xffEBF5FF),
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(38),
+                    side: BorderSide(
+                      color:
+                          option.isSelected
+                              ? Colors.transparent
+                              : const Color(0xffEBF5FF),
+                    ),
+                  ),
+                  onSelected: (bool selected) {
+                    setState(() {
+                      if (widget.isMultiSelection) {
+                        // لو مسموح اختيار كذا واحد: بنغير حالة العنصر اللي اتداس عليه بس
+                        option.isSelected = selected;
+                      } else {
+                        // لو اختيار واحد بس:
+                        if (selected) {
+                          // 1. بنخلي كل الاختيارات false
+                          for (var item in widget.sortOptions) {
+                            item.isSelected = false;
+                          }
+                          // 2. بنخلي اللي دوسنا عليه هو اللي true
+                          option.isSelected = true;
+                        } else {
+                          // لو دوست على المختار بالفعل وعايز تلغيه (اختياري)
+                          option.isSelected = false;
+                        }
                       }
-                      // 2. بنخلي اللي دوسنا عليه هو اللي true
-                      option.isSelected = true;
-                    } else {
-                      // لو دوست على المختار بالفعل وعايز تلغيه (اختياري)
-                      option.isSelected = false;
-                    }
-                  }
-                });
-              },
-            );
-          }).toList(),
+                    });
+                  },
+                );
+              }).toList(),
         ),
       ],
     );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
+import 'package:round_8_mobile_safarni_team4/core/theme/font_weight_helper.dart';
 
 class PasswordValidations extends StatelessWidget {
   final bool hasLowerCase;
@@ -55,13 +56,14 @@ class PasswordValidations extends StatelessWidget {
     return Row(
       children: [
         CircleAvatar(radius: 2.5, backgroundColor: AppColors.gray),
-        context.gapH(6),
+        context.gapW(6),
         Text(
           text,
-          style: context.textTheme.bodyMedium?.copyWith(
+          style: AppTextStyles.font14grayColor70Regular(context).copyWith(
             decoration: hasValidated ? TextDecoration.lineThrough : null,
             decorationColor: Colors.green,
             decorationThickness: 2,
+            fontWeight: FontWeightHelper.medium,
             color: hasValidated ? AppColors.gray : AppColors.mainColorLight,
           ),
         ),

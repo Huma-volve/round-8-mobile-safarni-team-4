@@ -19,7 +19,6 @@ class CustomHotelHeader extends StatelessWidget {
           const SizedBox(height: 8.0),
           const SearchTextField(),
           const SizedBox(height: 8.0),
-         
         ],
       ),
     );

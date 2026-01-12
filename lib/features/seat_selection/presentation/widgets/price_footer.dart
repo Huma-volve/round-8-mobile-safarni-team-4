@@ -53,7 +53,10 @@ class PriceFooter extends StatelessWidget {
           SizedBox(height: context.h(24)),
           SizedBox(
             width: double.infinity,
-            child: FilledButton(onPressed: onContinue, child: const Text('Continue')),
+            child: FilledButton(
+              onPressed: onContinue,
+              child: const Text('Continue'),
+            ),
           ),
         ],
       ),

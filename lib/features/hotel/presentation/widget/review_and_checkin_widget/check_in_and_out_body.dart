@@ -8,6 +8,7 @@ class CheckInAndOutBody extends StatefulWidget {
   @override
   State<CheckInAndOutBody> createState() => _CheckInAndOutBodyState();
 }
+
 class _CheckInAndOutBodyState extends State<CheckInAndOutBody> {
   double rating = 4;
 

@@ -15,4 +15,3 @@ class WelcomeTitleSection extends StatelessWidget {
     );
   }
 }
-  

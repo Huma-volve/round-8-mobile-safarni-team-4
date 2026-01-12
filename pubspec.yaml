@@ -64,6 +64,7 @@ dependencies:
   http_parser: any
   cookie_jar: any
   dio_cookie_manager: any
+  path_provider: any
 
   # =========================
   # 🪵 Logging & Debugging

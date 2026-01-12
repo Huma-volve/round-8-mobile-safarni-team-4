@@ -4,9 +4,7 @@ import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.
 import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 
 class TouresBookingItemTourTypeAndRateSec extends StatelessWidget {
-  const TouresBookingItemTourTypeAndRateSec({
-    super.key,
-  });
+  const TouresBookingItemTourTypeAndRateSec({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +17,7 @@ class TouresBookingItemTourTypeAndRateSec extends StatelessWidget {
           ).copyWith(color: AppColors.black[70]!),
         ),
         const Spacer(),
-        Icon(
-          Icons.star,
-          color: Colors.amber,
-          size: context.w(18),
-        ),
+        Icon(Icons.star, color: Colors.amber, size: context.w(18)),
         Text(
           '4.5',
           style: AppTextStyles.font14Black90w600(

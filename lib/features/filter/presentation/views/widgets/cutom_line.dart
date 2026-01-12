@@ -3,9 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../../../../../core/colors/app_colors.dart';
 
 class customLine extends StatelessWidget {
-  const customLine({
-    super.key,
-  });
+  const customLine({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +11,7 @@ class customLine extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 1,
       color: AppColors.black[20],
-      margin: const EdgeInsets.only(
-          bottom: 12,top:20
-      ),
+      margin: const EdgeInsets.only(bottom: 12, top: 20),
     );
   }
 }

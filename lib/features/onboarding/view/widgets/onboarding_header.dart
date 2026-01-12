@@ -35,7 +35,7 @@ class OnboardingHeader extends StatelessWidget {
                   onTap: () {
                     context.pushNamed(AppRoutes.welcomeView);
                   },
-                  child:  Text(
+                  child: Text(
                     "Skip",
                     style: AppTextStyles.font16mainColorLightSemiBold(context),
                   ),

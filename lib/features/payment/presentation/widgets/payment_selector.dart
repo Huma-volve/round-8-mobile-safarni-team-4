@@ -13,7 +13,7 @@ class PaymentSelector extends StatefulWidget {
 }
 
 class _PaymentSelectorState extends State<PaymentSelector> {
-  int? _selectedIndex ;
+  int? _selectedIndex;
 
   @override
   Widget build(BuildContext context) {

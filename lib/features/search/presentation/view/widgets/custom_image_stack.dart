@@ -39,7 +39,7 @@ class ItemImageStack extends StatelessWidget {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

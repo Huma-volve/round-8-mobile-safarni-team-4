@@ -10,13 +10,15 @@ class GallerySection extends StatefulWidget {
   @override
   State<GallerySection> createState() => _GallerySectionState();
 }
+
 class _GallerySectionState extends State<GallerySection> {
   final ImagePicker picker = ImagePicker();
   List<File> images = [];
 
   Future<void> pickImage() async {
-    final XFile? pickedImage =
-        await picker.pickImage(source: ImageSource.gallery);
+    final XFile? pickedImage = await picker.pickImage(
+      source: ImageSource.gallery,
+    );
 
     if (pickedImage != null) {
       setState(() {
@@ -35,10 +37,7 @@ class _GallerySectionState extends State<GallerySection> {
           children: [
             Text(
               "Gallery (${images.length})",
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
             ),
             const Spacer(),
             IconButton(

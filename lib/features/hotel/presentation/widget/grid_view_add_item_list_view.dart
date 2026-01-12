@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/gridview_add_item.dart';
 
 class GridViewAddItemListView extends StatelessWidget {
-  const GridViewAddItemListView({
-    super.key,
-    required this.images,
-  });
+  const GridViewAddItemListView({super.key, required this.images});
 
   final List<File> images;
 

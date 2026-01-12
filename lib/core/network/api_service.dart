@@ -1,6 +1,7 @@
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:round_8_mobile_safarni_team4/core/network/api_end_points.dart';
 import 'package:round_8_mobile_safarni_team4/core/network/tocken_storage_service.dart';
 
@@ -21,6 +22,12 @@ class ApiService {
   }
 
   Future<void> _initialize() async {
+    // 2. تهيئة مسار التخزين للكوكيز (هذا هو الجزء المفقود)
+    final appDocDir = await getApplicationDocumentsDirectory();
+    cookieJar = PersistCookieJar(
+      storage: FileStorage("${appDocDir.path}/.cookies/"),
+    );
+
     dio = Dio(
       BaseOptions(
         baseUrl: _baseUrlFromEnv,
@@ -31,6 +38,7 @@ class ApiService {
       ),
     );
 
+    // 3. الآن يمكن استخدام cookieJar بأمان لأنه تم تهيئته بالأعلى
     dio.interceptors.add(CookieManager(cookieJar));
 
     dio.interceptors.add(
@@ -46,13 +54,8 @@ class ApiService {
         },
         onError: (DioException e, handler) async {
           if (e.response?.statusCode == 401) {
-            // التوكن انتهى أو غير صحيح
             print("Token is invalid or expired. Cleaning up...");
-
-            // استدعاء الدالة الصحيحة من ملف TokenStorage الخاص بكِ
             await tokenService.deleteToken();
-
-            // (اختياري) يمكنك هنا إضافة كود للانتقال لصفحة الـ Login
           }
           return handler.next(e);
         },
@@ -68,8 +71,7 @@ class ApiService {
     );
   }
 
-
-
+  // ... (باقي دوال get, post, put, delete كما هي)
   Future<Map<String, dynamic>> get({
     required String urlEndPoint,
     Map<String, dynamic>? queryParameters,
@@ -116,7 +118,6 @@ class ApiService {
     );
     return response.data;
   }
-
 
   Future<Map<String, dynamic>> patch({
     required String urlEndPoint,

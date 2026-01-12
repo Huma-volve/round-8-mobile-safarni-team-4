@@ -14,25 +14,18 @@ class ResultSearch extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         actions: [
-        InkWell(
-          onTap: (){
-
-          },
-          child: SvgPicture.asset('assets/icons/searhc.svg',
-          height: 24.h,
-
-          ),
-        ),
-          const SizedBox(width: 23,),
           InkWell(
-            onTap: (){
+            onTap: () {},
+            child: SvgPicture.asset('assets/icons/searhc.svg', height: 24.h),
+          ),
+          const SizedBox(width: 23),
+          InkWell(
+            onTap: () {
               context.pushNamed(AppRoutes.FilterView);
             },
-            child: SvgPicture.asset('assets/icons/filter.svg',
-            height: 17.h,
-            ),
+            child: SvgPicture.asset('assets/icons/filter.svg', height: 17.h),
           ),
-          const SizedBox(width: 16,),
+          const SizedBox(width: 16),
         ],
       ),
       body: const ResultSearchViewBody(),

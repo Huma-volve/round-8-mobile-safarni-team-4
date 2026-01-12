@@ -18,7 +18,9 @@ class MasterCardAndVisaBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          const TextField(decoration: InputDecoration(hintText: 'Your full name')),
+          const TextField(
+            decoration: InputDecoration(hintText: 'Your full name'),
+          ),
           const SizedBox(height: 16),
           Text(
             'Your Email',
@@ -28,7 +30,9 @@ class MasterCardAndVisaBody extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-          const TextField(decoration: InputDecoration(hintText: 'Type your email')),
+          const TextField(
+            decoration: InputDecoration(hintText: 'Type your email'),
+          ),
           const SizedBox(height: 16),
           Row(
             spacing: 8,

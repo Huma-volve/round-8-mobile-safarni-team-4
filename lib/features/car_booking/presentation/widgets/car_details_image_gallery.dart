@@ -101,16 +101,8 @@ class CarDetailsImageGallery extends StatelessWidget {
                 child: const Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
-                      Icons.arrow_left,
-                      size: 18,
-                      color: Color(0xFF05162C),
-                    ),
-                    Icon(
-                      Icons.arrow_right,
-                      size: 18,
-                      color: Color(0xFF05162C),
-                    ),
+                    Icon(Icons.arrow_left, size: 18, color: Color(0xFF05162C)),
+                    Icon(Icons.arrow_right, size: 18, color: Color(0xFF05162C)),
                   ],
                 ),
               ),

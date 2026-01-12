@@ -3,29 +3,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/constants/assets_paths.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 
 class VerifyCodeViewHeaderSec extends StatelessWidget {
-  const VerifyCodeViewHeaderSec({super.key});
+  const VerifyCodeViewHeaderSec({super.key, required this.email});
+
+  final String email;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Align(
-          alignment: Alignment.centerLeft,
-          child: GestureDetector(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios,
-              size: context.sp(17),
-              color: AppColors.black[100],
-            ),
-          ),
-        ),
         context.gapH(32),
         SvgPicture.asset(
           AssetsPaths.mailIcon,
@@ -45,13 +33,11 @@ class VerifyCodeViewHeaderSec extends StatelessWidget {
           ).copyWith(color: AppColors.grayColor[60]),
         ),
         Text(
-          'kneedue@untitledui.com',
+          email,
           style: AppTextStyles.font14grayColor70Regular(
             context,
           ).copyWith(color: AppColors.grayColor[100]),
         ),
-        context.gapH(30),
-        Text('00:30', style: context.textTheme.titleLarge),
       ],
     );
   }

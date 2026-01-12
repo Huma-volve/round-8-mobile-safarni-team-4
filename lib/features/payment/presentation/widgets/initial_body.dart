@@ -21,8 +21,9 @@ class InitialBody extends StatelessWidget {
           ),
         ),
         GestureDetector(
-            onTap: (){},
-            child: const Icon(Icons.add_circle_outline)),
+          onTap: () {},
+          child: const Icon(Icons.add_circle_outline),
+        ),
       ],
     );
   }

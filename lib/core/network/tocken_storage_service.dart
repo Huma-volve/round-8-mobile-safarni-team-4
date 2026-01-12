@@ -1,19 +1,15 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class TokenStorageService {
-  
   final _storage = const FlutterSecureStorage();
 
   static const _tokenKey = 'auth_token';
 
-  AndroidOptions _getAndroidOptions() => const AndroidOptions(
-        encryptedSharedPreferences: true,
-      );
+  AndroidOptions _getAndroidOptions() =>
+      const AndroidOptions(encryptedSharedPreferences: true);
 
-  IOSOptions _getIOSOptions() => const IOSOptions(
-        accessibility: KeychainAccessibility.first_unlock,
-      );
-
+  IOSOptions _getIOSOptions() =>
+      const IOSOptions(accessibility: KeychainAccessibility.first_unlock);
 
   Future<void> saveToken(String token) async {
     await _storage.write(
@@ -31,7 +27,6 @@ class TokenStorageService {
       iOptions: _getIOSOptions(),
     );
   }
-
 
   Future<void> deleteToken() async {
     await _storage.delete(

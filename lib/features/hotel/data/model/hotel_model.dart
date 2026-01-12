@@ -9,5 +9,4 @@ class HotelModel {
     required this.rating,
     required this.hotelName,
   });
-
 }

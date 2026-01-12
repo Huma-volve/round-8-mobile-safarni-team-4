@@ -13,21 +13,26 @@ class ItemPriceRow extends StatelessWidget {
         Text(
           'From',
           style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.w600,
-              fontSize: 14.sp,
-              color: AppColors.black[60]),
+            fontWeight: FontWeight.w600,
+            fontSize: 14.sp,
+            color: AppColors.black[60],
+          ),
         ),
-        Text(' 1050\$',
-            style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                fontWeight: FontWeight.w600,
-                fontSize: 16.sp,
-                color: const Color(0xff1C64F2))),
+        Text(
+          ' 1050\$',
+          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+            fontWeight: FontWeight.w600,
+            fontSize: 16.sp,
+            color: const Color(0xff1C64F2),
+          ),
+        ),
         Text(
           ' per Person',
           style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.w600,
-              fontSize: 14.sp,
-              color: AppColors.black[60]),
+            fontWeight: FontWeight.w600,
+            fontSize: 14.sp,
+            color: AppColors.black[60],
+          ),
         ),
       ],
     );

@@ -13,17 +13,16 @@ class ResultSearchViewBody extends StatelessWidget {
       child: Column(
         children: [
           const SectionNumOfResult(),
-         Expanded(
-           child: ListView.builder(
-             itemCount: 5,
-             itemBuilder: (context, index) {
+          Expanded(
+            child: ListView.builder(
+              itemCount: 5,
+              itemBuilder: (context, index) {
                 return const CustomSearchItem();
-              }
+              },
             ),
-         ),
+          ),
         ],
       ),
     );
   }
 }
-

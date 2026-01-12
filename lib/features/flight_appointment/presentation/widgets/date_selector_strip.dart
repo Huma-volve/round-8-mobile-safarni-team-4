@@ -53,12 +53,7 @@ class DateCard extends StatelessWidget {
         children: [
           Icon(icon, size: 18, color: AppColors.black),
           const SizedBox(width: 8),
-          Text(
-            text,
-            style: theme.textTheme.titleSmall?.copyWith(
-              fontSize: 12
-            ),
-          ),
+          Text(text, style: theme.textTheme.titleSmall?.copyWith(fontSize: 12)),
         ],
       ),
     );
