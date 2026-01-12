@@ -8,15 +8,16 @@ import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/f
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/set_new_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/success_reset_password_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/verify_code_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/my_booking_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/personal_info_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/profile_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/search/presentation/view/result_search.dart';
 import 'package:round_8_mobile_safarni_team4/features/seat_selection/presentation/views/seat_selection_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/use_case/sign_up_use_case.dart';
-import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/cubit/sign_up_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/verify_code_request_entity.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/sign_up_cubit/sign_up_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/verify_code/verify_code_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/sign_up_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/verify_code_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/welcome/presentation/views/welcome_view.dart';
 
 import '../../features/boarding_pass/presentation/views/boarding_pass_view.dart';
@@ -97,9 +98,7 @@ abstract class AppRouter {
           return MaterialPageRoute(
             builder:
                 (context) => BlocProvider<SignUpCubit>(
-                  create:
-                      (context) =>
-                          SignUpCubit(signUpUseCase: getIt<SignUpUseCase>()),
+                  create: (context) => getIt<SignUpCubit>(),
                   child: const SignUpView(),
                 ),
           );
@@ -120,7 +119,13 @@ abstract class AppRouter {
 
         case AppRoutes.verifyCodeView:
           return MaterialPageRoute(
-            builder: (context) => const VerifyCodeView(),
+            builder:
+                (context) => BlocProvider<VerifyCodeCubit>(
+                  create: (context) => getIt<VerifyCodeCubit>(),
+                  child: VerifyCodeView(
+                    verifyCodeRequestEntity: args as VerifyCodeRequestEntity,
+                  ),
+                ),
           );
 
         case AppRoutes.setNewPasswordView:

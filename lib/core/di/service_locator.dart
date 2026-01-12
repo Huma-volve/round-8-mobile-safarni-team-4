@@ -2,10 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:round_8_mobile_safarni_team4/core/network/api_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/data_sources/sign_up_remote_data_source.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/data/data_sources/verify_code_remote_data_source.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/repos/sign_up_repo_impl.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/data/repos/verify_code_repo_impl.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/repos/sign_up_repo.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/repos/verify_code_repo.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/use_case/sign_up_use_case.dart';
-import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/cubit/sign_up_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/use_case/verify_code_use_case.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/sign_up_cubit/sign_up_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/verify_code/verify_code_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -24,17 +29,34 @@ Future<void> setupLocator() async {
   );
 
   getIt.registerLazySingleton<SignUpRepo>(
-    () => SignUpRepoImpl(
-      signUpRemoteDataSource: getIt<SignUpRemoteDataSourceImpl>(),
-    ),
+    () =>
+        SignUpRepoImpl(signUpRemoteDataSource: getIt<SignUpRemoteDataSource>()),
   );
 
   getIt.registerLazySingleton<SignUpUseCase>(
     () => SignUpUseCase(signUpRepo: getIt<SignUpRepo>()),
   );
 
-  getIt.registerLazySingleton<SignUpCubit>(
+  getIt.registerFactory<SignUpCubit>(
     () => SignUpCubit(signUpUseCase: getIt<SignUpUseCase>()),
+  );
+
+  getIt.registerLazySingleton<VerifyCodeRemoteDataSource>(
+    () => VerifyCodeRemoteDataSourceImpl(apiService: getIt<ApiService>()),
+  );
+
+  getIt.registerLazySingleton<VerifyCodeRepo>(
+    () => VerifyCodeRepoImpl(
+      verifyCodeRemoteDataSource: getIt<VerifyCodeRemoteDataSource>(),
+    ),
+  );
+
+  getIt.registerLazySingleton<VerifyCodeUseCase>(
+    () => VerifyCodeUseCase(verifyCodeRepo: getIt<VerifyCodeRepo>()),
+  );
+
+  getIt.registerFactory<VerifyCodeCubit>(
+    () => VerifyCodeCubit(verCodeUseCase: getIt<VerifyCodeUseCase>()),
   );
 
   // getIt.registerLazySingleton<LoginRepo>(

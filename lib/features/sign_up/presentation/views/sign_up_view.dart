@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/widgets/already_have_an_account_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/login_and_sign_up_divider_section.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/widgets/already_have_an_account_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/widgets/sign_up_button_section.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/widgets/sign_up_listener_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/widgets/sign_up_social_section.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/widgets/sign_up_text_form_fields_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/views/widgets/sign_up_welcome_title_section.dart';
@@ -31,6 +32,8 @@ class SignUpView extends StatelessWidget {
               const SignUpSocialSection(),
               context.gapH(32),
               const HaveAnAccountSec(),
+              const SignUpListenerSec(),
+              context.gapH(32),
             ],
           ),
         ),

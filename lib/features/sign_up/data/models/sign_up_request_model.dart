@@ -1,4 +1,4 @@
-import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/sign_up_entity.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/sign_up_entites/sign_up_request_entity.dart';
 
 class SignUpRequestModel extends SignUpRequestEntity {
   SignUpRequestModel({
