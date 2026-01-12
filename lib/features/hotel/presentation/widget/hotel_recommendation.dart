@@ -1,15 +1,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/hotel_model.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/get_all_hotels/hotel_model.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/available_room.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_discount_and_rationg.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_location.dart';
-
+import 'package:cached_network_image/cached_network_image.dart';
 class HotelRecommendation extends StatelessWidget {
   const HotelRecommendation({super.key, required this.hotelModel});
 
   final HotelModel hotelModel;
+  
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -43,23 +44,30 @@ class HotelRecommendation extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Image.asset(
-                hotelModel.hotelImage,
+              child: CachedNetworkImage(
+                imageUrl: hotelModel.image,
+                placeholder: (context, url) => const Center(
+                  child: CircularProgressIndicator(),
+                ),
+                errorWidget: (context, url, error) => const Center(
+                  child: Icon(Icons.error),
+                ),
                 fit: BoxFit.cover,
-              //  width: double.infinity,
               ),
             ),
             const SizedBox(height: 4.0),
             CustomDiscountAndRationg(hotelModel: hotelModel),
             FittedBox(
               child: Text(
-                hotelModel.hotelName,
+                hotelModel.name,
                 style: AppThemes.light.textTheme.titleLarge!.copyWith(
                   fontSize: 16.0,
                 ),
               ),
             ),
-            const FittedBox(child: CustomLocation()),
+          const  FittedBox(child: CustomLocation(
+             // hotelModel: hotelModel,
+            )),
           ],
         ),
       ),

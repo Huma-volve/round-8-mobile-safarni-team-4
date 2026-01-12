@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/hotel_model.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/get_all_hotels/hotel_model.dart';
 
 class CustomDiscountAndRationg extends StatelessWidget {
   const CustomDiscountAndRationg({super.key,  this.hotelModel , this.text});
@@ -20,7 +20,7 @@ class CustomDiscountAndRationg extends StatelessWidget {
             borderRadius: BorderRadius.circular(4.0),
           ),
           child: Text(
-            hotelModel!.discount,
+            "10%Off",
             style: AppThemes.light.textTheme.labelMedium!.copyWith(
               color: const Color(0xff007BFF),
             ),
@@ -33,8 +33,7 @@ class CustomDiscountAndRationg extends StatelessWidget {
           icon: const Icon(Icons.star, color: Colors.amber),
         ),
         Text(
-          text ??
-          hotelModel!.rating  ,
+         hotelModel?.rating.toString() ?? "3",
           style: AppThemes.light.textTheme.displayLarge!.copyWith(
             fontSize: 12.0,
           ),

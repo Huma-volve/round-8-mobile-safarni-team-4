@@ -2,20 +2,24 @@ import 'dart:ui';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:round_8_mobile_safarni_team4/core/di/mohamed_di.dart';
+import 'package:round_8_mobile_safarni_team4/core/di/service_locator.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routing.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
 
 
 void main() {
+//  WidgetsFlutterBinding.ensureInitialized();
+  // runApp(
+  //   DevicePreview(
+  //     enabled: !const bool.fromEnvironment('dart.vm.product'),
+  //     builder: (context) => const MyApp(),
+  //   ),
+  // );
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(
-    DevicePreview(
-      enabled: !const bool.fromEnvironment('dart.vm.product'),
-      builder: (context) => const MyApp(),
-    ),
-  );
-  WidgetsFlutterBinding.ensureInitialized();
+ setupDependencies();
   runApp(DevicePreview(enabled: false, builder: (context) => const MyApp()));
 }
 
@@ -34,8 +38,9 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           theme: AppThemes.light,
-          initialRoute: AppRoutes.onboardingView,
-          onGenerateRoute: AppRouter.onGenerateRoute,
+          home: const HotelView(),
+          // initialRoute: AppRoutes.onboardingView,
+          // onGenerateRoute: AppRouter.onGenerateRoute,
         );
       },
     );

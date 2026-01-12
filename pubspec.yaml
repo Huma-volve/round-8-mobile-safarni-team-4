@@ -134,11 +134,10 @@ dependencies:
 dev_dependencies:
   analyzer: any
   build_runner: any
-  hive_generator: any
   injectable_generator: any
   json_serializable: any
 
-  retrofit_generator: any
+  retrofit_generator: ^10.2.1
 
   flutter_test:
     sdk: flutter

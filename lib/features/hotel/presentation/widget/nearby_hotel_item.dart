@@ -46,7 +46,7 @@ class NearbyHotelItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    CustomDiscountAndRationg(hotelModel: hotelModel),
+                   const CustomDiscountAndRationg(),
                     Text(hotelModel.hotelName),
                     const CustomLocation(),
                   ],
