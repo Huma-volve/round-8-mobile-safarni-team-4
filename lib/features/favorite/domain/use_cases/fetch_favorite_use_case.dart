@@ -11,7 +11,7 @@ class FetchFavoriteUseCase extends UseCase<List<FavoriteEntity>, NoParams> { // 
   
   @override
   Future<Either<Faliar, List<FavoriteEntity>>> call([NoParams? params]) {
-    throw UnimplementedError();
+return favoriteRepo.fetchFeaturedFavorites();
   }
 }
 

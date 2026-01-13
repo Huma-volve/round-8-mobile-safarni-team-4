@@ -1,11 +1,12 @@
-// import 'package:round_8_mobile_safarni_team4/features/favorite/data/api_service/favorite_api_service.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/data/data_source/favorite_remote_data_source.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/data/model/favorite_response_model.dart';
 
-// class FavoriteRepo {
-//   FavoriteApiService getFavoriteApiService;
-//   FavoriteRepo(this.getFavoriteApiService);
+class FavoriteRepo {
+  FavoriteRemoteDataSource favoriteRemoteDataSource;
+  FavoriteRepo(this.favoriteRemoteDataSource);
 
-//   Future<List<FavoriteModel>> getFavorites() async {
-//     return await getFavoriteApiService.getFavorites();
-//   }
-
-// }
+  Future<List<FavoriteModel>> getFavorites() async {
+   FavoriteResponseModel response = await favoriteRemoteDataSource.getFavorites();
+    return response.favoritemodel;
+  }
+}
