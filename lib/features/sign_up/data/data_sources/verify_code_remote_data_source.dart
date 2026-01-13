@@ -20,7 +20,7 @@ class VerifyCodeRemoteDataSourceImpl implements VerifyCodeRemoteDataSource {
     required VerifyCodeRequestEntity verifyCodeRequestEntity,
   }) async {
     final response = await apiService.post(
-      urlEndPoint: ApiEndPoints.verifyCode,
+      urlEndPoint: ApisEndpoints.verifyCode,
       data:
           VerifyCodeRequestModel(
             userId: verifyCodeRequestEntity.userId,

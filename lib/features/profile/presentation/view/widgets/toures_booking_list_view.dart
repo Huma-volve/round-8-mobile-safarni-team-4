@@ -22,7 +22,7 @@ class TouresBookingListView extends StatelessWidget {
               vertical: context.h(8),
               horizontal: context.w(8),
             ),
-            margin: EdgeInsetsGeometry.symmetric(
+            margin: EdgeInsets.symmetric(
               vertical: context.h(6),
               horizontal: context.w(16),
             ),

@@ -19,7 +19,7 @@ class SignUpRemoteDataSourceImpl implements SignUpRemoteDataSource {
     SignUpRequestEntity signUpRequestEntity,
   ) async {
     final response = await apiService.post(
-      urlEndPoint: ApiEndPoints.signUp,
+      urlEndPoint: ApisEndpoints.signUp,
       data:
           SignUpRequestModel(
             fullName: signUpRequestEntity.fullName,

@@ -16,7 +16,7 @@ class FlightBookingListView extends StatelessWidget {
                 horizontal: context.w(35),
                 vertical: context.h(16),
               ),
-              margin: EdgeInsetsGeometry.symmetric(
+              margin: EdgeInsets.symmetric(
                 vertical: context.h(12),
                 horizontal: context.w(16),
               ),

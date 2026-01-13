@@ -7,17 +7,23 @@ import 'brands_list.dart';
 
 class BrandCard extends StatelessWidget {
   final BrandModel model;
+  final bool isSelected;
 
-  const BrandCard({super.key, required this.model});
+  const BrandCard({super.key, required this.model, this.isSelected = false});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color:
+            isSelected
+                ? AppColors.mainColorLight.withOpacity(0.1)
+                : Colors.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.grey.shade100),
+        border: Border.all(
+          color: isSelected ? AppColors.mainColorLight : Colors.grey.shade100,
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.02),
