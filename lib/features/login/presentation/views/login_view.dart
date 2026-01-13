@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/don_not_have_account_sec.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/login_listener_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/login_text_form_fields_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/login_image_and_welcome_title_section.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/login_forgot_password_and_button_section.dart';
@@ -30,6 +31,7 @@ class LoginView extends StatelessWidget {
               const LoginSocialSection(),
               context.gapH(32),
               const DonNotHaveAccountSec(),
+              const LoginListenerSec(),
             ],
           ),
         ),

@@ -7,7 +7,7 @@ final class VerifyCodeInitial extends VerifyCodeState {}
 final class VerifyCodeLoading extends VerifyCodeState {}
 
 final class VerifyCodeSuccess extends VerifyCodeState {
-  final UserEntity userEntity;
+  final UserDataEntity userEntity;
   VerifyCodeSuccess({required this.userEntity});
 }
 

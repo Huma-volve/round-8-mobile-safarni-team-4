@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/user_entity.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/user_data_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/verify_code_request_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/use_case/verify_code_use_case.dart';
 
@@ -15,11 +15,7 @@ class VerifyCodeCubit extends Cubit<VerifyCodeState> {
   Future<void> verifyCode({required int userId, required String email}) async {
     emit(VerifyCodeLoading());
     final result = await verCodeUseCase.call(
-      param: VerifyCodeRequestEntity(
-        userId: userId,
-        otp: otpController.text,
-        email: email,
-      ),
+      param: VerifyCodeRequestEntity(userId: userId, otp: '1234', email: email),
     );
     result.fold(
       (failure) => emit(VerifyCodeFailure(errorMessage: failure.errorMessage)),
