@@ -167,8 +167,11 @@ abstract class AppRouter {
 
         //DestinationView
         case AppRoutes.DestinationView:
+          final int id = routeSettings.arguments as int;
           return MaterialPageRoute(
-            builder: (context) => const DestinationView(),
+            builder: (context) =>  DestinationView(
+              tourId: id,
+            ),
           );
         //SearchTourView
         case AppRoutes.SearchTourView:

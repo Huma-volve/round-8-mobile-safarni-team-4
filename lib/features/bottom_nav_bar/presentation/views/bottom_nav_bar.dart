@@ -6,7 +6,8 @@ import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/bottom_nav_bar/presentation/views/widgets/dynamic_bar_painter.dart';
 import 'package:round_8_mobile_safarni_team4/features/compare/presentation/view/compare_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
-import 'package:round_8_mobile_safarni_team4/features/home/presentation/view/home_view.dart';
+
+import '../../../home/presentation/view/home_view.dart';
 // استورد باقي الشاشات هنا (Favorite و Compare إذا كانت موجودة)
 
 class BottomNavBar extends StatefulWidget {

@@ -26,6 +26,15 @@ import '../../features/car_booking/domain/use_cases/search_car_use_case.dart';
 import '../../features/car_booking/presentation/cubit/car_appointment_cubit.dart';
 import '../api/api_error_handler.dart';
 
+import '../../features/destination/data/api_service/tour_details_remote_data_source.dart';
+import '../../features/destination/data/repo/destination_rpo.dart';
+import '../../features/destination/domain/repo_imple/destination_repo_imple.dart';
+import '../../features/destination/presentation/managers/destination_cubit/destination_cubit.dart';
+import '../../features/home/data/api_service/home_remote_data_source.dart';
+import '../../features/home/data/repo/home_repo.dart';
+import '../../features/home/domain/repo_imple/home_repo_impe.dart';
+import '../../features/home/presentation/managers/home_cubit/home_cubit.dart';
+
 final getIt = GetIt.instance;
 
 Future<void> setupLocator() async {
@@ -87,6 +96,28 @@ Future<void> setupLocator() async {
 
   getIt.registerFactory<LoginCubit>(
     () => LoginCubit(loginUseCase: getIt<LoginUseCase>()),
+  );
+// --- Home ---
+  getIt.registerLazySingleton<HomeRemoteDataSource>(
+        () => HomeRemoteDataSource(getIt<ApiService>()),
+  );
+  getIt.registerLazySingleton<HomeRepo>(
+        () => HomeRepoImpl(getIt<HomeRemoteDataSource>()),
+  );
+  getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt<HomeRepo>()));
+  //-------------------------------------------------------------
+  // --- [2] Destination (الجزء الجديد) ---
+  getIt.registerLazySingleton<DestinationRemoteDataSource>(
+        () => DestinationRemoteDataSourceImpl(getIt<ApiService>()),
+  );
+
+  getIt.registerLazySingleton<DestinationRepo>(
+        () => DestinationRepoImpl(getIt<DestinationRemoteDataSource>()),
+  );
+
+  // نستخدم registerFactory لأن الـ Cubit يتم إنشاؤه وإغلاقه مع كل صفحة جديدة
+  getIt.registerFactory<DestinationCubit>(
+        () => DestinationCubit(getIt<DestinationRepo>()),
   );
 
   // getIt.registerLazySingleton<LoginRepo>(

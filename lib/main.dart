@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           theme: AppThemes.light,
-          initialRoute: AppRoutes.carBooking,
+          initialRoute: AppRoutes.home,
           onGenerateRoute: AppRouter.onGenerateRoute,
         );
       },
