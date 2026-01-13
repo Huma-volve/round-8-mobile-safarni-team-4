@@ -6,6 +6,7 @@ import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.
 import 'package:round_8_mobile_safarni_team4/features/car_booking/data/models/search_car_request.dart';
 import 'package:round_8_mobile_safarni_team4/features/car_booking/domain/entities/search_car_response_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/car_booking/presentation/cubit/car_appointment_cubit.dart';
+import '../../../../core/widgets/custom_shimmer.dart';
 import '../../../../core/widgets/error_state_widget.dart';
 import '../../../../core/widgets/loading_state_widget.dart';
 import '../widgets/brands_list.dart';
@@ -67,9 +68,7 @@ class CarBookingView extends StatelessWidget {
                             case Status.loading:
                               return SizedBox(
                                 height: height * 0.3,
-                                child: const Center(
-                                  child: LoadingStateWidget(),
-                                ),
+                                child: const Center(child: CustomShimmer()),
                               );
                             case Status.success:
                               if (state.searchCarResponseEntity != null &&

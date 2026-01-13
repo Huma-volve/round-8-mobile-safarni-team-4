@@ -9,10 +9,13 @@ class HomeRemoteDataSource {
   HomeRemoteDataSource(this._apiService);
 
   Future<List<Tours>> getRecommendedTours() async {
-    final response = await _apiService.get(urlEndPoint: '${ApiEndPoints.baseUrl}tours/recommended');
+    final response = await _apiService.get(
+      urlEndPoint: '${ApisEndpoints.baseUrl}tours/recommended',
+    );
     final List data = response['data'];
     return data.map((e) => Tours.fromJson(e)).toList();
   }
+
   // home_remote_data_source.dart
 
   Future<List<Tours>> getAvailableTours() async {
@@ -21,5 +24,4 @@ class HomeRemoteDataSource {
     final List data = response['data'];
     return data.map((e) => Tours.fromJson(e)).toList();
   }
-
 }

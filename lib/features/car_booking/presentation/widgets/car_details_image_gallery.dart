@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 
+import '../../../../core/widgets/custom_shimmer.dart';
 import '../../../../core/widgets/loading_state_widget.dart';
 
 class CarDetailsImageGallery extends StatelessWidget {
@@ -46,7 +47,10 @@ class CarDetailsImageGallery extends StatelessWidget {
                             ),
                           ),
                         ),
-                    placeholder: (context, url) => const LoadingStateWidget(),
+                    placeholder:  (context, url) => CustomShimmer(
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      height: MediaQuery.of(context).size.width * 0.2,
+                    ),
                     errorWidget:
                         (context, url, error) => const Icon(Icons.error),
                   ),
