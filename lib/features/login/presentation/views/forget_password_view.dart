@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/widgets/custom_button.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/forget_password/forget_password_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/forget_password_form_field_section.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/forget_password_listner_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/forget_password_view_header_sec.dart';
 
 class ForgetPasswordView extends StatelessWidget {
@@ -26,9 +27,16 @@ class ForgetPasswordView extends StatelessWidget {
               CustomButton(
                 buttonName: 'Reset Password',
                 onPressed: () {
-                  context.pushNamed(AppRoutes.verifyCodeView);
+                  if (context
+                      .read<ForgetPasswordCubit>()
+                      .formKey
+                      .currentState!
+                      .validate()) {
+                    context.read<ForgetPasswordCubit>().forgetPassword();
+                  }
                 },
               ),
+              const ForgetPasswordListnerSec(),
             ],
           ),
         ),

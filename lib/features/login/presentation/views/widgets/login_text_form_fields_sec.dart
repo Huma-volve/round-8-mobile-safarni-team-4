@@ -14,7 +14,7 @@ class LoginTextFormFieldsSec extends StatefulWidget {
 }
 
 class _LoginTextFormFieldsSecState extends State<LoginTextFormFieldsSec> {
-  bool isPassword = false;
+  bool isPassword = true;
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -43,7 +43,7 @@ class _LoginTextFormFieldsSecState extends State<LoginTextFormFieldsSec> {
           CustomTextFormField(
             controller: context.read<LoginCubit>().passwordController,
             hintText: '***********',
-            isObscureText: true,
+            isObscureText: isPassword,
             prefixIcon: Icons.lock_outline,
             suffixIcon: isPassword ? Icons.visibility : Icons.visibility_off,
             suffixIconTap: () {

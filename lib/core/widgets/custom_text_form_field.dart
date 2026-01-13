@@ -111,6 +111,9 @@ class CustomTextFormField extends StatelessWidget {
       ),
       obscureText: isObscureText ?? false,
       validator: validator ?? (value) => null,
+      style: AppTextStyles.font14grayColor70Regular(
+        context,
+      ).copyWith(color: AppColors.grayColor[90]),
     );
   }
 }
