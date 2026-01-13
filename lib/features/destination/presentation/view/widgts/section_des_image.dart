@@ -1,9 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SectionDesImage extends StatefulWidget {
-  const SectionDesImage({super.key});
-
+  const SectionDesImage({super.key, required this.image});
+final String image;
   @override
   State<SectionDesImage> createState() => _SectionDesImageState();
 }
@@ -14,11 +15,18 @@ class _SectionDesImageState extends State<SectionDesImage> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.asset(
-          'assets/images/f740ef6cd867e287f165cac7175de41c2d666258.jpg', // صورة برج إيفل افتراضية
-          width: double.infinity,
+        Container(
           height: 293.h,
-          fit: BoxFit.cover,
+          width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16)
+          ),
+          child: CachedNetworkImage(
+            imageUrl: widget.image,
+            fit: BoxFit.cover,
+            placeholder: (context, url) => Container(color: Colors.grey[200]), // مؤشر تحميل
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
         ),
         Positioned(
           top: 50,
@@ -26,11 +34,7 @@ class _SectionDesImageState extends State<SectionDesImage> {
           child: CircleAvatar(
             backgroundColor: Colors.white,
             child: IconButton(
-              icon: const Icon(
-                Icons.arrow_back_ios_new,
-                size: 18,
-                color: Colors.black,
-              ),
+              icon: const Icon(Icons.arrow_back_ios_new, size: 18, color: Colors.black),
               onPressed: () => Navigator.pop(context),
             ),
           ),
