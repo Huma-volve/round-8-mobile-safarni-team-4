@@ -7,6 +7,6 @@ class FavoriteRepo {
 
   Future<List<FavoriteModel>> getFavorites() async {
    FavoriteResponseModel response = await favoriteRemoteDataSource.getFavorites();
-    return response.favoritemodel;
+    return response.data;
   }
 }

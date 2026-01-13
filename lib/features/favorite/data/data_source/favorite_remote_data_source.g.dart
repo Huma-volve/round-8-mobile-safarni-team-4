@@ -12,7 +12,7 @@ part of 'favorite_remote_data_source.dart';
 
 class _FavoriteRemoteDataSource implements FavoriteRemoteDataSource {
   _FavoriteRemoteDataSource(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://round8-backend-team-one.huma-volve.com/api/';
+    baseUrl ??= 'https://round8-safarni-team-three.huma-volve.com/api/';
   }
 
   final Dio _dio;

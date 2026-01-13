@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/features/favorite/data/favorite_model.dart';
-import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/widget/list_view_item_favorite_card.dart';
 
 class FavoriteViewBody extends StatelessWidget {
@@ -10,6 +9,7 @@ class FavoriteViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 50),
         Row(
           children: [
             IconButton(

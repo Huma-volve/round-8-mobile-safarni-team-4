@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:round_8_mobile_safarni_team4/core/network/api_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/api_serrvice/hotel_api_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/repo/hotel_repo.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/cubit/hotel_cubit.dart';

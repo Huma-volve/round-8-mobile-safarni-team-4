@@ -1,15 +1,14 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:round_8_mobile_safarni_team4/features/favorite/domain/entity/favorite_entity.dart';
 part 'favorite_response_model.g.dart';
 
 @JsonSerializable()
 class FavoriteResponseModel  {
-  final List<FavoriteModel> favoritemodel;
+  final List<FavoriteModel> data;
   final String status;
   final String message;
 
   FavoriteResponseModel({
-    required this.favoritemodel,
+    required this.data,
     required this.status,
     required this.message,
   });

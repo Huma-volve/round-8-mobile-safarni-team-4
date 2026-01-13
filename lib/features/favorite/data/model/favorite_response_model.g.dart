@@ -9,8 +9,8 @@ part of 'favorite_response_model.dart';
 FavoriteResponseModel _$FavoriteResponseModelFromJson(
   Map<String, dynamic> json,
 ) => FavoriteResponseModel(
-  favoritemodel:
-      (json['favoritemodel'] as List<dynamic>)
+  data:
+      (json['data'] as List<dynamic>)
           .map((e) => FavoriteModel.fromJson(e as Map<String, dynamic>))
           .toList(),
   status: json['status'] as String,
@@ -20,7 +20,7 @@ FavoriteResponseModel _$FavoriteResponseModelFromJson(
 Map<String, dynamic> _$FavoriteResponseModelToJson(
   FavoriteResponseModel instance,
 ) => <String, dynamic>{
-  'favoritemodel': instance.favoritemodel,
+  'data': instance.data,
   'status': instance.status,
   'message': instance.message,
 };

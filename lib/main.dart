@@ -3,11 +3,8 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/di/mohamed_di.dart';
-import 'package:round_8_mobile_safarni_team4/core/di/service_locator.dart';
-import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
-import 'package:round_8_mobile_safarni_team4/core/routing/app_routing.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/view/favorite_view.dart';
 
 
 void main() {
@@ -38,7 +35,7 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           theme: AppThemes.light,
-          home: const HotelView(),
+          home: const FavoriteView(),
           // initialRoute: AppRoutes.onboardingView,
           // onGenerateRoute: AppRouter.onGenerateRoute,
         );

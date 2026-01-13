@@ -3,6 +3,10 @@ import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:round_8_mobile_safarni_team4/core/network/api_end_points.dart';
 import 'package:get_it/get_it.dart';
+import 'package:round_8_mobile_safarni_team4/core/network/tocken_storage_service.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/data/data_source/favorite_remote_data_source.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/data/repo/favorite_repo.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/maneger/favorite_cubit/favorites_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/api_serrvice/hotel_api_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/repo/hotel_repo.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/cubit/hotel_cubit.dart';
@@ -10,7 +14,6 @@ import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger
 final getIt = GetIt.instance;
 
 Future<void> setupDependencies() async {
-  // 1. Dio - الـ HTTP client
   getIt.registerLazySingleton<Dio>(() {
     final dio = Dio(BaseOptions(
       baseUrl: ApiEndPoints.baseUrl,
@@ -19,7 +22,7 @@ Future<void> setupDependencies() async {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        "Authorization": "Bearer Token",
+        "Authorization": "Bearer 62|fbF97VsFcdNiIyOMwtAmyT0RcTYPxOF6ckjefECq25e49c60",
         // لو عايز تضيف Authorization token هنا أو في interceptor
       },
     ));
@@ -39,18 +42,30 @@ Future<void> setupDependencies() async {
     return dio;
   });
 
-  // 2. PaymentWebService - Retrofit client
+  getIt.registerLazySingleton<TokenStorageService>(
+  () => TokenStorageService(),
+);
+
   getIt.registerLazySingleton<HotelApiService>(
     () => HotelApiService(getIt<Dio>()),
   );
 
-  /// Repository
   getIt.registerLazySingleton<HotelRepository>(
     () => HotelRepository(getIt<HotelApiService>()),
   );
 
-  /// Cubit
   getIt.registerFactory<HotelCubit>(
     () => HotelCubit(getIt<HotelRepository>()),
+  );
+  getIt.registerLazySingleton<FavoriteRemoteDataSource>(
+    () => FavoriteRemoteDataSource(getIt<Dio>()),
+  );
+
+  getIt.registerLazySingleton<FavoriteRepo>(
+    () => FavoriteRepo(getIt<FavoriteRemoteDataSource>()),
+  );
+
+  getIt.registerFactory<FavoritesCubit>(
+    () => FavoritesCubit(getIt<FavoriteRepo>()),
   );
 }
