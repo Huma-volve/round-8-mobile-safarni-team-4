@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/features/car_booking/domain/entities/search_car_response_entity.dart';
 import '../../../../core/colors/app_colors.dart';
 import '../../../../core/routing/app_routes.dart';
 import '../widgets/car_details_image_gallery.dart';
@@ -11,7 +12,7 @@ import '../widgets/popular_cars_list.dart';
 class CarDetailsView extends StatelessWidget {
   const CarDetailsView({super.key, required this.model});
 
-  final PopularCarModel model;
+  final CarEntity model;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class CarDetailsView extends StatelessWidget {
           children: [
             Expanded(
               flex: 4,
-              child: CarDetailsImageGallery(image: model.image),
+              child: CarDetailsImageGallery(image: model.images?[0].url??''),
             ),
             const Expanded(
               flex: 5,

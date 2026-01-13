@@ -20,7 +20,7 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
     required LoginRequestEntity loginRequestEntity,
   }) async {
     final response = await apiService.post(
-      urlEndPoint: ApiEndPoints.login,
+      urlEndPoint: ApisEndpoints.login,
       data:
           LoginRequestModel(
             email: loginRequestEntity.email,

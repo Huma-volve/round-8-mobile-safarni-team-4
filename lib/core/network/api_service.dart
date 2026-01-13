@@ -1,9 +1,13 @@
+import 'package:ansicolor/ansicolor.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
+import 'package:flutter/foundation.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:round_8_mobile_safarni_team4/core/network/api_end_points.dart';
 import 'package:round_8_mobile_safarni_team4/core/network/tocken_storage_service.dart';
+import 'package:talker_dio_logger/talker_dio_logger_interceptor.dart';
+import 'package:talker_dio_logger/talker_dio_logger_settings.dart';
 
 class ApiService {
   late Dio dio;
@@ -11,7 +15,7 @@ class ApiService {
 
   final tokenService = TokenStorageService();
 
-  String get _baseUrlFromEnv => ApiEndPoints.baseUrl;
+  String get _baseUrlFromEnv => ApisEndpoints.baseUrl;
 
   ApiService._();
 
@@ -34,6 +38,7 @@ class ApiService {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
+          'Authorization' :'Bearer 66|5E3cZpkglcclJA7HdmyCydFWFuYw0jsuBXw1CrQa7f67bd8a'
         },
       ),
     );
@@ -62,11 +67,28 @@ class ApiService {
       ),
     );
 
+    // dio.interceptors.add(
+    //   LogInterceptor(
+    //     requestBody: true,
+    //     responseBody: true,
+    //     requestHeader: true,
+    //   ),
+    // );
     dio.interceptors.add(
-      LogInterceptor(
-        requestBody: true,
-        responseBody: true,
-        requestHeader: true,
+      TalkerDioLogger(
+        settings: TalkerDioLoggerSettings(
+          enabled: kDebugMode,
+          printResponseHeaders: true,
+          printRequestHeaders: true,
+          printResponseTime: true,
+          printResponseRedirects: true,
+          // Blue http requests logs in console
+          requestPen: AnsiPen()..white(),
+          // Green http responses logs in console
+          responsePen: AnsiPen()..green(),
+          // Error http logs in console
+          errorPen: AnsiPen()..red(),
+        ),
       ),
     );
   }

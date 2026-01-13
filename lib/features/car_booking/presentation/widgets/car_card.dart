@@ -1,13 +1,16 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/widgets/loading_state_widget.dart';
+import 'package:round_8_mobile_safarni_team4/features/car_booking/domain/entities/search_car_response_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/car_booking/presentation/widgets/popular_cars_list.dart';
 import '../../../../core/routing/app_routes.dart';
 import 'car_divider.dart';
 import 'car_info_item.dart';
 
 class CarCard extends StatelessWidget {
-  final PopularCarModel model;
+  final CarEntity model;
 
   const CarCard({super.key, required this.model});
 
@@ -40,7 +43,7 @@ class CarCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                model.name,
+                model.model ?? '',
                 style: context.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                   fontSize: context.sp(16),
@@ -49,11 +52,11 @@ class CarCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CarInfoItem(label: model.type),
+                  CarInfoItem(label: model.transmission ?? ''),
                   const CarDivider(),
-                  CarInfoItem(label: model.seats),
+                  CarInfoItem(label: model.seatCount.toString()),
                   const CarDivider(),
-                  CarInfoItem(label: model.fuel),
+                  CarInfoItem(label: model.fuelType ?? ''),
                 ],
               ),
               Row(
@@ -85,9 +88,21 @@ class CarCard extends StatelessWidget {
         Positioned(
           top: 0,
           right: 0,
-          child: Image.asset(
-            model.image,
-            width: MediaQuery.of(context).size.width * 0.5,
+          child: CachedNetworkImage(
+            imageUrl: model.images?[0].url ?? '',
+            imageBuilder:
+                (context, imageProvider) => Container(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: MediaQuery.of(context).size.width * 0.2,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+            placeholder: (context, url) => const LoadingStateWidget(),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
       ],

@@ -17,6 +17,15 @@ import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/use_case/ve
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/sign_up_cubit/sign_up_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/verify_code/verify_code_cubit.dart';
 
+import '../../features/car_booking/data/api/api_client/car_appointment_api_client.dart';
+import '../../features/car_booking/data/datasource_contract/car_appointment_datasurce.dart';
+import '../../features/car_booking/data/datasource_impl/car_appointment_datasource_impl.dart';
+import '../../features/car_booking/data/repo_impl/car_appointment_repo_impl.dart';
+import '../../features/car_booking/domain/repo_contract/car_appointment_repo.dart';
+import '../../features/car_booking/domain/use_cases/search_car_use_case.dart';
+import '../../features/car_booking/presentation/cubit/car_appointment_cubit.dart';
+import '../api/api_error_handler.dart';
+
 final getIt = GetIt.instance;
 
 Future<void> setupLocator() async {
@@ -94,5 +103,24 @@ Future<void> setupLocator() async {
   // getIt.registerFactory<RegisterCubit>(
   //   () => RegisterCubit(getIt<RegisterRepo>()),
   // );
+
+  // --- [3] Car Appointment ---
+
+  getIt.registerLazySingleton<CarAppointmentApiClient>(
+    () => CarAppointmentApiClient(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<CarAppointmentDatasource>(
+    () => CarAppointmentDatasourceImpl(getIt<CarAppointmentApiClient>()),
+  );
+  getIt.registerLazySingleton<CarAppointmentRepo>(
+    () => CarAppointmentRepoImpl(getIt<CarAppointmentDatasource>()),
+  );
+  getIt.registerLazySingleton<SearchCarUseCase>(
+    () => SearchCarUseCase(getIt<CarAppointmentRepo>()),
+  );
+  getIt.registerFactory<CarAppointmentCubit>(
+    () => CarAppointmentCubit(getIt<SearchCarUseCase>()),
+  );
+  getIt.registerLazySingleton<ApiErrorHandler>(() => ApiErrorHandler());
   await getIt.allReady();
 }
