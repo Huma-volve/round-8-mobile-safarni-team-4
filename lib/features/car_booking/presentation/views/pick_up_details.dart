@@ -5,6 +5,7 @@ import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.
 import 'package:round_8_mobile_safarni_team4/features/car_booking/domain/entities/search_car_response_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/car_booking/presentation/widgets/popular_cars_list.dart';
 
+import '../../../../core/widgets/custom_shimmer.dart';
 import '../../../../core/widgets/loading_state_widget.dart';
 import '../widgets/car_divider.dart';
 import '../widgets/car_info_item.dart';
@@ -132,7 +133,10 @@ class PickUpDetailsView extends StatelessWidget {
                         ),
                       ),
                     ),
-                placeholder: (context, url) => const LoadingStateWidget(),
+                placeholder:  (context, url) => CustomShimmer(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: MediaQuery.of(context).size.width * 0.2,
+                ),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),

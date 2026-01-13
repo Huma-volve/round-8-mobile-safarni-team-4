@@ -6,6 +6,7 @@ import 'package:round_8_mobile_safarni_team4/core/widgets/loading_state_widget.d
 import 'package:round_8_mobile_safarni_team4/features/car_booking/domain/entities/search_car_response_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/car_booking/presentation/widgets/popular_cars_list.dart';
 import '../../../../core/routing/app_routes.dart';
+import '../../../../core/widgets/custom_shimmer.dart';
 import 'car_divider.dart';
 import 'car_info_item.dart';
 
@@ -101,7 +102,11 @@ class CarCard extends StatelessWidget {
                     ),
                   ),
                 ),
-            placeholder: (context, url) => const LoadingStateWidget(),
+            placeholder:
+                (context, url) => CustomShimmer(
+                  width: MediaQuery.of(context).size.width * 0.5,
+                  height: MediaQuery.of(context).size.width * 0.2,
+                ),
             errorWidget: (context, url, error) => const Icon(Icons.error),
           ),
         ),
