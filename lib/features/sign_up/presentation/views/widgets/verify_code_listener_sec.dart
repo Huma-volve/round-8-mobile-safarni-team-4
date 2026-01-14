@@ -2,13 +2,17 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
-import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
+import 'package:round_8_mobile_safarni_team4/core/widgets/custom_error_dialog.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/verify_code_request_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/verify_code/verify_code_cubit.dart';
 
 class VerifyCodeListenerSec extends StatelessWidget {
-  const VerifyCodeListenerSec({super.key});
+  const VerifyCodeListenerSec({
+    super.key,
+    required this.verifyCodeRequestEntity,
+  });
+  final VerifyCodeRequestEntity verifyCodeRequestEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -30,46 +34,32 @@ class VerifyCodeListenerSec extends StatelessWidget {
         if (state is VerifyCodeFailure) {
           log(state.errorMessage);
           Navigator.pop(context);
-
-          setupErrorState(context, state.errorMessage);
+          customErrorDialog(context, state.errorMessage);
         }
         if (state is VerifyCodeSuccess) {
           Navigator.pop(context);
-          Navigator.pushNamedAndRemoveUntil(
-            context,
-            AppRoutes.home,
-            (route) => false,
-          );
+          if (verifyCodeRequestEntity.isForgetPassword) {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.setNewPasswordView,
+              (route) => false,
+              arguments: VerifyCodeRequestEntity(
+                userId: verifyCodeRequestEntity.userId,
+                otp: context.read<VerifyCodeCubit>().otpController.text,
+                email: verifyCodeRequestEntity.email,
+                isForgetPassword: true,
+              ),
+            );
+          } else {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.home,
+              (route) => false,
+            );
+          }
         }
       },
       child: const SizedBox.shrink(),
     );
   }
-}
-
-void setupErrorState(BuildContext context, String error) {
-  showDialog(
-    context: context,
-    builder:
-        (context) => AlertDialog(
-          backgroundColor: Colors.white,
-          icon: Icon(Icons.error, color: Colors.red, size: context.w(40)),
-          content: Text(
-            error,
-            style: AppTextStyles.font16mainColorLightSemiBold(context),
-          ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text(
-                'Got it',
-                textAlign: TextAlign.center,
-                style: AppTextStyles.font14MainColorLightw600(context),
-              ),
-            ),
-          ],
-        ),
-  );
 }

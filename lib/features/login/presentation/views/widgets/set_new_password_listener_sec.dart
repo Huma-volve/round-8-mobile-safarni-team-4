@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
-import 'package:round_8_mobile_safarni_team4/core/theme/app_text_stytles.dart';
 import 'package:round_8_mobile_safarni_team4/core/widgets/custom_error_dialog.dart';
-import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/reset_password/reset_password_cubit.dart';
 
-class LoginListenerSec extends StatelessWidget {
-  const LoginListenerSec({super.key});
+class SetNewPasswordListenerSec extends StatelessWidget {
+  const SetNewPasswordListenerSec({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginCubit, LoginState>(
+    return BlocListener<ResetPasswordCubit, ResetPasswordState>(
       listenWhen:
           (previous, current) =>
-              current is LoginSuccess ||
-              current is LoginLoading ||
-              current is LoginFailure,
+              current is ResetPasswordLoading ||
+              current is ResetPasswordSuccess ||
+              current is ResetPasswordFailure,
       listener: (context, state) {
-        if (state is LoginLoading) {
+        if (state is ResetPasswordLoading) {
           showDialog(
             context: context,
             builder: (context) {
@@ -26,17 +25,13 @@ class LoginListenerSec extends StatelessWidget {
             },
           );
         }
-        if (state is LoginFailure) {
+        if (state is ResetPasswordFailure) {
           Navigator.pop(context);
           customErrorDialog(context, state.errorMessage);
         }
-        if (state is LoginSuccess) {
+        if (state is ResetPasswordSuccess) {
           Navigator.pop(context);
-          Navigator.pushNamedAndRemoveUntil(
-            context,
-            AppRoutes.home,
-            (route) => false,
-          );
+          context.pushNamed(AppRoutes.successResetPasswordView);
         }
       },
       child: const SizedBox.shrink(),

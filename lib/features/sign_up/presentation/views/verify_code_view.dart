@@ -64,7 +64,9 @@ class VerifyCodeView extends StatelessWidget {
                   },
                   buttonName: 'Verify',
                 ),
-                const VerifyCodeListenerSec(),
+                VerifyCodeListenerSec(
+                  verifyCodeRequestEntity: verifyCodeRequestEntity,
+                ),
               ],
             ),
           ),

@@ -38,7 +38,9 @@ class ServerFailure extends Failure {
         statusCode == 401 ||
         statusCode == 403 ||
         statusCode == 422) {
-      return ServerFailure(response['message']);
+      return ServerFailure(
+        (response['message']) is int ? response['errors'] : response['message'],
+      );
     } else if (statusCode == 404) {
       return ServerFailure('Your request not found, Please try later!');
     } else if (statusCode == 500) {

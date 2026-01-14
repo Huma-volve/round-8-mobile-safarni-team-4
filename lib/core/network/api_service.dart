@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ansicolor/ansicolor.dart';
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
@@ -26,7 +28,6 @@ class ApiService {
   }
 
   Future<void> _initialize() async {
-    // 2. تهيئة مسار التخزين للكوكيز (هذا هو الجزء المفقود)
     final appDocDir = await getApplicationDocumentsDirectory();
     cookieJar = PersistCookieJar(
       storage: FileStorage("${appDocDir.path}/.cookies/"),
@@ -38,12 +39,10 @@ class ApiService {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'Authorization' :'Bearer 66|5E3cZpkglcclJA7HdmyCydFWFuYw0jsuBXw1CrQa7f67bd8a'
         },
       ),
     );
 
-    // 3. الآن يمكن استخدام cookieJar بأمان لأنه تم تهيئته بالأعلى
     dio.interceptors.add(CookieManager(cookieJar));
 
     dio.interceptors.add(
@@ -59,7 +58,7 @@ class ApiService {
         },
         onError: (DioException e, handler) async {
           if (e.response?.statusCode == 401) {
-            print("Token is invalid or expired. Cleaning up...");
+            log("Token is invalid or expired. Cleaning up...");
             await tokenService.deleteToken();
           }
           return handler.next(e);

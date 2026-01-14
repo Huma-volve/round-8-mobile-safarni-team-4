@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/widgets/custom_button.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/reset_password/reset_password_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/set_new_password_back_to_login_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/set_new_password_form_fields_sec.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/set_new_password_listener_sec.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/widgets/set_new_password_view_header_sec.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/verify_code_request_entity.dart';
 
 class SetNewPasswordView extends StatelessWidget {
-  const SetNewPasswordView({super.key});
+  const SetNewPasswordView({super.key, required this.verifyCodeRequestEntity});
+
+  final VerifyCodeRequestEntity verifyCodeRequestEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +31,18 @@ class SetNewPasswordView extends StatelessWidget {
               CustomButton(
                 buttonName: 'Reset Password',
                 onPressed: () {
-                  context.pushNamed(AppRoutes.successResetPasswordView);
+                  final cubit = context.read<ResetPasswordCubit>();
+                  if (cubit.formKey.currentState!.validate()) {
+                    cubit.resetPassword(
+                      userId: verifyCodeRequestEntity.userId,
+                      otp: verifyCodeRequestEntity.otp,
+                    );
+                  }
                 },
               ),
               context.gapH(16),
               const SetNewPasswordBackToLoginSec(),
+              const SetNewPasswordListenerSec(),
             ],
           ),
         ),
@@ -39,3 +50,4 @@ class SetNewPasswordView extends StatelessWidget {
     );
   }
 }
+

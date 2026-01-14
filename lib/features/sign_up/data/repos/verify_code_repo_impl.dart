@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:round_8_mobile_safarni_team4/core/failure/failures.dart';
+import 'package:round_8_mobile_safarni_team4/core/network/tocken_storage_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/data_sources/verify_code_remote_data_source.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/user_data_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/verify_code_request_entity.dart';
@@ -19,6 +20,7 @@ class VerifyCodeRepoImpl extends VerifyCodeRepo {
       final response = await verifyCodeRemoteDataSource.verifyCode(
         verifyCodeRequestEntity: verifyCodeRequestEntity,
       );
+      TokenStorageService().saveToken(response.token);
       return Right(response);
     } on DioException catch (error) {
       return Left(ServerFailure.fromDioException(error));
