@@ -24,7 +24,7 @@ class BoardingPassCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const FlightBookingDetails(),
+          // const FlightBookingDetails(booking: booking),
           SizedBox(height: context.h(16)),
           Divider(
             height: 0,

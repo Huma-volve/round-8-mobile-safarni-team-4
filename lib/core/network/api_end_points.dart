@@ -8,4 +8,5 @@ class ApisEndpoints {
   static const String searchCar = 'search-car';
   static const String forgetPassword = 'forgot-password';
   static const String resetPassword = 'reset-password';
+  static const String getUserBookings = 'get-user-bookings';
 }

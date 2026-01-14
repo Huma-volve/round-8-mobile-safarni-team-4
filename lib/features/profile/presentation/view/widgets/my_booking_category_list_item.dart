@@ -36,10 +36,6 @@ class MyBookingCategoryListItem extends StatelessWidget {
               height: context.h(18),
               color:
                   isSelected ? AppColors.mainColorLight : AppColors.black[70]!,
-              // colorFilter: ColorFilter.mode(
-              //   AppColors.black[10]!,
-              //   BlendMode.dst,
-              // ),
             ),
             context.gapW(4),
             Text(

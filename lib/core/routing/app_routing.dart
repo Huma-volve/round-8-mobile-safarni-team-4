@@ -12,6 +12,9 @@ import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/f
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/set_new_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/success_reset_password_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/booking_type_cubit/booking_type_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/my_booking_cubit/my_booking_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/personal_info_cubit/personal_info_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/my_booking_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/personal_info_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/view/profile_view.dart';
@@ -29,13 +32,11 @@ import '../../features/bottom_nav_bar/presentation/views/bottom_nav_bar.dart';
 import '../../features/car_booking/presentation/views/car_booking.dart';
 import '../../features/car_booking/presentation/views/car_details.dart';
 import '../../features/car_booking/presentation/views/pick_up_details.dart';
-import '../../features/car_booking/presentation/widgets/popular_cars_list.dart';
 import '../../features/compare/presentation/view/compare_view.dart';
 import '../../features/destination/presentation/view/destination_view.dart';
 import '../../features/favorite/presentation/view/favorite_view.dart';
 import '../../features/flight_appointment/presentation/views/flight_booking_page.dart';
 import '../../features/home/presentation/view/search_tour_view.dart';
-import '../../features/onboarding/view/onboarding_view.dart';
 import '../../features/payment/presentation/views/checkout_view.dart';
 import '../../features/payment/presentation/views/payment_success_view.dart';
 import '../../features/search/presentation/view/search_view.dart';
@@ -82,14 +83,12 @@ abstract class AppRouter {
 
         case AppRoutes.carDetails:
           return MaterialPageRoute(
-            builder:
-                (context) => CarDetailsView(model: args as CarEntity),
+            builder: (context) => CarDetailsView(model: args as CarEntity),
           );
 
         case AppRoutes.pickUpDetails:
           return MaterialPageRoute(
-            builder:
-                (context) => PickUpDetailsView(model: args as CarEntity),
+            builder: (context) => PickUpDetailsView(model: args as CarEntity),
           );
 
         case AppRoutes.welcomeView:
@@ -144,12 +143,13 @@ abstract class AppRouter {
 
         case AppRoutes.setNewPasswordView:
           return MaterialPageRoute(
-            builder: (context) => BlocProvider<ResetPasswordCubit>(
-              create: (context) => getIt<ResetPasswordCubit>(),
-              child: SetNewPasswordView(
-                verifyCodeRequestEntity: args as VerifyCodeRequestEntity,
-              ),
-            ),
+            builder:
+                (context) => BlocProvider<ResetPasswordCubit>(
+                  create: (context) => getIt<ResetPasswordCubit>(),
+                  child: SetNewPasswordView(
+                    verifyCodeRequestEntity: args as VerifyCodeRequestEntity,
+                  ),
+                ),
           );
 
         case AppRoutes.successResetPasswordView:
@@ -166,9 +166,12 @@ abstract class AppRouter {
           );
 
         case AppRoutes.personalInfoView:
-          // ignore: todo
           return MaterialPageRoute(
-            builder: (context) => const PersonalInfoView(),
+            builder: (context) => BlocProvider<PersonalInfoCubit>(
+              create: (context) =>
+                  getIt<PersonalInfoCubit>()..loadUserProfile(),
+              child: const PersonalInfoView(),
+            ),
           );
 
         //FilterView
@@ -180,9 +183,7 @@ abstract class AppRouter {
         case AppRoutes.DestinationView:
           final int id = routeSettings.arguments as int;
           return MaterialPageRoute(
-            builder: (context) =>  DestinationView(
-              tourId: id,
-            ),
+            builder: (context) => DestinationView(tourId: id),
           );
         //SearchTourView
         case AppRoutes.SearchTourView:
@@ -191,7 +192,22 @@ abstract class AppRouter {
           );
           return MaterialPageRoute(builder: (context) => const FilterView());
         case AppRoutes.myBookingView:
-          return MaterialPageRoute(builder: (context) => const MyBookingView());
+          return MaterialPageRoute(
+            builder:
+                (context) => MultiBlocProvider(
+                  providers: [
+                    BlocProvider<MyBookingCubit>(
+                      create:
+                          (context) =>
+                              getIt<MyBookingCubit>()..loadBookings('Flight'),
+                    ),
+                    BlocProvider<BookingTypeCubit>(
+                      create: (context) => getIt<BookingTypeCubit>(),
+                    ),
+                  ],
+                  child: const MyBookingView(),
+                ),
+          );
 
         //CompareView
         case AppRoutes.CompareView:

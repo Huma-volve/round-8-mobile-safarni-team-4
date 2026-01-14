@@ -7,10 +7,9 @@ class ListHotelRecommendation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final hieght = MediaQuery.of(context).size.height;
-    print("hieght $hieght");
+    final height = MediaQuery.of(context).size.height;
     return SizedBox(
-      height: hieght * 0.35,
+      height: height * 0.35,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: listHotelModel.length,

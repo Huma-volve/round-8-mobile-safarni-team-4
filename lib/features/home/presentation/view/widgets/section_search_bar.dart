@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SectionSearchBar extends StatelessWidget {
-  const SectionSearchBar({
-    super.key,
-  });
+  const SectionSearchBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,22 +9,21 @@ class SectionSearchBar extends StatelessWidget {
       children: [
         Expanded(
           child: SizedBox(
-            height: 44, // الطول المطلوب
+            height: 44,
             child: TextFormField(
-              readOnly: true, // يمنع الكتابة
-              onTap: () {
-                // الكود اللي بيودي لصفحة تانية
-                print("Navigate to Search Page");
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()));
-              },
+              readOnly: true,
+              onTap: () {},
               decoration: InputDecoration(
                 hintText: 'Search ...',
                 hintStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
-                prefixIcon: Icon(Icons.search, color: Colors.grey, size: 20),
+                prefixIcon: const Icon(
+                  Icons.search,
+                  color: Colors.grey,
+                  size: 20,
+                ),
                 filled: true,
                 fillColor: Colors.white,
-                // إزالة الشادو والحدود الخارجية ليكون بسيط
-                contentPadding: EdgeInsets.symmetric(vertical: 0), // عشان يظبط الكلام في النص مع الطول الصغير
+                contentPadding: const EdgeInsets.symmetric(vertical: 0),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide(color: Colors.grey.withOpacity(0.3)),
@@ -40,9 +36,7 @@ class SectionSearchBar extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 12),
-
-        // زرار الفلتر بنفس الطول
+        const SizedBox(width: 12),
         Container(
           height: 44,
           width: 44,
@@ -53,9 +47,7 @@ class SectionSearchBar extends StatelessWidget {
           child: IconButton(
             padding: EdgeInsets.zero,
             icon: Icon(Icons.tune, color: Colors.grey[600], size: 20),
-            onPressed: () {
-              print("Filter clicked");
-            },
+            onPressed: () {},
           ),
         ),
       ],

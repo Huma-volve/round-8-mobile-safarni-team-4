@@ -1,14 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 
 import '../../../../../core/colors/app_colors.dart';
 import '../../../../../core/theme/app_theme.dart';
 
 class SectionWelcome extends StatelessWidget {
-  const SectionWelcome({
-    super.key,
-  });
+  const SectionWelcome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,22 +17,30 @@ class SectionWelcome extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Welcome",
+            Text(
+              "Welcome",
               style: AppThemes.light.textTheme.bodyLarge!.copyWith(
-                  color: AppColors.mainColorLight[100]
+                color: AppColors.mainColorLight[100],
               ),
             ),
-            Text('explore The Best Places In World!',
-                style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                    color: AppColors.black[60]
-                )),
-          ],),
-        CircleAvatar(
+            Text(
+              'explore The Best Places In World!',
+              style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                color: AppColors.black[60],
+              ),
+            ),
+          ],
+        ),
+        InkWell(
+          onTap: () {
+            context.pushNamed(AppRoutes.profileView);
+          },
+          child: CircleAvatar(
             radius: 20.w,
-            child: Image.asset('assets/images/Avatar.png',
-              height: 40.h,
-            )),
-
-      ],);
+            child: Image.asset('assets/images/Avatar.png', height: 40.h),
+          ),
+        ),
+      ],
+    );
   }
 }

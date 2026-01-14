@@ -10,6 +10,17 @@ import 'package:round_8_mobile_safarni_team4/features/login/domain/use_case/rese
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/forget_password/forget_password_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/reset_password/reset_password_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/data/data_sources/booking_remote_data_source.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/data/data_sources/profile_remote_data_source.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/data/repos/booking_repo_impl.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/data/repos/profile_repo_impl.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/domain/repos/booking_repo.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/domain/repos/profile_repo.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/domain/use_case/get_user_bookings_use_case.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/domain/use_case/get_user_profile_use_case.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/booking_type_cubit/booking_type_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/my_booking_cubit/my_booking_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/personal_info_cubit/personal_info_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/data_sources/sign_up_remote_data_source.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/data_sources/verify_code_remote_data_source.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/repos/sign_up_repo_impl.dart';
@@ -28,8 +39,6 @@ import '../../features/car_booking/data/repo_impl/car_appointment_repo_impl.dart
 import '../../features/car_booking/domain/repo_contract/car_appointment_repo.dart';
 import '../../features/car_booking/domain/use_cases/search_car_use_case.dart';
 import '../../features/car_booking/presentation/cubit/car_appointment_cubit.dart';
-import '../api/api_error_handler.dart';
-
 import '../../features/destination/data/api_service/tour_details_remote_data_source.dart';
 import '../../features/destination/data/repo/destination_rpo.dart';
 import '../../features/destination/domain/repo_imple/destination_repo_imple.dart';
@@ -38,6 +47,7 @@ import '../../features/home/data/api_service/home_remote_data_source.dart';
 import '../../features/home/data/repo/home_repo.dart';
 import '../../features/home/domain/repo_imple/home_repo_impe.dart';
 import '../../features/home/presentation/managers/home_cubit/home_cubit.dart';
+import '../api/api_error_handler.dart';
 
 final getIt = GetIt.instance;
 
@@ -101,27 +111,27 @@ Future<void> setupLocator() async {
   getIt.registerFactory<LoginCubit>(
     () => LoginCubit(loginUseCase: getIt<LoginUseCase>()),
   );
-// --- Home ---
+  // --- Home ---
   getIt.registerLazySingleton<HomeRemoteDataSource>(
-        () => HomeRemoteDataSource(getIt<ApiService>()),
+    () => HomeRemoteDataSource(getIt<ApiService>()),
   );
   getIt.registerLazySingleton<HomeRepo>(
-        () => HomeRepoImpl(getIt<HomeRemoteDataSource>()),
+    () => HomeRepoImpl(getIt<HomeRemoteDataSource>()),
   );
   getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt<HomeRepo>()));
   //-------------------------------------------------------------
   // --- [2] Destination (الجزء الجديد) ---
   getIt.registerLazySingleton<DestinationRemoteDataSource>(
-        () => DestinationRemoteDataSourceImpl(getIt<ApiService>()),
+    () => DestinationRemoteDataSourceImpl(getIt<ApiService>()),
   );
 
   getIt.registerLazySingleton<DestinationRepo>(
-        () => DestinationRepoImpl(getIt<DestinationRemoteDataSource>()),
+    () => DestinationRepoImpl(getIt<DestinationRemoteDataSource>()),
   );
 
   // نستخدم registerFactory لأن الـ Cubit يتم إنشاؤه وإغلاقه مع كل صفحة جديدة
   getIt.registerFactory<DestinationCubit>(
-        () => DestinationCubit(getIt<DestinationRepo>()),
+    () => DestinationCubit(getIt<DestinationRepo>()),
   );
   getIt.registerLazySingleton<ForgetPasswordUseCase>(
     () => ForgetPasswordUseCase(loginRepo: getIt<LoginRepo>()),
@@ -138,9 +148,8 @@ Future<void> setupLocator() async {
   );
 
   getIt.registerFactory<ResetPasswordCubit>(
-    () => ResetPasswordCubit(
-      resetPasswordUseCase: getIt<ResetPasswordUseCase>(),
-    ),
+    () =>
+        ResetPasswordCubit(resetPasswordUseCase: getIt<ResetPasswordUseCase>()),
   );
 
   // getIt.registerLazySingleton<LoginRepo>(
@@ -176,5 +185,42 @@ Future<void> setupLocator() async {
     () => CarAppointmentCubit(getIt<SearchCarUseCase>()),
   );
   getIt.registerLazySingleton<ApiErrorHandler>(() => ApiErrorHandler());
+
+  // --- [4] My Booking ---
+  getIt.registerLazySingleton<BookingRemoteDataSource>(
+    () => BookingRemoteDataSourceImpl(apiService: getIt<ApiService>()),
+  );
+  getIt.registerLazySingleton<BookingRepo>(
+    () => BookingRepoImpl(
+      bookingRemoteDataSource: getIt<BookingRemoteDataSource>(),
+    ),
+  );
+  getIt.registerLazySingleton<GetUserBookingsUseCase>(
+    () => GetUserBookingsUseCase(bookingRepo: getIt<BookingRepo>()),
+  );
+  getIt.registerFactory<MyBookingCubit>(
+    () =>
+        MyBookingCubit(getUserBookingsUseCase: getIt<GetUserBookingsUseCase>()),
+  );
+  getIt.registerFactory<BookingTypeCubit>(
+    () => BookingTypeCubit(),
+  );
+
+  // --- [5] Personal Info ---
+  getIt.registerLazySingleton<ProfileRemoteDataSource>(
+    () => ProfileRemoteDataSourceImpl(dio: getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ProfileRepo>(
+    () => ProfileRepoImpl(
+      profileRemoteDataSource: getIt<ProfileRemoteDataSource>(),
+    ),
+  );
+  getIt.registerLazySingleton<GetUserProfileUseCase>(
+    () => GetUserProfileUseCase(profileRepo: getIt<ProfileRepo>()),
+  );
+  getIt.registerFactory<PersonalInfoCubit>(
+    () =>
+        PersonalInfoCubit(getUserProfileUseCase: getIt<GetUserProfileUseCase>()),
+  );
   await getIt.allReady();
 }
