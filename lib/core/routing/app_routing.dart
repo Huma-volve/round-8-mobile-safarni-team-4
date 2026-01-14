@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:round_8_mobile_safarni_team4/core/di/service_locator.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
+import 'package:round_8_mobile_safarni_team4/features/car_booking/domain/entities/search_car_response_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/filter_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/forget_password/forget_password_cubit.dart';
@@ -48,10 +49,10 @@ abstract class AppRouter {
         case AppRoutes.home:
           return MaterialPageRoute(builder: (context) => const BottomNavBar());
 
-        case AppRoutes.onboardingView:
-          return MaterialPageRoute(
-            builder: (context) => const OnboardingView(),
-          );
+        // case AppRoutes.onboardingView:
+        //   return MaterialPageRoute(
+        //     builder: (context) => const OnboardingView(),
+        //   );
 
         case AppRoutes.paymentMethod:
           return MaterialPageRoute(builder: (context) => const CheckoutView());
@@ -82,13 +83,13 @@ abstract class AppRouter {
         case AppRoutes.carDetails:
           return MaterialPageRoute(
             builder:
-                (context) => CarDetailsView(model: args as PopularCarModel),
+                (context) => CarDetailsView(model: args as CarEntity),
           );
 
         case AppRoutes.pickUpDetails:
           return MaterialPageRoute(
             builder:
-                (context) => PickUpDetailsView(model: args as PopularCarModel),
+                (context) => PickUpDetailsView(model: args as CarEntity),
           );
 
         case AppRoutes.welcomeView:
@@ -177,8 +178,11 @@ abstract class AppRouter {
 
         //DestinationView
         case AppRoutes.DestinationView:
+          final int id = routeSettings.arguments as int;
           return MaterialPageRoute(
-            builder: (context) => const DestinationView(),
+            builder: (context) =>  DestinationView(
+              tourId: id,
+            ),
           );
         //SearchTourView
         case AppRoutes.SearchTourView:

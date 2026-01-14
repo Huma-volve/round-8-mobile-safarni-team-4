@@ -1,5 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/helpers/size_config_extension.dart';
+
+import '../../../../core/widgets/custom_shimmer.dart';
+import '../../../../core/widgets/loading_state_widget.dart';
 
 class CarDetailsImageGallery extends StatelessWidget {
   const CarDetailsImageGallery({super.key, required this.image});
@@ -31,7 +35,26 @@ class CarDetailsImageGallery extends StatelessWidget {
                     size: 20,
                   ),
                 ),
-                Expanded(child: Image.asset(image, fit: BoxFit.contain)),
+                Expanded(
+                  child: CachedNetworkImage(
+                    imageUrl: image,
+                    imageBuilder:
+                        (context, imageProvider) => Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: imageProvider,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                    placeholder:  (context, url) => CustomShimmer(
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      height: MediaQuery.of(context).size.width * 0.2,
+                    ),
+                    errorWidget:
+                        (context, url, error) => const Icon(Icons.error),
+                  ),
+                ),
                 IconButton(
                   onPressed: () {},
                   icon: const Icon(

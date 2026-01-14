@@ -20,7 +20,7 @@ class _MyBookingCategoryListViewState extends State<MyBookingCategoryListView> {
     return SizedBox(
       height: context.h(42),
       child: ListView.separated(
-        padding: EdgeInsetsGeometry.only(left: context.w(16)),
+        padding: EdgeInsets.only(left: context.w(16)),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final isSelected = currentIndex == index;

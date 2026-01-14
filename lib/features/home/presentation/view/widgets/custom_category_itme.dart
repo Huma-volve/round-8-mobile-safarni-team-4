@@ -1,7 +1,5 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:round_8_mobile_safarni_team4/core/helpers/theme_extension.dart';
-import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
 
 import '../../../../../core/colors/app_colors.dart';
 import '../../../../../core/theme/app_theme.dart';
@@ -10,7 +8,7 @@ import '../../../data/model/model_category.dart';
 class CategoryItem extends StatelessWidget {
   final CategoryModel category;
 
-  const CategoryItem({super.key, required this.category});
+  const CategoryItem({required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +32,10 @@ class CategoryItem extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            category.title,
-            style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              color: AppColors.mainColorLight[70],
-            ),
+              category.title,
+              style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                  color: AppColors.mainColorLight[70]
+              )
           ),
         ],
       ),
@@ -48,26 +46,21 @@ class CategoryItem extends StatelessWidget {
   void _navigateToPage(BuildContext context, String title) {
     switch (title) {
       case 'Flight':
-        context.pushNamed(AppRoutes.flightBooking);
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => FlightsScreen()));
-
+      // Navigator.push(context, MaterialPageRoute(builder: (context) => FlightsScreen()));
+        print("ذهاب لصفحة الطيران");
         break;
       case 'Cars':
-        context.pushNamed(AppRoutes.carBooking);
-        // Navigator.push(context, MaterialPageRoute(builder: (context) => CarsScreen()));
-
+      // Navigator.push(context, MaterialPageRoute(builder: (context) => CarsScreen()));
+        print("ذهاب لصفحة السيارات");
         break;
       case 'Tours':
-        context.pushNamed(AppRoutes.SearchTourView);
-
+        print("ذهاب لصفحة الجولات");
         break;
       case 'Hotel':
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const HotelView()),
-        );
+        print("ذهاب لصفحة الفنادق");
         break;
       default:
+        print("صفحة غير معروفة");
     }
   }
 }

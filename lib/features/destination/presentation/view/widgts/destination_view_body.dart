@@ -1,221 +1,190 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:round_8_mobile_safarni_team4/core/colors/app_colors.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/destination/presentation/view/widgts/review_card.dart';
+import 'package:round_8_mobile_safarni_team4/features/destination/presentation/view/widgts/scetion_rate_city.dart';
 import 'package:round_8_mobile_safarni_team4/features/destination/presentation/view/widgts/section_des_image.dart';
 import 'package:round_8_mobile_safarni_team4/features/destination/presentation/view/widgts/section_info.dart';
-
+import 'package:round_8_mobile_safarni_team4/features/destination/presentation/view/widgts/section_tour_gallery.dart';
+import '../../managers/destination_cubit/destination_cubit.dart';
 import 'activited_card.dart';
 
 class DestinationPage extends StatelessWidget {
   const DestinationPage({super.key});
 
-  // حالة زر القلب
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // الجزء العلوي: الصورة والأزرار
-          const SectionDesImage(),
-          Padding(
-            padding: const EdgeInsets.all(16),
+    return BlocBuilder<DestinationCubit, DestinationState>(
+      builder: (context, state) {
+        if (state is DestinationSuccess) {
+          final tour = state.tour;
+
+          return SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const section_rate_city(),
-                const SizedBox(height: 8),
-                Text(
-                  "Eiffel Tower",
-                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.mainColorLight[100],
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  "7 Days and 6 Nights",
-                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.black[70],
-                  ),
-                ),
-                Text(
-                  "Paris, France",
-                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.black[70],
-                  ),
-                ),
+                // الصورة العلوية تأخذ أول صورة من الـ API
+                SectionDesImage(image: tour.images[0]),
 
-                const SizedBox(height: 20),
-                Text(
-                  "Top Activities",
-                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.mainColorLight[100],
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ActivityCard(
-                      title: "Go to the Top",
-                      imageUrl: "https://picsum.photos/200",
-                    ),
-                    ActivityCard(
-                      title: "Louvre at Night",
-                      imageUrl: "https://picsum.photos/201",
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  "Best Time to Visit",
-                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.mainColorLight[100],
-                  ),
-                ),
-                const SizedBox(height: 20),
-                CustomInfoContainer(
-                  child: Text(
-                    "Spring (April–June) and autumn (September–October) are perfect times to visit Paris, with mild weather and fewer tourists.",
-
-                    style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.black[70],
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 25),
-                const SctionSeeMore(),
-
-                GridView.count(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 8,
-                  mainAxisSpacing: 8,
-                  children: List.generate(
-                    4,
-                    (index) => ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        "https://picsum.photos/20${index + 2}",
-
-                        fit: BoxFit.cover,
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // التقييم الديناميكي
+                      section_rate_city(
+                        rating: tour.ratingAverage.toDouble(),
+                        reviewCount: tour.reviewsCount,
                       ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Center(
-                  child: TextButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.add_a_photo_outlined, size: 24),
-                    label: Text(
-                      "Add Photo",
-                      style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.mainColorLight[70],
-                      ),
-                    ),
-                  ),
-                ),
+                      const SizedBox(height: 8),
 
-                const SizedBox(height: 10),
-                Text(
-                  "Reviews",
-                  style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                    fontSize: 17.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.mainColorLight[100],
-                  ),
-                ),
-                const SizedBox(height: 10),
-                const ReviewCard(
-                  name: "Dale Thiel",
-                  date: "11 months ago",
-                  comment: "Such a dreamy place! The views were stunning...",
-                  avatar: "https://i.pravatar.cc/150?u=1",
-                ),
-                const ReviewCard(
-                  name: "Léo Martin",
-                  date: "6 months ago",
-                  comment:
-                      "A beautiful escape from the ordinary. Everything was elegant...",
-                  avatar: "https://i.pravatar.cc/150?u=2",
-                ),
+                      Text(tour.title,
+                          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.mainColorLight[100])),
+                      const SizedBox(height: 8),
 
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: const Color(0xff1E429F)),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "See More",
-                        style: AppThemes.light.textTheme.titleMedium!.copyWith(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w600,
-                          color: const Color(0xff1E429F),
+                      Text("${tour.duration} Days",
+                          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black[70])),
+
+                      Text(tour.visitSeason,
+                          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.black[70])),
+
+                      const SizedBox(height: 20),
+                      Text("Top Activities",
+                          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                              fontSize: 17.sp,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.mainColorLight[100])),
+                      const SizedBox(height: 10),
+
+                      // الأنشطة
+                      SizedBox(
+                        height: 140.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: tour.activities.length,
+                          itemBuilder: (context, index) => ActivityCard(
+                            title: tour.activities[index],
+                            imageUrl: "", // الـ Card سيهندل الأيقونة الافتراضية
+                          ),
                         ),
                       ),
-                    ),
+
+                      const SizedBox(height: 20),
+                      Text("Best Time to Visit",
+                          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                              fontSize: 17.sp,
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.mainColorLight[100])),
+                      const SizedBox(height: 10),
+
+                      CustomInfoContainer(
+                        child: Text(
+                            "${tour.visitSeason}: ${tour.recommendation}",
+                            style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w600,
+                                color: AppColors.black[70])),
+                      ),
+
+                      const SizedBox(height: 25),
+
+                      // قسم الجاليري المطور (عرض المزيد + إضافة صورة)
+                      TourGallerySection(images: tour.images),
+
+                      const SizedBox(height: 20),
+                      Text("Reviews",
+                          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                              fontSize: 17.sp,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.mainColorLight[100])),
+                      const SizedBox(height: 10),
+
+                      // عرض المراجعات
+                      ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: tour.reviews.length,
+                        itemBuilder: (context, index) {
+                          final review = tour.reviews[index];
+                          return ReviewCard(
+                            name: review.user,
+                            date: "Recently",
+                            comment: review.comment,
+                            avatar: "https://i.pravatar.cc/150?u=${review.user}",
+                          );
+                        },
+                      ),
+
+                      const SizedBox(height: 16),
+
+                      // زر See More للمراجعات
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              border: Border.all(color: const Color(0xff1E429F))
+                          ),
+                          child: Center(
+                            child: Text("See More Reviews",
+                                style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w600,
+                                    color: const Color(0xff1E429F))),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-          ),
-        ],
-      ),
+          );
+        } else if (state is DestinationError) {
+          return Center(child: Text(state.errMess));
+        } else {
+          return const Center(child: CircularProgressIndicator());
+        }
+      },
     );
-
-    // الجزء السفلي الثابت (السعر والزرار)
   }
 }
 
 class SctionSeeMore extends StatelessWidget {
-  const SctionSeeMore({super.key});
+  const SctionSeeMore({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          "Gallery (150)",
-          style: AppThemes.light.textTheme.titleMedium!.copyWith(
-            fontSize: 17.sp,
-            fontWeight: FontWeight.w600,
-            color: AppColors.mainColorLight[100],
-          ),
-        ),
+        Text("Gallery (150)",
+            style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                fontSize: 17.sp,
+                fontWeight: FontWeight.w600,
+                color: AppColors.mainColorLight[100])),
         const Spacer(),
         InkWell(
-          onTap: () {},
-          child: Text(
-            "See more",
-            style: AppThemes.light.textTheme.titleMedium!.copyWith(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w600,
-              color: AppColors.mainColorLight[70],
-            ),
-          ),
+          onTap: (){},
+          child: Text("See more",
+              style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.mainColorLight[70])),
         ),
       ],
     );
@@ -223,39 +192,38 @@ class SctionSeeMore extends StatelessWidget {
 }
 
 class section_rate_city extends StatelessWidget {
-  const section_rate_city({super.key});
+  const section_rate_city({
+    super.key, required this.reviewCount, required this.rating,
+  });
+  final int reviewCount;
+  final double rating;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
-          "City Breaks",
-          style: AppThemes.light.textTheme.titleMedium!.copyWith(
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w600,
-            color: AppColors.black[70],
-          ),
-        ),
+        Text("City Breaks",
+            style: AppThemes.light.textTheme.titleMedium!.copyWith(
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w600,
+                color: AppColors.black[70])),
         const Spacer(),
         Wrap(
           children: List.generate(5, (index) {
-            return Icon(
-              index < 4 ? Icons.star : Icons.star_half, // مثال لتقييم 4.5
-              color: Colors.amber,
-              size: 14.h,
-            );
+            if (index < rating.floor()) {
+              return Icon(Icons.star, color: Colors.amber, size: 14.h);
+            } else if (index < rating) {
+              return Icon(Icons.star_half, color: Colors.amber, size: 14.h);
+            } else {
+              return Icon(Icons.star_border, color: Colors.amber, size: 14.h);
+            }
           }),
         ),
         const SizedBox(width: 5),
-        Text(
-          "4.5 (675)",
-          style: AppThemes.light.textTheme.titleMedium!.copyWith(
+        Text("$rating ($reviewCount)",   style: AppThemes.light.textTheme.titleMedium!.copyWith(
             fontSize: 12.sp,
             fontWeight: FontWeight.w600,
-            color: AppColors.black[70],
-          ),
-        ),
+            color: AppColors.black[70])),
       ],
     );
   }

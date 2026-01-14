@@ -15,11 +15,9 @@ import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/ve
 abstract class LoginRemoteDataSource {
   Future<UserDataEntity> login({
     required LoginRequestEntity loginRequestEntity,
-  });
+  }); 
 
-  Future<ForgetPasswordEntity> forgetPassword({
-    required String email,
-  });
+  Future<ForgetPasswordEntity> forgetPassword({required String email});
 
   Future<ResetPasswordEntity> resetPassword({
     required ResetPasswordRequestEntity resetPasswordRequestEntity,
@@ -35,11 +33,12 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
     required LoginRequestEntity loginRequestEntity,
   }) async {
     final response = await apiService.post(
-      urlEndPoint: ApiEndPoints.login,
-      data: LoginRequestModel(
-        email: loginRequestEntity.email,
-        password: loginRequestEntity.password,
-      ).toJson(),
+      urlEndPoint: ApisEndpoints.login,
+      data:
+          LoginRequestModel(
+            email: loginRequestEntity.email,
+            password: loginRequestEntity.password,
+          ).toJson(),
     );
     return LoginResponseModel.fromJson(response);
   }
@@ -47,7 +46,7 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
   @override
   Future<ForgetPasswordEntity> forgetPassword({required String email}) async {
     final response = await apiService.post(
-      urlEndPoint: ApiEndPoints.forgetPassword,
+      urlEndPoint: ApisEndpoints.forgetPassword,
       data: ForgetPasswordRequestModel(email: email).toJson(),
     );
     return ForgetPasswordResponseModel.fromJson(response);
@@ -58,13 +57,14 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
     required ResetPasswordRequestEntity resetPasswordRequestEntity,
   }) async {
     final response = await apiService.post(
-      urlEndPoint: ApiEndPoints.resetPassword,
-      data: ResetPasswordRequestModel(
-        userId: resetPasswordRequestEntity.userId,
-        otp: resetPasswordRequestEntity.otp,
-        password: resetPasswordRequestEntity.password,
-        passwordConfirmation: resetPasswordRequestEntity.confirmPassword,
-      ).toJson(),
+      urlEndPoint: ApisEndpoints.resetPassword,
+      data:
+          ResetPasswordRequestModel(
+            userId: resetPasswordRequestEntity.userId,
+            otp: resetPasswordRequestEntity.otp,
+            password: resetPasswordRequestEntity.password,
+            passwordConfirmation: resetPasswordRequestEntity.confirmPassword,
+          ).toJson(),
     );
     return ResetPasswordResponseModel.fromJson(response);
   }

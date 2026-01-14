@@ -13,6 +13,7 @@ import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/ve
 class LoginRepoImpl extends LoginRepo {
   final LoginRemoteDataSource loginRemoteDataSource;
 
+
   LoginRepoImpl({required this.loginRemoteDataSource});
 
   @override

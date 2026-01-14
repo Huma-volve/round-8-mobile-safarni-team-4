@@ -29,7 +29,7 @@ class CarBookingItem extends StatelessWidget {
             vertical: context.h(30),
             horizontal: context.w(16),
           ),
-          margin: EdgeInsetsGeometry.symmetric(
+          margin: EdgeInsets.symmetric(
             vertical: context.h(12),
             horizontal: context.w(16),
           ),
