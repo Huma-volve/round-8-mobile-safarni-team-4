@@ -202,9 +202,7 @@ Future<void> setupLocator() async {
     () =>
         MyBookingCubit(getUserBookingsUseCase: getIt<GetUserBookingsUseCase>()),
   );
-  getIt.registerFactory<BookingTypeCubit>(
-    () => BookingTypeCubit(),
-  );
+  getIt.registerFactory<BookingTypeCubit>(() => BookingTypeCubit());
 
   // --- [5] Personal Info ---
   getIt.registerLazySingleton<ProfileRemoteDataSource>(
@@ -219,8 +217,9 @@ Future<void> setupLocator() async {
     () => GetUserProfileUseCase(profileRepo: getIt<ProfileRepo>()),
   );
   getIt.registerFactory<PersonalInfoCubit>(
-    () =>
-        PersonalInfoCubit(getUserProfileUseCase: getIt<GetUserProfileUseCase>()),
+    () => PersonalInfoCubit(
+      getUserProfileUseCase: getIt<GetUserProfileUseCase>(),
+    ),
   );
   await getIt.allReady();
 }

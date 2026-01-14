@@ -167,11 +167,13 @@ abstract class AppRouter {
 
         case AppRoutes.personalInfoView:
           return MaterialPageRoute(
-            builder: (context) => BlocProvider<PersonalInfoCubit>(
-              create: (context) =>
-                  getIt<PersonalInfoCubit>()..loadUserProfile(),
-              child: const PersonalInfoView(),
-            ),
+            builder:
+                (context) => BlocProvider<PersonalInfoCubit>(
+                  create:
+                      (context) =>
+                          getIt<PersonalInfoCubit>()..loadUserProfile(),
+                  child: const PersonalInfoView(),
+                ),
           );
 
         //FilterView

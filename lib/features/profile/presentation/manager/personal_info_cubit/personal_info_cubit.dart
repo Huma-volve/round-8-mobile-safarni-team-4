@@ -14,7 +14,8 @@ class PersonalInfoCubit extends Cubit<PersonalInfoState> {
     emit(PersonalInfoLoading());
     final result = await getUserProfileUseCase.call();
     result.fold(
-      (failure) => emit(PersonalInfoFailure(errorMessage: failure.errorMessage)),
+      (failure) =>
+          emit(PersonalInfoFailure(errorMessage: failure.errorMessage)),
       (userProfile) => emit(PersonalInfoSuccess(userProfile: userProfile)),
     );
   }

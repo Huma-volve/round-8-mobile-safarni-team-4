@@ -19,11 +19,6 @@ class UserProfileModel extends UserProfileEntity {
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'full_name': fullName,
-      'email': email,
-      'role': role,
-    };
+    return {'id': id, 'full_name': fullName, 'email': email, 'role': role};
   }
 }
