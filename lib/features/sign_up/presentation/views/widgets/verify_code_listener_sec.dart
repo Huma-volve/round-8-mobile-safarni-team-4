@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/widgets/custom_error_dialog.dart';
+import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/verify_code_request_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/presentation/manager/verify_code/verify_code_cubit.dart';
 
 class VerifyCodeListenerSec extends StatelessWidget {
-  const VerifyCodeListenerSec({super.key, required this.isForgetPassword});
-  final bool isForgetPassword;
+  const VerifyCodeListenerSec({
+    super.key,
+    required this.verifyCodeRequestEntity,
+  });
+  final VerifyCodeRequestEntity verifyCodeRequestEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +38,25 @@ class VerifyCodeListenerSec extends StatelessWidget {
         }
         if (state is VerifyCodeSuccess) {
           Navigator.pop(context);
-          Navigator.pushNamedAndRemoveUntil(
-            context,
-            isForgetPassword ? AppRoutes.setNewPasswordView : AppRoutes.home,
-            (route) => false,
-          );
+          if (verifyCodeRequestEntity.isForgetPassword) {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.setNewPasswordView,
+              (route) => false,
+              arguments: VerifyCodeRequestEntity(
+                userId: verifyCodeRequestEntity.userId,
+                otp: context.read<VerifyCodeCubit>().otpController.text,
+                email: verifyCodeRequestEntity.email,
+                isForgetPassword: true,
+              ),
+            );
+          } else {
+            Navigator.pushNamedAndRemoveUntil(
+              context,
+              AppRoutes.home,
+              (route) => false,
+            );
+          }
         }
       },
       child: const SizedBox.shrink(),

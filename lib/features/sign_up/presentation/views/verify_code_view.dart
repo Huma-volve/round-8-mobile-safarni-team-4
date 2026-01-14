@@ -65,7 +65,7 @@ class VerifyCodeView extends StatelessWidget {
                   buttonName: 'Verify',
                 ),
                 VerifyCodeListenerSec(
-                  isForgetPassword: verifyCodeRequestEntity.isForgetPassword,
+                  verifyCodeRequestEntity: verifyCodeRequestEntity,
                 ),
               ],
             ),

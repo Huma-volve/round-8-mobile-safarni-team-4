@@ -6,8 +6,10 @@ import 'package:round_8_mobile_safarni_team4/features/login/data/repos/login_rep
 import 'package:round_8_mobile_safarni_team4/features/login/domain/repos/login_repo.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/domain/use_case/forget_password_use_case.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/domain/use_case/login_use_case.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/domain/use_case/reset_password_use_case.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/forget_password/forget_password_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/reset_password/reset_password_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/data_sources/sign_up_remote_data_source.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/data_sources/verify_code_remote_data_source.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/data/repos/sign_up_repo_impl.dart';
@@ -88,6 +90,16 @@ Future<void> setupLocator() async {
   getIt.registerFactory<ForgetPasswordCubit>(
     () => ForgetPasswordCubit(
       forgetPasswordUseCase: getIt<ForgetPasswordUseCase>(),
+    ),
+  );
+
+  getIt.registerLazySingleton<ResetPasswordUseCase>(
+    () => ResetPasswordUseCase(loginRepo: getIt<LoginRepo>()),
+  );
+
+  getIt.registerFactory<ResetPasswordCubit>(
+    () => ResetPasswordCubit(
+      resetPasswordUseCase: getIt<ResetPasswordUseCase>(),
     ),
   );
 

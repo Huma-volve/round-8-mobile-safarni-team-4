@@ -6,6 +6,7 @@ import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/forget_password/forget_password_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/presentation/manager/reset_password/reset_password_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/forget_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/set_new_password_view.dart';
@@ -142,7 +143,12 @@ abstract class AppRouter {
 
         case AppRoutes.setNewPasswordView:
           return MaterialPageRoute(
-            builder: (context) => const SetNewPasswordView(),
+            builder: (context) => BlocProvider<ResetPasswordCubit>(
+              create: (context) => getIt<ResetPasswordCubit>(),
+              child: SetNewPasswordView(
+                verifyCodeRequestEntity: args as VerifyCodeRequestEntity,
+              ),
+            ),
           );
 
         case AppRoutes.successResetPasswordView:

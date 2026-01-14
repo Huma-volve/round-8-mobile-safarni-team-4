@@ -4,8 +4,12 @@ import 'package:round_8_mobile_safarni_team4/features/login/data/models/forget_p
 import 'package:round_8_mobile_safarni_team4/features/login/data/models/forget_password/forget_password_response_model.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/data/models/login_models/login_request_model.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/data/models/login_models/login_response_model.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/data/models/reset_password/reset_password_request_model.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/data/models/reset_password/reset_password_response_model.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/domain/entites/forget_password_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/domain/entites/login_request_entity.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/domain/entites/reset_password_entity.dart';
+import 'package:round_8_mobile_safarni_team4/features/login/domain/entites/reset_password_request_entity.dart';
 import 'package:round_8_mobile_safarni_team4/features/sign_up/domain/entities/verify_code_entity.dart/user_data_entity.dart';
 
 abstract class LoginRemoteDataSource {
@@ -15,7 +19,11 @@ abstract class LoginRemoteDataSource {
 
   Future<ForgetPasswordEntity> forgetPassword({
     required String email,
-  }); // <ForgetPasswordEntity>
+  });
+
+  Future<ResetPasswordEntity> resetPassword({
+    required ResetPasswordRequestEntity resetPasswordRequestEntity,
+  });
 }
 
 class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
@@ -28,11 +36,10 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
   }) async {
     final response = await apiService.post(
       urlEndPoint: ApiEndPoints.login,
-      data:
-          LoginRequestModel(
-            email: loginRequestEntity.email,
-            password: loginRequestEntity.password,
-          ).toJson(),
+      data: LoginRequestModel(
+        email: loginRequestEntity.email,
+        password: loginRequestEntity.password,
+      ).toJson(),
     );
     return LoginResponseModel.fromJson(response);
   }
@@ -44,5 +51,21 @@ class LoginRemoteDataSourceImpl implements LoginRemoteDataSource {
       data: ForgetPasswordRequestModel(email: email).toJson(),
     );
     return ForgetPasswordResponseModel.fromJson(response);
+  }
+
+  @override
+  Future<ResetPasswordEntity> resetPassword({
+    required ResetPasswordRequestEntity resetPasswordRequestEntity,
+  }) async {
+    final response = await apiService.post(
+      urlEndPoint: ApiEndPoints.resetPassword,
+      data: ResetPasswordRequestModel(
+        userId: resetPasswordRequestEntity.userId,
+        otp: resetPasswordRequestEntity.otp,
+        password: resetPasswordRequestEntity.password,
+        passwordConfirmation: resetPasswordRequestEntity.confirmPassword,
+      ).toJson(),
+    );
+    return ResetPasswordResponseModel.fromJson(response);
   }
 }
