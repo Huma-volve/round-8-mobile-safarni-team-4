@@ -1,3 +1,5 @@
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/room_detailes.dart';
+
 abstract class AppRoutes {
   static const home = '/home';
 
@@ -32,4 +34,5 @@ abstract class AppRoutes {
   static const favoriteView ='/FavoriteView';
   static const hotelView='/hotelView';
   static const availableRoom='/availableRoom';
+  static const roomDetailesView='/roomDetailesView';
 }

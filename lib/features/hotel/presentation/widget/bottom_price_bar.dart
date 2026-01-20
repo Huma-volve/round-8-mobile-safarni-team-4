@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/room_detailes/rooms_data.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/check_in&out.dart';
 
 class BottomPriceBar extends StatelessWidget {
-  const BottomPriceBar({super.key});
+  const BottomPriceBar({super.key, required this.pricePerNight});
+  final double pricePerNight;
 
   @override
   Widget build(BuildContext context) {
@@ -11,6 +13,7 @@ class BottomPriceBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [
+          // ignore: deprecated_member_use
           BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10),
         ],
         borderRadius: const BorderRadius.only(
@@ -20,21 +23,21 @@ class BottomPriceBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Column(
+           Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Total price"),
-              SizedBox(height: 8),
+           const   Text("Total price"),
+              const SizedBox(height: 8),
               Text(
-                "\$200/night",
-                style: TextStyle(
+                "\$$pricePerNight ",
+                style:const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff1E429F),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
           const Expanded(child: SizedBox()),

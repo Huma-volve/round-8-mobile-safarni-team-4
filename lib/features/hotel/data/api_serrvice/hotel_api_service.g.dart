@@ -85,7 +85,7 @@ class _HotelApiService implements HotelApiService {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/room/${id}',
+            'room/${id}',
             queryParameters: queryParameters,
             data: _data,
           )

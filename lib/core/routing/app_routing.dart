@@ -4,9 +4,11 @@ import 'package:round_8_mobile_safarni_team4/core/di/service_locator.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/filter_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/hotel_available_rooms/rooms_model.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel_available_rooms/hotel_availables_room_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/available_room.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/room_detailes.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/forget_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/set_new_password_view.dart';
@@ -166,6 +168,13 @@ abstract class AppRouter {
         //FavoriteView
         case AppRoutes.favoriteView:
           return MaterialPageRoute(builder: (context) => const FavoriteView());
+
+        case AppRoutes.roomDetailesView:
+        final rooms = routeSettings.arguments as RoomItemModel;
+          return MaterialPageRoute(builder: (context) =>  RoomDetailesView(
+            room: rooms as dynamic,
+          ));
+
         case AppRoutes.hotelView:
           return MaterialPageRoute(builder: (context) => const HotelView());
 

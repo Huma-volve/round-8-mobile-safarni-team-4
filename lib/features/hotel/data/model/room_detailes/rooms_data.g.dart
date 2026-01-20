@@ -16,6 +16,7 @@ RoomsData _$RoomsDataFromJson(Map<String, dynamic> json) => RoomsData(
   refundable: json['refundable'] as bool,
   hotel: HotelModel.fromJson(json['hotel'] as Map<String, dynamic>),
   images: (json['images'] as List<dynamic>).map((e) => e as String).toList(),
+  bedNumber: (json['bed_number'] as num).toInt(),
 );
 
 Map<String, dynamic> _$RoomsDataToJson(RoomsData instance) => <String, dynamic>{
@@ -24,6 +25,7 @@ Map<String, dynamic> _$RoomsDataToJson(RoomsData instance) => <String, dynamic>{
   'description': instance.description,
   'area': instance.area,
   'occupancy': instance.occupancy,
+  'bed_number': instance.bedNumber,
   'price_per_night': instance.pricePerNight,
   'refundable': instance.refundable,
   'hotel': instance.hotel,

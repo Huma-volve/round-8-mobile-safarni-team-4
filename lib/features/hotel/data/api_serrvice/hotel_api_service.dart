@@ -16,7 +16,6 @@ abstract class HotelApiService {
   });
 @GET('/hotel/{id}')
   Future<HotelAvailableRoomsResponseModel> getHotelDetailsById(@Path('id') int id);
-  
-@GET("/room/{id}")
+  @GET("room/{id}")
   Future<RoomDetailesModelResponse> getRoomDetailsById(@Path('id') int id);
 }

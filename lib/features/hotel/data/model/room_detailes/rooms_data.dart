@@ -8,6 +8,8 @@ class RoomsData {
   final String description;
   final int area;
   final int occupancy;
+  @JsonKey(name: "bed_number")
+  final int bedNumber ;
   @JsonKey(name: "price_per_night")
   final double pricePerNight;
   final bool refundable;
@@ -23,6 +25,7 @@ class RoomsData {
     required this.refundable,
     required this.hotel,
     required this.images,
+    required this.bedNumber,
   });
   factory RoomsData.fromJson(Map<String, dynamic> json) =>
       _$RoomsDataFromJson(json);
