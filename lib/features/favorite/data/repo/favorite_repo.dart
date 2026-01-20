@@ -9,4 +9,7 @@ class FavoriteRepo {
    FavoriteResponseModel response = await favoriteRemoteDataSource.getFavorites();
     return response.data;
   }
+  Future<void> deleteFavorite(int id) async {
+    await favoriteRemoteDataSource.deleteFavorite(id);
+  }
 }

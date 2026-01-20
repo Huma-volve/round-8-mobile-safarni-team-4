@@ -9,7 +9,8 @@ import 'package:round_8_mobile_safarni_team4/features/favorite/data/repo/favorit
 import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/maneger/favorite_cubit/favorites_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/api_serrvice/hotel_api_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/repo/hotel_repo.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/cubit/hotel_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel/hotel_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel_detailes/hotel_availables_room_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -22,7 +23,7 @@ Future<void> setupDependencies() async {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        "Authorization": "Bearer 62|fbF97VsFcdNiIyOMwtAmyT0RcTYPxOF6ckjefECq25e49c60",
+        "Authorization": "Bearer 2|Uok1Jxsa3nZjl4JAgK9id2v1fWEltZbGy1jishLqb7688efc",
         // لو عايز تضيف Authorization token هنا أو في interceptor
       },
     ));
@@ -68,4 +69,9 @@ Future<void> setupDependencies() async {
   getIt.registerFactory<FavoritesCubit>(
     () => FavoritesCubit(getIt<FavoriteRepo>()),
   );
+ getIt.registerFactory<HotelRoomsCubit>(
+    () => HotelRoomsCubit(getIt<HotelRepository>()),
+  );
+
+
 }

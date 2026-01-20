@@ -20,9 +20,16 @@ class FavoritesCubit extends Cubit<FavoritesState> {
     }
   }
 
-  // Future<void> deleteFavorite(int id) async {
-    
-  // }
+  Future<void> deleteFavorite(int id) async {
+  try {
+    await favoriteRepo.deleteFavorite(id);
+    emit(DeleteFavorite(id: id));
+    fetchFavotite(); // refresh list
+  } catch (e) {
+    emit(FavoriteError(message: e.toString()));
+  }
+}
+
    
   }
 

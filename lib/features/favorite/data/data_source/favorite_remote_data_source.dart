@@ -10,6 +10,7 @@ abstract class FavoriteRemoteDataSource {
 
   @GET("favorites")
   Future<FavoriteResponseModel> getFavorites();
-
+@DELETE( "favorites/{id}")
+  Future<void> deleteFavorite(@Path("id") int id);
   
 }

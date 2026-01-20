@@ -1,12 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/maneger/favorite_cubit/favorites_cubit.dart';
 import '../../data/model/favorite_response_model.dart';
 
 class ItemFavoriteCard extends StatelessWidget {
-  const ItemFavoriteCard({
-    super.key,
-    required this.favoriteModel,
-  });
+  const ItemFavoriteCard({super.key, required this.favoriteModel});
 
   final FavoriteModel favoriteModel;
 
@@ -49,14 +48,20 @@ class ItemFavoriteCard extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      IconButton(
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(),
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.favorite,
-                          color: Colors.red,
-                        ),
+                      BlocBuilder<FavoritesCubit, FavoritesState>(
+                        builder: (context, state) {
+
+                          return IconButton(
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(),
+                            onPressed: () {
+                              context
+                                  .read<FavoritesCubit>()
+                                  .deleteFavorite(favoriteModel.id);
+                            },
+                            icon: const Icon(Icons.favorite, color: Colors.red),
+                          );
+                        },
                       ),
                     ],
                   ),

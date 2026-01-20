@@ -22,3 +22,10 @@ final class FavoriteError extends FavoritesState {
   @override
   List<Object> get props => [message];
 }
+
+final class DeleteFavorite extends FavoritesState {
+  final int id;
+  const DeleteFavorite({required this.id});
+  @override
+  List<Object> get props => [id];
+}

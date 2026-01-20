@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:round_8_mobile_safarni_team4/core/di/service_locator.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/cubit/hotel_cubit.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/cubit/hotel_state.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel/hotel_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel/hotel_state.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/hotel_recommendation.dart';
 
 class ListHotelRecommendation extends StatelessWidget {

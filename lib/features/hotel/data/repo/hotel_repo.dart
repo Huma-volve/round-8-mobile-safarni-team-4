@@ -1,6 +1,8 @@
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/api_serrvice/hotel_api_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/get_all_hotels/hotel_model.dart';
 
+import '../model/hotel_detailes/rooms_model.dart';
+
 
 class HotelRepository {
   final HotelApiService apiService;
@@ -10,5 +12,10 @@ class HotelRepository {
   Future<List<HotelModel>> getHotels({int page = 1}) async {
     final response = await apiService.getHotels(page: page);
     return response.data;
+  }
+
+   Future<List<RoomItemModel>> getHotelRooms(int id) async {
+    var response = await apiService.getHotelDetailsById(id);
+    return response.data.rooms.data;
   }
 }

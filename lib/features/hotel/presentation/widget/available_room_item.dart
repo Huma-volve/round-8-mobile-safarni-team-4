@@ -1,9 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/room_detailes.dart';
 
+import '../../data/model/hotel_detailes/rooms_model.dart';
+
 class AvailableRoomItem extends StatelessWidget {
-  const AvailableRoomItem({super.key});
+  const AvailableRoomItem({super.key, required this.rooms});
+
+  final RoomItemModel rooms;
 
   @override
   Widget build(BuildContext context) {
@@ -11,11 +16,7 @@ class AvailableRoomItem extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
-            builder: (context) => const RoomDetailesView(
-              
-            ),
-          ),
+          MaterialPageRoute(builder: (context) => const RoomDetailesView()),
         );
       },
       child: Padding(
@@ -39,11 +40,15 @@ class AvailableRoomItem extends StatelessWidget {
             children: [
               Expanded(
                 child: Center(
-                  child: Image.asset('assets/images/room.png', fit: BoxFit.cover),
+                  child: CachedNetworkImage(
+                    imageUrl: rooms.images[0],
+                    fit: BoxFit.cover,
+                   // width: double.,
+                  )
                 ),
               ),
               const SizedBox(height: 8.0),
-              Text('Room_1', style: Theme.of(context).textTheme.titleMedium),
+              Text(rooms.name, style: Theme.of(context).textTheme.titleMedium),
               const SizedBox(height: 4.0),
               RichText(
                 text: TextSpan(
@@ -56,7 +61,7 @@ class AvailableRoomItem extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: '\$120',
+                      text: '\$${rooms.pricePerNight}',
                       style: AppThemes.light.textTheme.titleLarge!.copyWith(
                         fontSize: 12,
                         color: const Color(0xff1C64F2),
