@@ -10,7 +10,7 @@ import 'package:round_8_mobile_safarni_team4/features/favorite/presentation/mane
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/api_serrvice/hotel_api_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/repo/hotel_repo.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel/hotel_cubit.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel_detailes/hotel_availables_room_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel_available_rooms/hotel_availables_room_cubit.dart';
 
 final getIt = GetIt.instance;
 
@@ -69,8 +69,8 @@ Future<void> setupDependencies() async {
   getIt.registerFactory<FavoritesCubit>(
     () => FavoritesCubit(getIt<FavoriteRepo>()),
   );
- getIt.registerFactory<HotelRoomsCubit>(
-    () => HotelRoomsCubit(getIt<HotelRepository>()),
+ getIt.registerFactory<HotelAvailableRoomsCubit>(
+    () => HotelAvailableRoomsCubit(getIt<HotelRepository>()),
   );
 
 

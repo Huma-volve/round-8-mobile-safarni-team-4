@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:round_8_mobile_safarni_team4/core/di/service_locator.dart';
 import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/features/filter/presentation/views/filter_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/flight_appointment/presentation/views/select_flight_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/hotel_available_rooms/hotel_availables_room_cubit.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/available_room.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/hotel_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/forget_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/set_new_password_view.dart';
@@ -150,17 +155,29 @@ abstract class AppRouter {
           return MaterialPageRoute(
             builder: (context) => const SearchTourView(),
           );
-          return MaterialPageRoute(builder: (context) => const FilterView());
+        //  return MaterialPageRoute(builder: (context) => const FilterView());
         case AppRoutes.myBookingView:
           return MaterialPageRoute(builder: (context) => const MyBookingView());
 
         //CompareView
-        case AppRoutes.CompareView:
+        case AppRoutes.compareView:
           return MaterialPageRoute(builder: (context) => const CompareView());
 
         //FavoriteView
-        case AppRoutes.FavoriteView:
+        case AppRoutes.favoriteView:
           return MaterialPageRoute(builder: (context) => const FavoriteView());
+        case AppRoutes.hotelView:
+          return MaterialPageRoute(builder: (context) => const HotelView());
+
+        case AppRoutes.availableRoom:
+          final hotelId = routeSettings.arguments as int;
+          return MaterialPageRoute(
+            builder:
+                (context) => BlocProvider(
+                  create: (context) => getIt<HotelAvailableRoomsCubit>()..fetchHotelRooms(hotelId),
+                  child: const AvailableRoom(),
+                ),
+          );
         default:
           return _errorRoute();
       }

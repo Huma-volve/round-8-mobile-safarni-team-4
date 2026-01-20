@@ -28,6 +28,8 @@ abstract class AppRoutes {
   static const String pickUpDetails = '/pickUpDetails';
   static const mainLayout = '/mainLayout';
   static const String myBookingView = '/myBooking';
-  static const CompareView='/CompareView';
-  static const FavoriteView ='/FavoriteView';
+  static const compareView='/CompareView';
+  static const favoriteView ='/FavoriteView';
+  static const hotelView='/hotelView';
+  static const availableRoom='/availableRoom';
 }

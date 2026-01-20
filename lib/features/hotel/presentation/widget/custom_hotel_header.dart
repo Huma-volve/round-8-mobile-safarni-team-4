@@ -13,13 +13,14 @@ class CustomHotelHeader extends StatelessWidget {
         children: [
           const SizedBox(height: 16.0),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             icon: const Icon(Icons.arrow_back_ios_new_rounded),
           ),
           const SizedBox(height: 8.0),
           const SearchTextField(),
           const SizedBox(height: 8.0),
-         
         ],
       ),
     );

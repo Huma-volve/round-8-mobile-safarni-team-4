@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/core/routing/app_routes.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/get_all_hotels/hotel_model.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/available_room.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_discount_and_rationg.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_location.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -15,13 +15,10 @@ class HotelRecommendation extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushReplacement(
+        Navigator.pushNamed(
           context,
-          MaterialPageRoute(
-            builder: (context) => const AvailableRoom(
-             
-            ),
-          ),
+          AppRoutes.availableRoom,
+         arguments: hotelModel.id,
         );
       },
       child: Container(

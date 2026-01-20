@@ -14,16 +14,21 @@ class CustomTextHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: AppThemes.light.textTheme.titleMedium!.copyWith(fontSize: 18),
-        ),
-        const Expanded(child: SizedBox()),
-        TextButton(onPressed: onPressed, child: Text(textButton)),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 16.0, right: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: AppThemes.light.textTheme.titleMedium!.copyWith(
+              fontSize: 18,
+            ),
+          ),
+          const Expanded(child: SizedBox()),
+          TextButton(onPressed: onPressed, child: Text(textButton)),
+        ],
+      ),
     );
   }
 }
