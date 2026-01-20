@@ -1,7 +1,7 @@
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/api_serrvice/hotel_api_service.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/get_all_hotels/hotel_model.dart';
 
-import '../model/hotel_detailes/rooms_model.dart';
+import '../model/hotel_available_rooms/rooms_model.dart';
 
 
 class HotelRepository {

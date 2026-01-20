@@ -8,10 +8,9 @@ part of 'hotel_response.dart';
 
 HotelResponse _$HotelResponseFromJson(Map<String, dynamic> json) =>
     HotelResponse(
-      data:
-          (json['data'] as List<dynamic>)
-              .map((e) => HotelModel.fromJson(e as Map<String, dynamic>))
-              .toList(),
+      data: (json['data'] as List<dynamic>)
+          .map((e) => HotelModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       links: LinksModel.fromJson(json['links'] as Map<String, dynamic>),
       meta: MetaModel.fromJson(json['meta'] as Map<String, dynamic>),
       status: json['status'] as String,

@@ -9,10 +9,9 @@ part of 'favorite_response_model.dart';
 FavoriteResponseModel _$FavoriteResponseModelFromJson(
   Map<String, dynamic> json,
 ) => FavoriteResponseModel(
-  data:
-      (json['data'] as List<dynamic>)
-          .map((e) => FavoriteModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  data: (json['data'] as List<dynamic>)
+      .map((e) => FavoriteModel.fromJson(e as Map<String, dynamic>))
+      .toList(),
   status: json['status'] as String,
   message: json['message'] as String,
 );

@@ -1,6 +1,6 @@
 
 
-import '../../../data/model/hotel_detailes/rooms_model.dart';
+import '../../../data/model/hotel_available_rooms/rooms_model.dart';
 
 abstract class HotelRoomsState {}
 

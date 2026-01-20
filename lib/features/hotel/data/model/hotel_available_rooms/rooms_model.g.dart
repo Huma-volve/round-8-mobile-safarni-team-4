@@ -7,10 +7,9 @@ part of 'rooms_model.dart';
 // **************************************************************************
 
 RoomsModel _$RoomsModelFromJson(Map<String, dynamic> json) => RoomsModel(
-  data:
-      (json['data'] as List<dynamic>)
-          .map((e) => RoomItemModel.fromJson(e as Map<String, dynamic>))
-          .toList(),
+  data: (json['data'] as List<dynamic>)
+      .map((e) => RoomItemModel.fromJson(e as Map<String, dynamic>))
+      .toList(),
   currentPage: (json['current_page'] as num).toInt(),
   lastPage: (json['last_page'] as num).toInt(),
   perPage: (json['per_page'] as num).toInt(),
@@ -31,8 +30,9 @@ RoomItemModel _$RoomItemModelFromJson(Map<String, dynamic> json) =>
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       pricePerNight: (json['price_per_night'] as num).toDouble(),
-      images:
-          (json['images'] as List<dynamic>).map((e) => e as String).toList(),
+      images: (json['images'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$RoomItemModelToJson(RoomItemModel instance) =>

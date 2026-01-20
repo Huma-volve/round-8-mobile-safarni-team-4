@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/view/room_detailes.dart';
 
-import '../../data/model/hotel_detailes/rooms_model.dart';
+import '../../data/model/hotel_available_rooms/rooms_model.dart';
 
 class AvailableRoomItem extends StatelessWidget {
   const AvailableRoomItem({super.key, required this.rooms});
