@@ -30,18 +30,21 @@ class GallaryCubit extends Cubit<GalleryState> {
     _images.removeAt(index);
     emit(GalleryUpdated(images: images));
   }
+
   void selectImageForDelete(int index) {
-    if(state is GalleryUpdated){
+    if (state is GalleryUpdated) {
       final currentState = state as GalleryUpdated;
       emit(currentState.copyWith(selectedIndexForDelete: index));
     }
   }
- void clearSelection() {
-  if (state is GalleryUpdated) {
-    emit((state as GalleryUpdated).copyWith(
-      selectedIndexForDelete: null,
-    ));
-  }
-}
 
+  void clearSelection() {
+    print('clear selection ');
+
+    if (state is GalleryUpdated) {
+      emit((state as GalleryUpdated).copyWith(
+        clearSelection: true
+        ));
+    }
+  }
 }

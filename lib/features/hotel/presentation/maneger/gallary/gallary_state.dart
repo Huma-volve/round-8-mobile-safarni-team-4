@@ -18,12 +18,16 @@ class GalleryUpdated extends GalleryState {
   @override
   List<Object> get props => [images, selectedIndexForDelete ?? -1];
 
-  GalleryUpdated copyWith({
-    final List<File>? images,
-    final int? selectedIndexForDelete,
-  }) => GalleryUpdated(
+ GalleryUpdated copyWith({
+  List<File>? images,
+  int? selectedIndexForDelete,
+  bool clearSelection = false,
+}) {
+  return GalleryUpdated(
     images: images ?? this.images,
     selectedIndexForDelete:
-        selectedIndexForDelete ?? this.selectedIndexForDelete,
+        clearSelection ? null : selectedIndexForDelete ?? this.selectedIndexForDelete,
   );
+}
+
 }

@@ -11,37 +11,38 @@ class GridViewAddItemListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GallaryCubit, GalleryState>(
-  builder: (context, state) {
-    if (state is GalleryUpdated) {
-      return GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: state.images.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-        ),
-        itemBuilder: (context, index) {
-          return GridviewAddItem(
-            images: state.images[index],
-            showDelete: state.selectedIndexForDelete == index,
-            onLongPress: () {
-              context.read<GallaryCubit>().selectImageForDelete(index);
-            },
-            onTap: () {
-              context.read<GallaryCubit>().clearSelection();
-            },
-            onRemove: () {
-              context.read<GallaryCubit>().removeImage(index);
+      builder: (context, state) {
+        if (state is GalleryUpdated) {
+          return GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: state.images.length,
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+            ),
+            itemBuilder: (context, index) {
+              return GridviewAddItem(
+                images: state.images[index],
+                showDelete: state.selectedIndexForDelete == index,
+                onLongPress: () {
+                  context.read<GallaryCubit>().selectImageForDelete(index);
+                },
+                onTap: () {
+                  print('Image tapped');
+                  context.read<GallaryCubit>().clearSelection();
+                },
+
+                onRemove: () {
+                  context.read<GallaryCubit>().removeImage(index);
+                },
+              );
             },
           );
-        },
-      );
-    }
-    return const SizedBox();
-  },
-);
-
+        }
+        return const SizedBox();
+      },
+    );
   }
 }
