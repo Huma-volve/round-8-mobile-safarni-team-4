@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/room_detailes/rooms_data.dart';
 
 class AboutSection extends StatelessWidget {
-  AboutSection({super.key, });
-  //final RoomsData roomsData;
-
+ const AboutSection({super.key,required this.roomsData});
+  final RoomsData roomsData;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,9 +14,9 @@ class AboutSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildInfoItem(Icons.bed, " Beds"), //${roomsData.bedNumber}
-              _buildInfoItem(Icons.bathtub, " Bath"), //${roomsData.occupancy}
-              _buildInfoItem(Icons.crop_free, " Sqrt"), //${roomsData.area}
+              _buildInfoItem(Icons.bed, "${roomsData.bedNumber} Beds"), //${roomsData.bedNumber}
+              _buildInfoItem(Icons.bathtub, "${roomsData.occupancy} Bath"), //${roomsData.occupancy}
+              _buildInfoItem(Icons.crop_free, "${roomsData.area} Sqrt"), //${roomsData.area}
             ],
           ),
           const SizedBox(height: 20),
@@ -27,7 +26,7 @@ class AboutSection extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            "roomsData.description",
+            roomsData.description ,
             style: const TextStyle(fontSize: 14, color: Colors.grey),
           ),
           TextButton(

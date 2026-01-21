@@ -17,7 +17,9 @@ class RoomDetailesViewBody extends StatelessWidget {
               CustomDetailesImage(
                 room: room,
               ),
-              const SectionDetailesViewBody(),
+               SectionDetailesViewBody(
+                room: room,
+              ),
             ],
           ),
         ),

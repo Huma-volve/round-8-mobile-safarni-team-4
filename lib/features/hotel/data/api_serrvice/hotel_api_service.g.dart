@@ -12,7 +12,7 @@ part of 'hotel_api_service.dart';
 
 class _HotelApiService implements HotelApiService {
   _HotelApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://round8-safarni-team-three.huma-volve.com/api';
+    baseUrl ??= 'https://round8-safarni-team-three.huma-volve.com/api/';
   }
 
   final Dio _dio;
@@ -31,7 +31,7 @@ class _HotelApiService implements HotelApiService {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/hotel',
+            'hotel',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -58,7 +58,7 @@ class _HotelApiService implements HotelApiService {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/hotel/${id}',
+            'hotel/${id}',
             queryParameters: queryParameters,
             data: _data,
           )

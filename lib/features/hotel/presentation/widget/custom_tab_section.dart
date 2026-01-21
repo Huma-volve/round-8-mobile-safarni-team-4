@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/room_detailes/room_detailes_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/about_section.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/gallery_section.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/review_section.dart';
@@ -22,38 +24,46 @@ class _CustomTabSectionState extends State<CustomTabSection> {
       children: [
         // Custom Tabs (Horizontal Scrollable)
         Row(
-          children:
-              tabs.asMap().entries.map((entry) {
-                //
-                int index = entry.key;
-                String title = entry.value;
+          children: tabs.asMap().entries.map((entry) {
+            //
+            int index = entry.key;
+            String title = entry.value;
 
-                return GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedIndex = index;
-                    });
-                  },
-                  child: _decoraionItemSelected(index, title),
-                );
-              }).toList(),
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              child: _decoraionItemSelected(index, title),
+            );
+          }).toList(),
         ),
 
         const SizedBox(height: 20),
 
         // Content based on selected tab
-        IndexedStack(
-          index: selectedIndex,
-          children:  [
-            AboutSection(
-             // roomsData: ,
-            ),
-            // Gallery Tab 
-           const GallerySection(),
+        BlocBuilder<RoomDetailesCubit, RoomDetailesState>(
+          builder: (context, state) {
+            if (state is RoomDetailesLoading) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (state is RoomDetailesError) {
+              print("Error: ${state.message}");
+              return Center(child: Text(state.message));
+            } else if (state is RoomDetailedSuccess) {
+              final roomsData = state.roomDetailes.data;
 
-            // Review Tab
-            ReviewSection(),
-          ],
+              return IndexedStack(
+                index: selectedIndex,
+                children: [
+                  AboutSection(roomsData: roomsData),
+                  const GallerySection(),
+                  ReviewSection(),
+                ],
+              );
+            }
+            return const SizedBox();
+          },
         ),
       ],
     );
@@ -74,8 +84,9 @@ class _CustomTabSectionState extends State<CustomTabSection> {
         title,
         style: TextStyle(
           color: selectedIndex == index ? Colors.blue : Colors.grey,
-          fontWeight:
-              selectedIndex == index ? FontWeight.bold : FontWeight.normal,
+          fontWeight: selectedIndex == index
+              ? FontWeight.bold
+              : FontWeight.normal,
           fontSize: 16,
         ),
       ),

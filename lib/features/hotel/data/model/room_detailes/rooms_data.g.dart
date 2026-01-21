@@ -12,7 +12,7 @@ RoomsData _$RoomsDataFromJson(Map<String, dynamic> json) => RoomsData(
   description: json['description'] as String,
   area: (json['area'] as num).toInt(),
   occupancy: (json['occupancy'] as num).toInt(),
-  pricePerNight: (json['price_per_night'] as num).toDouble(),
+  pricePerNight: RoomsData._fromJsonPrice(json['price_per_night']),
   refundable: json['refundable'] as bool,
   hotel: HotelModel.fromJson(json['hotel'] as Map<String, dynamic>),
   images: (json['images'] as List<dynamic>).map((e) => e as String).toList(),

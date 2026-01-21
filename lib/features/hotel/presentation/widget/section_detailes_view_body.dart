@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:round_8_mobile_safarni_team4/core/theme/app_theme.dart';
-import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/room_detailes/rooms_data.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/hotel_available_rooms/rooms_model.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_discount_and_review.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/custom_tab_section.dart';
 
 class SectionDetailesViewBody extends StatelessWidget {
-  const SectionDetailesViewBody({super.key , });
+  const SectionDetailesViewBody({super.key , required this.room});
 
-  //final RoomsData roomsData;
+     final RoomItemModel room;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class SectionDetailesViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CustomDiscountAndReview(),
-              Text("roomsData.name", style: AppThemes.light.textTheme.titleLarge),
+              Text(room.name, style: AppThemes.light.textTheme.titleLarge),
               const SizedBox(height: 4),
               const Text(
                 "1012 oscean avanue, New Yourk ,USA",
