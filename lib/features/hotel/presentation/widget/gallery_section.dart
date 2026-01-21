@@ -65,7 +65,7 @@ class _GallerySectionState extends State<GallerySection> {
               const SizedBox(height: 12),
 
               /// Grid
-              GridViewAddItemListView(images: images),
+             const GridViewAddItemListView(),
             ],
           );
         },
