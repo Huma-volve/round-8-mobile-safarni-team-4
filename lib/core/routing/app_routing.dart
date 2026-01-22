@@ -12,6 +12,7 @@ import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/f
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/login_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/set_new_password_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/login/presentation/views/success_reset_password_view.dart';
+import 'package:round_8_mobile_safarni_team4/features/onboarding/view/onboarding_view.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/booking_type_cubit/booking_type_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/my_booking_cubit/my_booking_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/profile/presentation/manager/personal_info_cubit/personal_info_cubit.dart';
@@ -50,10 +51,10 @@ abstract class AppRouter {
         case AppRoutes.home:
           return MaterialPageRoute(builder: (context) => const BottomNavBar());
 
-        // case AppRoutes.onboardingView:
-        //   return MaterialPageRoute(
-        //     builder: (context) => const OnboardingView(),
-        //   );
+        case AppRoutes.onboardingView:
+          return MaterialPageRoute(
+            builder: (context) => const OnboardingView(),
+          );
 
         case AppRoutes.paymentMethod:
           return MaterialPageRoute(builder: (context) => const CheckoutView());
