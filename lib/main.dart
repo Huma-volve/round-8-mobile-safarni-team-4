@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           debugShowCheckedModeBanner: false,
           theme: AppThemes.light,
-          initialRoute: AppRoutes.loginView,
+          initialRoute: AppRoutes.onboardingView,
           onGenerateRoute: AppRouter.onGenerateRoute,
         );
       },
@@ -37,13 +36,3 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyCustomScrollBehavior extends MaterialScrollBehavior {
-  // Override behavior methods and getters like dragDevices
-  @override
-  Set<PointerDeviceKind> get dragDevices => {
-    PointerDeviceKind.touch,
-    PointerDeviceKind.mouse,
-    PointerDeviceKind.stylus,
-    PointerDeviceKind.unknown,
-  };
-}

@@ -14,7 +14,6 @@ class PersonalInfoBody extends StatelessWidget {
         if (state is PersonalInfoLoading) {
           return const Center(child: CircularProgressIndicator());
         }
-
         if (state is PersonalInfoFailure) {
           return Center(
             child: Column(
@@ -27,7 +26,6 @@ class PersonalInfoBody extends StatelessWidget {
             ),
           );
         }
-
         if (state is PersonalInfoSuccess) {
           final userProfile = state.userProfile;
           return SingleChildScrollView(
