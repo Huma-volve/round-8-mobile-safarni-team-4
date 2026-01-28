@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/gallary/gallary_state.dart';
@@ -24,7 +23,7 @@ class GridViewAddItemListView extends StatelessWidget {
             ),
             itemBuilder: (context, index) {
               return GridviewAddItem(
-                images: state.images[index],
+                image: state.images[index],
                 showDelete: state.selectedIndexForDelete == index,
                 onLongPress: () {
                   context.read<GallaryCubit>().selectImageForDelete(index);

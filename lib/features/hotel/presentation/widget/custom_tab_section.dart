@@ -57,7 +57,9 @@ class _CustomTabSectionState extends State<CustomTabSection> {
                 index: selectedIndex,
                 children: [
                   AboutSection(roomsData: roomsData),
-                  const GallerySection(),
+                    GallerySection(
+                    data: roomsData,
+                  ),
                   ReviewSection(),
                 ],
               );

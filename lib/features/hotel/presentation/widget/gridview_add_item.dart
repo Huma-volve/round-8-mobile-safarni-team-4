@@ -1,17 +1,19 @@
 import 'dart:io';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/gallery_image_type/galler_image_type.dart';
 
 class GridviewAddItem extends StatelessWidget {
   const GridviewAddItem({
     super.key,
-    required this.images,
+    required this.image,
     required this.onRemove,
     required this.showDelete,
     required this.onLongPress,
     required this.onTap,
   });
 
-  final File images;
+  final GalleryImage image;
   final VoidCallback onRemove;
   final bool showDelete;
   final VoidCallback onLongPress;
@@ -33,12 +35,19 @@ class GridviewAddItem extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: Image.file(
-                images,
-                fit: BoxFit.cover,
-                width: double.infinity,
-                height: double.infinity,
-              ),
+              child: image.type == ImageType.api
+                  ? CachedNetworkImage(
+                      imageUrl: image.imageUrl!,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: double.infinity,
+                    )
+                  : Image.file(
+                      image.file!,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                      height: double.infinity,
+                    ),
             ),
 
             if (showDelete)

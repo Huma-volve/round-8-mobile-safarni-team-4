@@ -3,25 +3,26 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/gallery_image_type/galler_image_type.dart';
+import 'package:round_8_mobile_safarni_team4/features/hotel/data/model/room_detailes/rooms_data.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/gallary/gallary_state.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/maneger/gallary/gallery_cubit.dart';
 import 'package:round_8_mobile_safarni_team4/features/hotel/presentation/widget/grid_view_add_item_list_view.dart';
 
-class GallerySection extends StatefulWidget {
-  const GallerySection({super.key});
+class GallerySection extends StatelessWidget {
+    GallerySection({super.key , required this.data});
 
-  @override
-  State<GallerySection> createState() => _GallerySectionState();
-}
-
-class _GallerySectionState extends State<GallerySection> {
   final ImagePicker picker = ImagePicker();
-  List<File> images = [];
+
+   List<GalleryImage> images = [];
+ final RoomsData data;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GallaryCubit(),
+      create: (context) => GallaryCubit()..setApiImages(
+        data.images ?? [],
+      ),
       child: BlocBuilder<GallaryCubit, GalleryState>(
         builder: (context, state) {
           if (state is GalleryUpdated) {
